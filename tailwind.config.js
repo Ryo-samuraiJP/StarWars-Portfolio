@@ -5,6 +5,9 @@ export default {
     extend: {
       animation: {
         "profile-effect": "profile__effect 8s ease-in-out infinite 1s",
+        scrolldown: "scrolldown-guide 2s infinite",
+        arrow: "arrow 500ms ease infinite alternate",
+        "arrow-delay": "arrow 500ms ease infinite alternate 250ms",
       },
       keyframes: {
         profile__effect: {
@@ -17,6 +20,20 @@ export default {
           "100%": {
             borderRadius: "60% 40% 30% 70%/60% 30% 70% 40%",
           },
+        },
+        "scrolldown-guide": {
+          "0%": { opacity: 0, height: "6px" },
+          "40%": { opacity: 1, height: "10px" },
+          "80%": {
+            transform: "translate(0, 20px)",
+            height: "10px",
+            opacity: 0,
+          },
+          "100%": { height: "3px", opacity: 0 },
+        },
+        arrow: {
+          from: { opacity: 0 },
+          to: { opacity: 0.5 },
         },
       },
     },
