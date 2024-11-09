@@ -1,9 +1,4 @@
-import {
-  IoLogoGithub,
-  IoLogoJavascript,
-  IoLogoYoutube,
-  IoMdOpen,
-} from "react-icons/io";
+import { IoLogoGithub, IoLogoYoutube, IoMdOpen } from "react-icons/io";
 import itone from "./assets/itone.png";
 import ai_visual_doppelganger from "./assets/ai_visual_doppelganger.jpg";
 import platemate from "./assets/platemate.jpeg";
@@ -12,23 +7,28 @@ import campus_network_simulator from "./assets/network_simulator.png";
 import {
   SiAndroidstudio,
   SiCisco,
+  SiCss3,
   SiDiagramsdotnet,
   SiFlask,
   SiGoogledrive,
+  SiHtml5,
+  SiJavascript,
   SiPrezi,
+  SiPython,
+  SiReact,
   SiRender,
+  SiTailwindcss,
+  SiVercel,
   SiVite,
 } from "react-icons/si";
 import { FiDownload } from "react-icons/fi";
-import { FaJava, FaPython, FaReact } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { IoLogoVercel } from "react-icons/io5";
 import { BsFiletypeXml } from "react-icons/bs";
+import { AiOutlineJava } from "react-icons/ai";
 
 export const projectsData = [
   {
     id: 1,
-    name: "iTone",
+    title: "iTone",
     desc: "Music streaming web application inspired by Spotify",
     image: itone,
     genre: "Web",
@@ -41,16 +41,16 @@ export const projectsData = [
       },
     ],
     tech_used: [
-      { icon: FaReact, text: "React" },
-      { icon: SiVite, text: "Vite" },
-      { icon: RiTailwindCssFill, text: "Tailwind CSS" },
-      { icon: IoLogoJavascript, text: "JavaScript" },
-      { icon: IoLogoVercel, text: "Vercel" },
+      { icon: SiReact, name: "React" },
+      { icon: SiVite, name: "Vite" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiJavascript, name: "JavaScript" },
+      { icon: SiVercel, name: "Vercel" },
     ],
   },
   {
     id: 2,
-    name: "AI Visual Doppelganger",
+    title: "AI Visual Doppelganger",
     desc: "AI-powered replication web application",
     image: ai_visual_doppelganger,
     genre: ["Web", "AI"],
@@ -72,15 +72,18 @@ export const projectsData = [
       },
     ],
     tech_used: [
-      { icon: SiFlask, text: "Flask" },
-      { icon: FaPython, text: "Python" },
-      { icon: SiRender, text: "SiRender" },
+      { icon: SiFlask, name: "Flask" },
+      { icon: SiPython, name: "Python" },
+      { icon: SiJavascript, name: "JavaScript" },
+      { icon: SiHtml5, name: "HTML" },
+      { icon: SiCss3, name: "CSS" },
+      { icon: SiRender, name: "Render" },
     ],
   },
   {
     id: 3,
-    name: "PlateMate",
-    desc: "Food delivery mobile app for Android OS",
+    title: "PlateMate",
+    desc: "Food delivery mobile application for Android OS",
     image: platemate,
     genre: "Mobile",
     links: [
@@ -96,14 +99,14 @@ export const projectsData = [
       },
     ],
     tech_used: [
-      { icon: FaJava, text: "Java" },
-      { icon: BsFiletypeXml, text: "XML" },
-      { icon: SiAndroidstudio, text: "Android Studio" },
+      { icon: AiOutlineJava, name: "Java" },
+      { icon: BsFiletypeXml, name: "XML" },
+      { icon: SiAndroidstudio, name: "Android Studio" },
     ],
   },
   {
     id: 4,
-    name: "PlateMate Architecural Model",
+    title: "PlateMate Architecural Model",
     desc: "Food delivery system architectural design",
     image: platemate_architecture,
     genre: "Others",
@@ -119,11 +122,11 @@ export const projectsData = [
         ulr: "https://prezi.com/view/kiFUg0jNey3zD5mN1ctl/",
       },
     ],
-    tech_used: [{ icon: SiDiagramsdotnet, text: "diagrams.net" }],
+    tech_used: [{ icon: SiDiagramsdotnet, name: "diagrams.net" }],
   },
   {
     id: 5,
-    name: "Campus Network Simulator",
+    title: "Campus Network Simulator",
     desc: "Network infrastructure design for campus",
     image: campus_network_simulator,
     genre: "Others",
@@ -144,7 +147,7 @@ export const projectsData = [
         url: "https://drive.usercontent.google.com/u/0/uc?id=1HVgYZu9RMIlfEn8bxssOG3lytE-uWUOh&export=download/",
       },
     ],
-    tech_used: [{ icon: SiCisco, text: "Cisco Packet Tracer" }],
+    tech_used: [{ icon: SiCisco, name: "Cisco Packet Tracer" }],
   },
 ];
 
