@@ -8,37 +8,39 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
   const filteredProjects = filterProjects(genre);
 
   return (
-    <div className="flex flex-wrap -mx-2">
+    <div className="flex flex-wrap">
       {filteredProjects.map((project) => (
-        <div key={project.id} className="flex flex-col w-1/2 px-2 mb-4">
-          <div className="h-70 max-h-82 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:transform hover:-translate-y-2 hover:shadow-lg">
-            <div className="w-full h-2/3 rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center">
-              <img
-                src={project.image}
-                alt="Project"
-                className="w-full h-full object-cover"
-              />
+        <div
+          key={project.id}
+          className="flex flex-col w-1/2 px-[1.5rem] my-[1.5rem]"
+        >
+          <div className="h-[35rem] border-2 px-[1.5em] border-[rgba(75,30,133,0.5)] rounded-[1.5em] bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] text-white font-nunito flex justify-center items-left flex-col backdrop-blur-[12px] shadow-md overflow-hidden transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2 hover:shadow-lg">
+            <div className="rounded-[0.5rem] overflow-hidden -mt-[1rem] border-2 border-gray-400">
+              <img src={project.image} alt="Project" className="object-cover" />
             </div>
-            <p className="m-0 text-lg font-semibold cursor-default truncate">
-              {project.name}
-            </p>
-            <p className="m-0 text-sm cursor-default truncate-3-lines">
-              {project.desc}
-            </p>
-            <div className="flex justify-between items-center mt-3">
+            <div className="text-[1.5rem] font-semibold text-left mt-[0.5rem]">
+              {project.title}
+            </div>
+            <p className="text-[1rem] font-light text-left">- {project.desc}</p>
+            <div className="flex gap-x-[1.5rem] items-center my-[1rem]">
               {project.links.map((link, index) => (
-                <div key={index} className="flex items-center space-x-1">
-                  <link.icon />
+                <button
+                  key={index}
+                  className="flex items-center gap-[0.5rem] border-2 border-white text-white py-[0.25rem] px-[0.75rem] rounded-[1rem] transition-all duration-300 hover:bg-white hover:text-black"
+                >
+                  <link.icon className="text-[1.2rem]" />
                   <span>{link.text}</span>
-                </div>
+                </button>
               ))}
             </div>
-            <div className="flex justify-between items-center mt-3">
-              <p className="text-bold">Primary tech used:</p>
+            <div className="flex items-center gap-x-[1.25rem] mt-[0.75rem]">
+              <p className="text-bold">Primary Technologies Used:</p>
               {project.tech_used.map((tech, index) => (
-                <div key={index} className="flex items-center space-x-1">
-                  <tech.icon />
-                  <span>{tech.text}</span>
+                <div key={index} className="relative group">
+                  <tech.icon className="text-[1.4rem]" />
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-[0.5rem] w-max px-[0.5rem] py-[0.25rem] text-white border-2 rounded-full opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100">
+                    {tech.name}
+                  </div>
                 </div>
               ))}
             </div>
