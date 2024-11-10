@@ -8,6 +8,7 @@ export default {
         scrolldown: "scrolldown-guide 2s infinite",
         arrow: "arrow 500ms ease infinite alternate",
         "arrow-delay": "arrow 500ms ease infinite alternate 250ms",
+        "meteor-effect": "meteor 5s linear infinite",
       },
       keyframes: {
         profile__effect: {
@@ -34,6 +35,14 @@ export default {
         arrow: {
           from: { opacity: 0 },
           to: { opacity: 0.5 },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
         },
       },
     },
