@@ -9,7 +9,7 @@ const SkillProgressBar = () => {
         {skillsData.map((category) => (
           <SpotlightCard key={category.id} className="w-full lg:w-[170%]">
             <div className="relative h-full bg-slate-900 p-[0.5rem] rounded-[inherit] z-20 overflow-hidden">
-              {/* whtie blur */}
+              {/* white blur */}
               <div
                 className="absolute mb-[19.5rem] -top-[11rem] translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square lg:top-[0.75rem]"
                 aria-hidden="true"
@@ -36,37 +36,47 @@ const SkillProgressBar = () => {
                         >
                           <div className="relative flex items-center justify-center">
                             <div className="relative flex items-center justify-center w-[4rem] h-[4rem]">
-                              <div
-                                className="absolute inset-0"
-                                style={{
-                                  clip: "rect(0, 4rem, 4rem, 2rem)",
-                                  borderColor: skill.color,
-                                  borderWidth: "0.25rem",
-                                  borderStyle: "solid",
-                                  borderRadius: "50%",
-                                  transform: `rotate(${
-                                    skill.progress > 50
-                                      ? 180
-                                      : (skill.progress / 100) * 360
-                                  }deg)`,
-                                }}
-                              ></div>
-                              {skill.progress > 50 && (
-                                <div
-                                  className="absolute inset-0"
-                                  style={{
-                                    clip: "rect(0, 2rem, 4rem, 0)",
-                                    borderColor: skill.color,
-                                    borderWidth: "0.25rem",
-                                    borderStyle: "solid",
-                                    borderRadius: "50%",
-                                    transform: `rotate(${
-                                      ((skill.progress - 50) / 100) * 360
-                                    }deg)`,
-                                  }}
-                                ></div>
-                              )}
-                              <skill.icon size="2rem" color={skill.color} />
+                              <svg
+                                className="w-[100%] h-[100%] transform rotate-[-90deg] "
+                                viewBox="0 0 200 200"
+                              >
+                                <circle
+                                  className="stroke-gray-700"
+                                  r="90"
+                                  cx="100"
+                                  cy="100"
+                                  fill="transparent"
+                                  strokeWidth="16px"
+                                  strokeDasharray="565.48px"
+                                  strokeDashoffset="0"
+                                ></circle>
+                                <circle
+                                  r="90"
+                                  cx="100"
+                                  cy="100"
+                                  stroke={skill.color}
+                                  strokeWidth="16px"
+                                  strokeLinecap="round"
+                                  fill="transparent"
+                                  strokeDasharray="565.48px"
+                                  strokeDashoffset="565.48px"
+                                >
+                                  <animate
+                                    attributeName="stroke-dashoffset"
+                                    from="565.48"
+                                    to={(565.48 * (100 - skill.progress)) / 100}
+                                    dur="1s"
+                                    fill="freeze"
+                                  />
+                                </circle>
+                              </svg>
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <skill.icon
+                                  size="2rem"
+                                  color={skill.color}
+                                  className=""
+                                />
+                              </div>
                             </div>
                           </div>
                           <p className="text-sm mt-[0.25rem] text-gray-200">
