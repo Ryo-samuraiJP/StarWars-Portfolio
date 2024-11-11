@@ -3,6 +3,7 @@ import { IconCloud } from "./components/ui/skills-cloud";
 const icons = [
   "html5",
   "css3",
+  "markdown",
   "tailwindcss",
   "javascript",
   "ejs",
@@ -10,10 +11,13 @@ const icons = [
   "react",
   "vite",
   "npm",
+  "swiper",
+  "scrollreveal",
   "nodedotjs",
   "express",
   "postman",
   "python",
+  "flask",
   "c",
   "java",
   "axios",
@@ -23,10 +27,10 @@ const icons = [
   "vercel",
   "netlify",
   "render",
-  "githubpages",
   "git",
   "github",
   "githubactions",
+  "uml",
 ];
 
 const IconSphere = () => {
