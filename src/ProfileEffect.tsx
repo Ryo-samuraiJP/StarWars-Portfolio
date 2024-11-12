@@ -1,4 +1,4 @@
-import profile from "./assets/profile.jpeg";
+import profile from "./assets/images/profile.jpeg";
 
 const ProfileEffect = () => {
   return (

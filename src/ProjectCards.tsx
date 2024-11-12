@@ -1,4 +1,4 @@
-import { filterProjects } from "./projectsData";
+import { filterProjects } from "./data/projectsData";
 
 interface ProjectCardsProps {
   genre: string;
