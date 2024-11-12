@@ -53,7 +53,7 @@ export const projectsData = [
     title: "AI Visual Doppelganger",
     desc: "AI-powered replication web application",
     image: ai_visual_doppelganger,
-    genre: ["Web", "AI"],
+    genre: ["Web", "AI / ML"],
     links: [
       {
         icon: IoMdOpen,
@@ -109,7 +109,7 @@ export const projectsData = [
     title: "PlateMate Architecural Model",
     desc: "Food delivery system architectural design",
     image: platemate_architecture,
-    genre: "Others",
+    genre: "Other",
     links: [
       {
         icon: IoLogoGithub,
@@ -129,7 +129,7 @@ export const projectsData = [
     title: "Campus Network Simulator",
     desc: "Network infrastructure design for campus",
     image: campus_network_simulator,
-    genre: "Others",
+    genre: "Other",
     links: [
       {
         icon: IoLogoGithub,
@@ -151,14 +151,20 @@ export const projectsData = [
   },
 ];
 
+export const genres = [
+  // Add "ALL" to the beginning of the array
+  "All",
+  ...Array.from(new Set(projectsData.flatMap((project) => project.genre))),
+];
+
+// Function to filter projects based on genre
 export const filterProjects = (genre: string) => {
   if (genre === "All") {
     return projectsData;
   }
-  return projectsData.filter((project) => {
-    if (Array.isArray(project.genre)) {
-      return project.genre.includes(genre);
-    }
-    return project.genre === genre;
-  });
+  return projectsData.filter((project) =>
+    Array.isArray(project.genre)
+      ? project.genre.includes(genre)
+      : project.genre === genre
+  );
 };
