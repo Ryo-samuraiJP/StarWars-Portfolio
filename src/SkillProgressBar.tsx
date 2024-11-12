@@ -1,4 +1,4 @@
-import { skillsData } from "./data/skillsData";
+import { skillsData } from "./skillsData";
 import { Meteors } from "./components/ui/meteros";
 import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
 

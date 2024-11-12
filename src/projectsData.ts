@@ -1,9 +1,9 @@
 import { IoLogoGithub, IoLogoYoutube, IoMdOpen } from "react-icons/io";
-import itone from "./../assets/images/itone.png";
-import ai_visual_doppelganger from "./../assets/images/ai_visual_doppelganger.jpg";
-import platemate from "./../assets/images/platemate.jpeg";
-import platemate_architecture from "./../assets/images/platemate_architecture.png";
-import campus_network_simulator from "./../assets/images/network_simulator.png";
+import itone from "./assets/itone.png";
+import ai_visual_doppelganger from "./assets/ai_visual_doppelganger.jpg";
+import platemate from "./assets/platemate.jpeg";
+import platemate_architecture from "./assets/platemate_architecture.png";
+import campus_network_simulator from "./assets/network_simulator.png";
 import {
   SiAndroidstudio,
   SiCisco,

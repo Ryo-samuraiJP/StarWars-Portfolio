@@ -14,7 +14,7 @@ import {
   SiVite,
 } from "react-icons/si";
 import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
-import { servicesData } from "./data/servicesData";
+import { servicesData } from "./servicesData";
 import { GrMysql } from "react-icons/gr";
 import { Meteors } from "./components/ui/meteros";
 
