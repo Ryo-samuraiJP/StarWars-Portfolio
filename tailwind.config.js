@@ -9,6 +9,7 @@ export default {
         arrow: "arrow 500ms ease infinite alternate",
         "arrow-delay": "arrow 500ms ease infinite alternate 250ms",
         "meteor-effect": "meteor 5s linear infinite",
+        "shining-effect": "shining 2s linear infinite",
       },
       keyframes: {
         profile__effect: {
@@ -42,6 +43,14 @@ export default {
           "100%": {
             transform: "rotate(215deg) translateX(-500px)",
             opacity: "0",
+          },
+        },
+        shining: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
           },
         },
       },
