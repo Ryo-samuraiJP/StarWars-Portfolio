@@ -41,7 +41,7 @@ const iconMap: { [key: string]: JSX.Element | string } = {
 };
 
 const Credentials = () => {
-  const [credential, setCredential] = useState(credentialsData.slice(0, 5)); // the number of credentials that are loaded initially
+  const [credential, setCredential] = useState(credentialsData.slice(0, 3)); // the number of credentials that are loaded initially
   const [, setHasMore] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -124,7 +124,7 @@ const Credentials = () => {
               <div className="flex justify-end">
                 {credential.link && (
                   <a href={credential.link} target="_blank">
-                    <ShiningButton />
+                    <ShiningButton text="See Certification" />
                   </a>
                 )}
               </div>
