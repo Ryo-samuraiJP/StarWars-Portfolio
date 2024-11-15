@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply text-gray-500 !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  @apply text-gray-300 transition-all duration-300 ease-in-out !important;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-slate-50 -mb-[0.8rem] p-[0.325rem] rounded-full !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-slate-300 transition-all duration-300 ease-in-out !important;
+}
