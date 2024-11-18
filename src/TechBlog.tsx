@@ -123,14 +123,14 @@ const TechBlog: React.FC = () => {
               <p className="italic text-left px-[1rem] text-gray-100">
                 {post.description}
               </p>
-              <button className="items-center my-[1.25rem]">
-                <a href={post.url} target="_blank" rel="noopener noreferrer">
+              <a href={post.url} target="_blank" rel="noopener noreferrer">
+                <div className="items-center py-[1.25rem]">
                   <ShiningButton
                     icon={<IoMdOpen className="text-[1.5rem]" />}
                     text="Read more on DEV"
                   />
-                </a>
-              </button>
+                </div>
+              </a>
             </div>
           </SwiperSlide>
         ))}
