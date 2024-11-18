@@ -1,9 +1,9 @@
 import Typewriter from "typewriter-effect";
-import DownloadButton from "./DownloadButton";
-import ProfileEffect from "./ProfileEffect";
-import ProfileNumbers from "./ProfileNumbers";
-import ScrollDown from "./ScrollDown";
-import SocialButtons from "./SocialButtons";
+import DownloadButton from "./components/ui/DownloadButton";
+import ProfileEffect from "./components/ui/ProfileEffect";
+import ProfileNumbers from "./components/ui/ProfileNumbers";
+import ScrollDown from "./components/ui/ScrollDown";
+import SocialButtons from "./components/ui/SocialButtons";
 
 const Home = () => {
   return (

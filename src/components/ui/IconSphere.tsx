@@ -1,4 +1,4 @@
-import { IconCloud } from "./components/ui/skills-cloud";
+import { IconCloud } from "./skills-cloud";
 
 const icons = [
   "html5",

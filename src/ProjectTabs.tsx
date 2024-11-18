@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tab, Tabs, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import ProjectCards from "./ProjectCards";
+import ProjectCards from "./components/ui/ProjectCards";
 import { genres } from "./data/projectsData";
 
 const ProjectTabs = () => {

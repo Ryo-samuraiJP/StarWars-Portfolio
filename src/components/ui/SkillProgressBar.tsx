@@ -1,6 +1,6 @@
-import { skillsData } from "./data/skillsData";
-import { Meteors } from "./components/ui/meteros";
-import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
+import { skillsData } from "../../data/skillsData";
+import { Meteors } from "./meteros";
+import Spotlight, { SpotlightCard } from "./spotlight-card";
 
 const SkillProgressBar = () => {
   return (

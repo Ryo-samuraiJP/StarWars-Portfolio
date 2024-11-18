@@ -1,5 +1,5 @@
-import SkillsProgress from "./SkillProgressBar";
-import IconSphere from "./IconSphere";
+import SkillsProgress from "./components/ui/SkillProgressBar";
+import IconSphere from "./components/ui/IconSphere";
 
 const SkillStack = () => {
   return (
