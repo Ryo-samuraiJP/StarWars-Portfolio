@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@splinetool/react-spline": "^4.0.0",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
@@ -17,13 +18,15 @@
     "next-themes": "^0.4.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.2",
     "react-icon-cloud": "^4.1.4",
     "react-icons": "^5.3.0",
     "react-tabs": "^6.0.2",
     "react-vertical-timeline-component": "^3.6.0",
     "swiper": "^11.1.14",
     "tailwind-merge": "^2.5.4",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
