@@ -1,6 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { contactFormSchema, TContactFormSchema } from "./lib/types";
+import sendEmailWithEmailjs from "./lib/emailjs";
 import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
 import { CiLinkedin, CiMail } from "react-icons/ci";
 import { Meteors } from "./components/ui/meteros";
@@ -21,8 +22,9 @@ const ReactHookForm = () => {
   // Handle form submission and reset form after submission
   const onSubmit = async (data: TContactFormSchema) => {
     console.log(data);
-    // Submit data to server
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Call sendEmailWithEmailjs function to send email
+    await sendEmailWithEmailjs(data);
 
     reset();
   };
