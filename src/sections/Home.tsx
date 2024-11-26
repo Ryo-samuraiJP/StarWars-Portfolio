@@ -1,13 +1,13 @@
 import Typewriter from "typewriter-effect";
-import DownloadButton from "./components/ui/DownloadButton";
-import ProfileEffect from "./components/ui/ProfileEffect";
-import ProfileNumbers from "./components/ui/ProfileNumbers";
-import ScrollDown from "./components/ui/ScrollDown";
-import SocialButtons from "./components/ui/SocialButtons";
+import DownloadButton from "../components/ui/DownloadButton";
+import ProfileEffect from "../components/ui/ProfileEffect";
+import ProfileNumbers from "../components/ui/ProfileNumbers";
+import ScrollDown from "../components/ui/ScrollDown";
+import SocialButtons from "../components/ui/SocialButtons";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <section id="home" className="flex flex-col items-center justify-center">
       <div className="flex flex-col md:flex-row items-center justify-center w-full">
         <div className="flex-1 p-4 mt-10">
           <div className="space-y-4">
@@ -53,7 +53,7 @@ const Home = () => {
         <ProfileNumbers />
       </div>
       <ScrollDown />
-    </div>
+    </section>
   );
 };
 
