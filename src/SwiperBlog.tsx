@@ -29,7 +29,8 @@ interface Post {
   cover_image?: string;
 }
 
-const TechBlog: React.FC = () => {
+const SwiperBlog: React.FC = () => {
+  // State to store the fetched posts from DEV.to API
   const [posts, setPosts] = useState<Post[]>([]);
 
   // Fetch the latest posts from DEV.to
@@ -82,7 +83,7 @@ const TechBlog: React.FC = () => {
           nextEl: ".swiper-button-next",
         }}
         // Enable loop mode
-        loop={true}
+        // loop={true}
         modules={[
           EffectCoverflow,
           Pagination,
@@ -164,4 +165,4 @@ const FormattedDate: React.FC<{ published_at: string }> = ({
   );
 };
 
-export default TechBlog;
+export default SwiperBlog;
