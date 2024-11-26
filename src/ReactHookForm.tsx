@@ -8,6 +8,7 @@ import { Meteors } from "./components/ui/meteros";
 import { ImRocket } from "react-icons/im";
 import validateEmail from "./lib/emailValidator";
 import { MdError, MdCheckCircle } from "react-icons/md";
+import { CiLinkedin, CiMail } from "react-icons/ci";
 
 const ReactHookForm = () => {
   // State for email validation status
@@ -84,9 +85,9 @@ const ReactHookForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-y-[1.5rem] py-[2rem] pb-[2.75rem] bg-slate-900"
         >
-          <div className="flex flex-row gap-x-[0.5rem] items-center justify-center text-[1.25rem]">
+          <div className="flex flex-row gap-x-[0.5rem] items-center justify-center mt-[0.5rem] text-[1.5rem]">
             <ImRocket />
-            <p>Submit your inquiry here</p>
+            <p>Submit the contact form</p>
           </div>
           <input
             type="text"
@@ -155,7 +156,7 @@ const ReactHookForm = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="p-[0.75rem] mt-[0.75rem] mx-[5rem] rounded-md bg-slate-500 text-white"
+            className="p-[0.75rem] mt-[0.75rem] mx-[5rem] rounded-lg border border-slate-500 bg-transparent text-slate-400 hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
           >
             Submit
           </button>
@@ -176,6 +177,30 @@ const ReactHookForm = () => {
               </div>
             </span>
           )}
+          <hr className="mx-[2.5rem] bg-slate-600 border-0 h-px" />
+          <p className="text-slate-500 mb-[0.5rem]">
+            Or reach out to me through LinkedIn or email
+          </p>
+          <div className="flex flex-col gap-y-[1rem] items-center text-slate-500">
+            <a
+              href="https://linkedin.com/in/ryoichihomma/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row gap-x-[0.25rem] items-center hover:text-white hover:underline transition-all duration-300 ease-in-out"
+            >
+              <CiLinkedin className="text-[1.75rem]" />
+              <span>linkedin.com/in/ryoichihomma/</span>
+            </a>
+            <a
+              href="mailto:r.homma.inbox@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row gap-x-1 items-center hover:text-white hover:underline transition-all duration-300 ease-in-out"
+            >
+              <CiMail className="text-[1.5rem]" />
+              <span>r.homma.inbox@gmail.com</span>
+            </a>
+          </div>
         </form>
       </SpotlightCard>
     </Spotlight>
