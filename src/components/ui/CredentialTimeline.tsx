@@ -40,7 +40,7 @@ const iconMap: { [key: string]: JSX.Element | string } = {
   "Quality Assurance": "quality assurance, etc.",
 };
 
-const Credentials = () => {
+const CredentialTimeline = () => {
   const [credential, setCredential] = useState(credentialsData.slice(0, 3)); // the number of credentials that are loaded initially
   const [, setHasMore] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -167,4 +167,4 @@ const Credentials = () => {
   );
 };
 
-export default Credentials;
+export default CredentialTimeline;
