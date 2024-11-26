@@ -1,3 +1,4 @@
+import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -10,86 +11,102 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 
-const tabs = [
+const routes = [
   {
     id: "home",
     label: "Home",
+    path: "/#home",
     icon: <FaHome className="text-2xl" />,
   },
   {
     id: "project",
     label: "Project",
+    path: "/#project",
     icon: <FaLaptopCode className="text-2xl" />,
   },
   {
-    id: "skill",
+    id: "technical-skill",
     label: "Tech Skill",
+    path: "/#technical-skill",
     icon: <FaCode className="text-2xl" />,
   },
   {
     id: "service",
     label: "Service",
+    path: "/#service",
     icon: <FaHandshake className="text-2xl" />,
   },
   {
     id: "credential",
     label: "Credential",
+    path: "/#credential",
     icon: <FaBriefcase className="text-2xl" />,
   },
   {
-    id: "blog",
+    id: "tech-blog",
     label: "Tech Blog",
+    path: "/#tech-blog",
     icon: <FaDev className="text-2xl" />,
   },
   {
     id: "contact",
     label: "Contact",
+    path: "/#contact",
     icon: <FaPaperPlane className="text-2xl" />,
   },
 ];
 
 const NavBar = () => {
-  // State to keep track of the active tab and the previous active tab for animation
-  const [activeTab, setActiveTab] = useState("");
-  const [prevActiveTab, setPrevActiveTab] = useState("");
+  // State to keep track of the active route and the previous active route for the navigation bar
+  const [activeRoute, setActiveRoute] = useState("home");
+  const [prevActiveRoute, setPrevActiveRoute] = useState("home");
 
-  // Function to handle tab click and set the active tab and previous active tab accordingly
-  const handleTabClick = (tabId: string) => {
-    setPrevActiveTab(activeTab);
-    setActiveTab(tabId);
+  // Function to handle route click and set the active route and previous active route accordingly
+  const handleRouteClick = (routeId: string) => {
+    setPrevActiveRoute(activeRoute);
+    setActiveRoute(routeId);
   };
 
-  // Function to get the index of the tab in the tabs array based on the tab id
-  const getTabIndex = (tabId: string) =>
-    tabs.findIndex((tab) => tab.id === tabId);
+  // Function to get the index of the route in the routes array based on the route id
+  const getRouteIndex = (routeId: string) =>
+    routes.findIndex((route) => route.id === routeId);
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="relative flex w-[80%] overflow-hidden border border-gray-600 rounded-full bg-transparent py-[0.175rem] shadow-xl shadow-gray-800">
+    <nav className="flex items-center justify-center">
+      <div className="relative flex w-[75%] overflow-hidden border border-gray-600 rounded-full bg-transparent py-[0.175rem] shadow-xl shadow-gray-800">
         <AnimatePresence initial={false}>
           <motion.div
-            key={activeTab}
+            key={activeRoute}
             className="absolute inset-y-0 my-[0.2rem] border border-gray-400 rounded-full bg-gray-800"
-            initial={{ x: `${getTabIndex(prevActiveTab) * 100}%` }}
-            animate={{ x: `${getTabIndex(activeTab) * 100}%` }}
+            initial={{ x: `${getRouteIndex(prevActiveRoute) * 100}%` }}
+            animate={{ x: `${getRouteIndex(activeRoute) * 100}%` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ width: `${100 / tabs.length}%` }}
+            style={{ width: `${100 / routes.length}%` }}
           />
         </AnimatePresence>
-        {tabs.map((tab) => (
-          <motion.button
-            key={tab.id}
-            className={`relative z-10 flex w-full items-center justify-center gap-[0.375rem] py-[0.625rem] font-medium transition-all duration-300 ${
-              activeTab === tab.id ? "font-bold text-white" : "text-gray-500"
+        {/* Mapping through the routes array to render the navigation links with icons and labels  */}
+        {routes.map((route) => (
+          <HashLink
+            key={route.id}
+            to={route.path}
+            smooth={true}
+            className={`relative z-10 flex w-full items-center justify-center py-[0.625rem] font-medium transition-all duration-300 ${
+              activeRoute === route.id
+                ? "font-bold text-white"
+                : "text-gray-500"
             }`}
-            onClick={() => handleTabClick(tab.id)}
           >
-            {tab.icon}
-            {tab.label}
-          </motion.button>
+            <motion.button
+              onClick={() => handleRouteClick(route.id)}
+              className="flex gap-[0.375rem]"
+            >
+              {route.icon}
+              {route.label}
+            </motion.button>
+          </HashLink>
         ))}
       </div>
-    </div>
+    </nav>
   );
 };
 
