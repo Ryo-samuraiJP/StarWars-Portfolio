@@ -73,6 +73,10 @@ const NavBar = () => {
 
   return (
     <nav className="flex items-center justify-center">
+      <div className="absolute left-[2.5rem] top-[1.25rem] text-3xl text-yellow-500 star-wars-font">
+        <p>Ryoichi</p>
+        <p>Homma</p>
+      </div>
       <div className="relative flex w-[75%] overflow-hidden border border-gray-600 rounded-full bg-transparent py-[0.175rem] shadow-xl shadow-gray-800">
         <AnimatePresence initial={false}>
           <motion.div
