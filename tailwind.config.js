@@ -54,7 +54,13 @@ export default {
           },
         },
       },
+      textShadow: {
+        neon: "0 0 5px #a114ff, 0 0 10px #a114ff, 0 0 20px #a114ff, 0 0 30px #a114ff",
+      },
+      colors: {
+        neon: "rgba(161,20,255,0.5)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-textshadow")],
 };
