@@ -107,8 +107,8 @@ function IconContainer({
            rounded-full duration-75 ease-in-out
           ${
             hovered
-              ? `border-gray-500 ${hoverColor} bg-purple-50 transition-all duration-300 ease-in-out`
-              : "border-purple-300 text-purple-300 shadow-xl shadow-neon"
+              ? `border-gray-500 ${hoverColor} bg-sky-50 transition-all duration-300 ease-in-out`
+              : "border-[rgb(190,220,255)] text-[rgb(190,220,255)] shadow-lg shadow-neon"
           }`}
       >
         {/* AnimatePresence is used to animate the name becomes visible when hovered */}
@@ -118,7 +118,7 @@ function IconContainer({
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
               className="px-[0.5rem] py-[0.125rem] rounded-md bg-gray-100 font-medium 
-              text-xs text-purple-950 absolute left-1/2 -translate-x-1/2 bottom-[-1.75rem] w-fit"
+              text-xs text-sky-950 absolute left-1/2 -translate-x-1/2 bottom-[-1.75rem] w-fit"
             >
               {name}
             </motion.div>
