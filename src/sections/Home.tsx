@@ -3,53 +3,59 @@ import DownloadButton from "../components/ui/DownloadButton";
 import ProfileEffect from "../components/ui/ProfileEffect";
 import ProfileNumbers from "../components/ui/ProfileNumbers";
 import ScrollDown from "../components/ui/ScrollDown";
-import SocialButtons from "../components/ui/SocialButtons";
+import FooterIcons from "../components/ui/SocialIcons";
 
 const Home = () => {
   return (
     <section id="home" className="flex flex-col items-center justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-center w-full">
-        <div className="flex-1 p-4 mt-10">
+      <div className="flex flex-col md:flex-row items-center justify-center w-[90%]">
+        <div className="flex-1 p-[1rem] mt-[2.5rem]">
           <div className="space-y-4">
-            <div className="font-bold text-4xl text-left">
-              Hi, I'm Rio (Ryoichi)
+            <p className="flex font-medium text-4xl text-left text-white">
+              <p>Hi, I'm&nbsp;</p>
+              <p className="text-shadow-neon">Rio (Ryoichi)</p>
+            </p>
+            <div className="flex flex-row text-6xl text-left font-bold">
+              <div className="text-white text-shadow-neon star-wars-font">
+                <Typewriter
+                  options={{
+                    strings: [
+                      "software engineer",
+                      "web developer",
+                      "ai evaluator",
+                    ],
+                    delay: 50,
+                    deleteSpeed: 30,
+                    loop: true,
+                    autoStart: true,
+                  }}
+                />
+              </div>
             </div>
-            <div className="text-6xl text-left">
-              <Typewriter
-                options={{
-                  strings: [
-                    "Software Engineer",
-                    "Full-Stack Developer",
-                    "AI Evaluator",
-                    "Continuous Learner",
-                  ],
-                  delay: 50,
-                  deleteSpeed: 30,
-                  loop: true,
-                  autoStart: true,
-                }}
-              />
-            </div>
-            <p className="text-left py-5 w-[101%]">
-              I specialize in the MERN stack and actively seek opportunities to
-              work with talented teams. I am passionate about learning new
-              technologies and eager to contribute to building secure and
-              efficient software solutions by leveraging my extensive expertise
-              in web development, collaboration, and effective AI prompting. As
-              a big fan of MLB, I am also interested in sports science and
+            <p className="w-[85%] py-[1.25rem] text-left">
+              While I specialize in front-end development with React.js,
+              TypeScript / JavaScript, and Tailwind CSS, I am actively expanding
+              my expertise to full-stack development by enhancing my skills in
+              the MERN stack. As a recent CS graduate in BC, Canada, I seek
+              opportunities to collaborate with talented teams in building
+              secure and efficient software solutions. I am passionate about
+              learning hands-on technical skills and contributing to
+              organizations by leveraging my extensive expertise in web
+              development, teamwork, and effective AI prompting. Additionally, I
+              am a huge fan of MLB with a keen interest in sports science and
               baseball analytics!
             </p>
-            <div className="flex items-center space-x-10">
+            <div className="flex flex-row items-center gap-[3rem]">
               <DownloadButton />
-              <SocialButtons />
+              <FooterIcons />
             </div>
           </div>
         </div>
-        <div className="flex-1 mt-14 flex justify-center">
+        <div className="flex mt-[3.5rem] justify-center">
           <ProfileEffect />
         </div>
       </div>
-      <div className="flex flex-wrap items-center text-left space-x-32 py-12">
+      <div className="flex flex-wrap items-center text-left gap-[6rem] py-[3rem]">
         <ProfileNumbers />
       </div>
       <ScrollDown />
