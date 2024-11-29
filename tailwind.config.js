@@ -55,10 +55,10 @@ export default {
         },
       },
       textShadow: {
-        neon: "0 0 5px #a114ff, 0 0 10px #a114ff, 0 0 20px #a114ff, 0 0 30px #a114ff",
+        neon: "0 0 5px #1472ff, 0 0 10px #1472ff, 0 0 20px #1472ff, 0 0 30px #1472ff",
       },
       colors: {
-        neon: "rgba(161,20,255,0.5)",
+        neon: "rgba(20,114,255,0.5)",
       },
     },
   },
