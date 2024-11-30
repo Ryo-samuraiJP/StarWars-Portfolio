@@ -9,6 +9,7 @@ import ServiceSection from "./sections/ServiceSection";
 import CredentialSection from "./sections/CredentialSection";
 import TechBlogSection from "./sections/TechBlogSection";
 import ContactSection from "./sections/ContactSection";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <ContactSection />
         </section>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
