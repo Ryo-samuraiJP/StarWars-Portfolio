@@ -1,8 +1,7 @@
 import { HashLink } from "react-router-hash-link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  FaBriefcase,
   FaCode,
   FaDev,
   FaHandshake,
@@ -10,6 +9,7 @@ import {
   FaLaptopCode,
   FaPaperPlane,
 } from "react-icons/fa";
+import { IoBriefcase } from "react-icons/io5";
 
 const routes = [
   {
@@ -40,7 +40,7 @@ const routes = [
     id: "credential",
     label: "Credential",
     path: "/#credential",
-    icon: <FaBriefcase className="text-2xl" />,
+    icon: <IoBriefcase className="text-2xl" />,
   },
   {
     id: "tech-blog",
@@ -61,6 +61,10 @@ const NavBar = () => {
   const [activeRoute, setActiveRoute] = useState("home");
   const [prevActiveRoute, setPrevActiveRoute] = useState("home");
 
+  // State to keep track of the visibility of the navigation bar and the last scroll position
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   // Function to handle route click and set the active route and previous active route accordingly
   const handleRouteClick = (routeId: string) => {
     setPrevActiveRoute(activeRoute);
@@ -71,24 +75,46 @@ const NavBar = () => {
   const getRouteIndex = (routeId: string) =>
     routes.findIndex((route) => route.id === routeId);
 
+  // Effect to handle the visibility of the navigation bar based on the scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      // Scrolling up => show the navigation bar; otherwise, hide it
+      if (window.scrollY < lastScrollY) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll); // Event listener for scroll event
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]); // Dependency array for the effect to run only when lastScrollY changes
+
   return (
-    <nav className="flex items-center justify-center">
-      <div className="absolute left-[2.5rem] top-[1.25rem] text-3xl text-yellow-500 star-wars-font">
-        <p>Ryoichi</p>
-        <p>Homma</p>
+    <nav
+      className={`fixed top-4 left-0 right-0 z-30 flex justify-center px-[18rem] 
+        transition-transform duration-300 ease-in-out
+        ${isVisible ? "translate-y-0" : "-translate-y-[180%]"}`}
+    >
+      <div className="absolute -top-3 left-[2.5rem] text-3xl text-yellow-500 star-wars-font">
+        <p>ryoichi</p>
+        <p>homma</p>
       </div>
-      <div className="relative flex w-[75%] overflow-hidden border border-gray-600 rounded-full bg-transparent py-[0.175rem] shadow-xl shadow-gray-800">
+      <div className="relative flex w-[100%] overflow-hidden border border-gray-600 rounded-full bg-black shadow-xl shadow-sky-950">
         <AnimatePresence initial={false}>
           <motion.div
             key={activeRoute}
-            className="absolute inset-y-0 my-[0.2rem] border border-gray-400 rounded-full bg-gray-800"
+            className="absolute inset-y-0 mt-[0.05rem] mb-[0.1rem] border-2 border-blue-400 rounded-full bg-transparent shadow-md shadow-sky-500"
             initial={{ x: `${getRouteIndex(prevActiveRoute) * 100}%` }}
             animate={{ x: `${getRouteIndex(activeRoute) * 100}%` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             style={{ width: `${100 / routes.length}%` }}
           />
         </AnimatePresence>
-        {/* Mapping through the routes array to render the navigation links with icons and labels  */}
+        {/* Mapping through the routes array to render the navigation links with icons and labels */}
         {routes.map((route) => (
           <HashLink
             key={route.id}
@@ -96,7 +122,7 @@ const NavBar = () => {
             smooth={true}
             className={`relative z-10 flex w-full items-center justify-center py-[0.625rem] font-medium transition-all duration-300 ${
               activeRoute === route.id
-                ? "font-bold text-white"
+                ? "font-bold text-sky-200"
                 : "text-gray-500"
             }`}
           >
