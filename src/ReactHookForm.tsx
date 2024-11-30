@@ -4,11 +4,11 @@ import { useState } from "react";
 import { contactFormSchema, TContactFormSchema } from "./lib/types";
 import sendEmailWithEmailjs from "./lib/emailjs";
 import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
-import { Meteors } from "./components/ui/meteros";
 import { ImRocket } from "react-icons/im";
 import validateEmail from "./lib/emailValidator";
 import { MdError, MdCheckCircle } from "react-icons/md";
 import { CiLinkedin, CiMail } from "react-icons/ci";
+import ParticlesAnimation from "./components/ui/particles-animation";
 
 const ReactHookForm = () => {
   // State for email validation status
@@ -78,12 +78,15 @@ const ReactHookForm = () => {
   };
 
   return (
-    <Spotlight className="mx-[20rem]">
+    <Spotlight className="mx-[20rem] relative">
+      <div className="absolute z-10 inset-0 pointer-events-none">
+        <ParticlesAnimation />
+      </div>
       <SpotlightCard>
-        <Meteors number={15} />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-y-[1.5rem] py-[2rem] pb-[2.75rem] bg-slate-900"
+          className="relative flex flex-col gap-y-[1.5rem] py-[2rem] pb-[2.75rem] border rounded-[1.5em]
+          border-[rgba(75,30,133,0.5)] bg-[linear-gradient(225deg,rgba(75,30,133,0.8),rgb(0,0,0))]"
         >
           <div className="flex flex-row gap-x-[0.5rem] items-center justify-center mt-[0.5rem] text-[1.5rem]">
             <ImRocket />
@@ -156,7 +159,7 @@ const ReactHookForm = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="p-[0.75rem] mt-[0.75rem] mx-[5rem] rounded-lg border border-slate-500 bg-transparent text-slate-400 hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
+            className="relative z-10 p-[0.75rem] mt-[0.75rem] mx-[5rem] rounded-lg border border-slate-500 bg-transparent text-slate-400 hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
           >
             Submit
           </button>
