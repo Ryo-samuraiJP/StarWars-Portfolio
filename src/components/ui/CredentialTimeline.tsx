@@ -66,11 +66,11 @@ const CredentialTimeline = () => {
             className="vertical-timeline-element--work text-left"
             contentStyle={{
               background:
-                "linear-gradient(180deg, rgb(15,19,39), rgb(50, 60, 75))",
+                "linear-gradient(180deg, rgba(75,30,133,0.8), rgba(75,30,133,0.01))",
               color: "rgb(203, 213, 225)",
             }}
             contentArrowStyle={{
-              borderRight: `10px solid rgba(19,24,43,255)`,
+              borderRight: `10px solid  rgba(75,30,133,0.65)`,
             }}
             date={credential.date}
             icon={
@@ -86,7 +86,7 @@ const CredentialTimeline = () => {
               background: "#fff",
             }}
           >
-            <h3 className="vertical-timeline-element-title text-lg font-bold">
+            <h3 className="vertical-timeline-element-title text-lg text-slate-100 font-bold">
               {credential.title}
             </h3>
             <div className="flex items-center gap-[0.5rem] italic">
@@ -135,8 +135,7 @@ const CredentialTimeline = () => {
         {/* Add a button to toggle the credential */}
         <VerticalTimelineElement
           iconStyle={{
-            background:
-              "linear-gradient(180deg, rgb(15,19,39), rgb(50, 60, 75))",
+            background: "linear-gradient(180deg, rgb(75,30,133), rgb(0, 0, 0))",
             color: "#fff",
             display: "flex",
             alignItems: "center",

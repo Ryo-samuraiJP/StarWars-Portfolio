@@ -12,7 +12,7 @@ import {
   Navigation,
 } from "swiper/modules";
 import ShiningButton from "./components/ui/ShiningButton";
-import { IoMdOpen } from "react-icons/io";
+import { IoMdOpen, IoMdTime } from "react-icons/io";
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
 
 // DEV.to API response type definition
@@ -110,13 +110,16 @@ const SwiperBlog: React.FC = () => {
                 {post.tag_list.map((tag) => `#${tag}`).join(" ")}
               </div>
               <div className="flex gap-[0.875rem] mt-[0.25rem] mx-[1rem] text-gray-400">
-                <div className="flex flex-grow flex-cols gap-[0.5rem] items-center">
-                  <FaRegHeart />
-                  {post.public_reactions_count}
-                  <FaRegComment />
+                <div className="flex flex-grow flex-cols gap-[0.375rem] items-center">
+                  <FaRegHeart className="mt-[0.125rem]" />
+                  {post.public_reactions_count}&nbsp;
+                  <FaRegComment className="mt-[0.125rem]" />
                   {post.comments_count}
                 </div>
-                {post.reading_time_minutes} min to read
+                <div className="flex gap-[0.25rem] items-center">
+                  <IoMdTime className="size-[1.2rem] mt-[0.125rem]" />
+                  {post.reading_time_minutes} min read
+                </div>
               </div>
               <div className="my-[0.25rem]">
                 <FormattedDate published_at={post.published_at} />

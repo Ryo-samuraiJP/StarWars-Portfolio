@@ -8,7 +8,10 @@ const SkillProgressBar = () => {
       <Spotlight className="max-w-sm mx-auto grid gap-[1.5rem] lg:grid-cols-1 items-start lg:max-w-none group">
         {skillsData.map((category) => (
           <SpotlightCard key={category.id} className="w-full lg:w-[170%]">
-            <div className="relative h-full bg-slate-900 p-[0.5rem] rounded-[inherit] z-20 overflow-hidden">
+            <div
+              className="relative h-full border border-[rgba(75,30,133,0.5)] rounded-[inherit] 
+              bg-gradient-to-br from-[rgba(75,30,133,0.5)] to-[rgb(0,0,0)] p-[0.5rem] z-20 overflow-hidden"
+            >
               {/* white blur */}
               <div
                 className="absolute mb-[19.5rem] -top-[11rem] translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square lg:top-[0.75rem]"
@@ -20,7 +23,7 @@ const SkillProgressBar = () => {
                 <div className="relative inline-flex p-[1rem]">
                   {/* blue blur */}
                   <div
-                    className="w-[40%] h-[40%] border absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600"
+                    className="w-[40%] h-[40%] border absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-purple-600"
                     aria-hidden="true"
                   ></div>
                   <div className="grow">

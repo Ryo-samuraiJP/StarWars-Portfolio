@@ -24,14 +24,17 @@ const ServiceCards = () => {
         <Spotlight className="max-w-sm mx-auto grid gap-[1.5rem] lg:grid-cols-4 items-start lg:max-w-none group">
           {servicesData.map((service) => (
             <SpotlightCard key={service.id}>
-              <div className="relative h-full bg-slate-900 p-[2.5rem] pb-[2rem] rounded-[inherit] z-20 overflow-hidden">
+              <div
+                className="relative h-full border border-[rgba(75,30,133,0.5)] rounded-[inherit] 
+                bg-gradient-to-br from-[rgba(75,30,133,0.8)] to-[rgb(0,0,0)] p-[2.5rem] pb-[2rem] z-20 overflow-hidden"
+              >
                 {/* background blur position */}
-                <div
+                {/* <div
                   className="absolute mb-[19.5rem] bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
                   aria-hidden="true"
                 >
-                  <div className="absolute inset-0 translate-z-0 bg-slate-700 rounded-full blur-[37px]"></div>
-                </div>
+                  <div className="absolute inset-0 translate-z-0 bg-purple-900 rounded-full blur-[37px]"></div>
+                </div> */}
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="relative inline-flex p-[2.5rem]">
                     <div
@@ -39,13 +42,13 @@ const ServiceCards = () => {
                       aria-hidden="true"
                     ></div>
                     <div className="grow">
-                      <div className="absolute inset-[1.5rem] border-2 border-slate-600 rounded-full">
+                      <div className="absolute inset-[1.5rem] border-2 border-slate-400 rounded-full">
                         {/* Fetch the service objects from the servicesData array and reder them here */}
                         {service.id === 1 && (
                           <SiReact className="text-[1.25rem] relative z-10 -mt-[1.25rem]" />
                         )}
                       </div>
-                      <div className="absolute inset-[0.5rem] border-2 border-slate-700 rounded-full">
+                      <div className="absolute inset-[0.5rem] border-2 border-slate-500 rounded-full">
                         {(service.id === 1 && (
                           <>
                             <SiTailwindcss className="text-[1.25rem] relative z-10 ml-[5rem]" />
@@ -68,18 +71,18 @@ const ServiceCards = () => {
                             <SiDiagramsdotnet className="text-[1.25rem] relative z-10 mt-[1rem]" />
                           ))}
                       </div>
-                      <div className="absolute inset-[-8px] border-2 border-slate-800 rounded-full">
+                      <div className="absolute inset-[-8px] border-2 border-slate-600 rounded-full">
                         {(service.id === 1 && (
                           <>
                             <SiTypescript className="text-[1rem] mt-[4rem] ml-[0.5rem]" />
-                            <SiJavascript className="text-[1rem] ml-[7.75rem]" />
+                            <SiJavascript className="text-[1rem] ml-[7.25rem]" />
                           </>
                         )) ||
                           (service.id === 2 && (
                             <SiPython className="text-[1.25rem] relative z-10 mt-[6.25rem] ml-[1.75rem]" />
                           )) ||
                           (service.id === 3 && (
-                            <GrMysql className="text-[1.25rem] relative z-10 mt-[5.5rem] ml-[2rem]" />
+                            <GrMysql className="text-[1.25rem] relative z-10 mt-[6.25rem] ml-[2rem]" />
                           )) ||
                           (service.id === 4 && (
                             <SiUml className="text-[1.25rem] relative z-10 mt-[6rem] ml-[7rem]" />
@@ -97,7 +100,7 @@ const ServiceCards = () => {
                     </p>
                   </div>
                 </div>
-                <Meteors number={10} />
+                <Meteors number={12} />
               </div>
             </SpotlightCard>
           ))}

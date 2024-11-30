@@ -8,20 +8,23 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
   const filteredProjects = filterProjects(genre);
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap mx-[2rem]">
       {filteredProjects.map((project) => (
         <div
           key={project.id}
           className="flex flex-col w-1/2 px-[1.5rem] my-[1.5rem]"
         >
-          <div className="h-[35rem] border-2 px-[1.5em] border-[rgba(75,30,133,0.5)] rounded-[1.5em] bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] font-nunito flex justify-center items-left flex-col backdrop-blur-[12px] shadow-md overflow-hidden transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2 hover:shadow-lg">
+          <div
+            className="h-[35rem] px-[1.5em] border-2 border-[rgba(75,30,133,0.5)] rounded-[1.5em] bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] 
+            font-nunito flex justify-center items-left flex-col backdrop-blur-[12px] shadow-md overflow-hidden transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2 hover:shadow-lg"
+          >
             <div className="rounded-[0.5rem] overflow-hidden -mt-[1rem] border-2 border-gray-400">
               <img src={project.image} alt="Project" className="object-cover" />
             </div>
             <div className="text-[1.5rem] font-semibold text-left mt-[0.5rem]">
               {project.title}
             </div>
-            <p className="text-[1rem] font-light text-left">- {project.desc}</p>
+            <p className="text-[1rem] font-light text-left">{project.desc}</p>
             <div className="flex gap-x-[1.5rem] items-center my-[1rem]">
               {project.links.map((link, index) => (
                 <button
@@ -34,7 +37,7 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
               ))}
             </div>
             <div className="flex items-center gap-x-[1.25rem] mt-[0.75rem]">
-              <p className="text-bold">Primary Technologies Used:</p>
+              <p className="text-bold">Technologies Used:</p>
               {project.tech_used.map((tech, index) => (
                 <div key={index} className="relative group">
                   <tech.icon className="text-[1.4rem]" />
