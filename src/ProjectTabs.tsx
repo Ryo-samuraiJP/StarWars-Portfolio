@@ -1,41 +1,60 @@
 import { useState } from "react";
-import { Tab, Tabs, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
-import ProjectCards from "./components/ui/ProjectCards";
-import { genres } from "./data/projectsData";
+import { motion } from "framer-motion";
+import { cn } from "./lib/utils";
 
-const ProjectTabs = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+interface TabProps {
+  text: string;
+  selected: boolean;
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface ProjectTabsProps {
+  tabs: string[];
+  renderContent: (selectedTab: string) => React.ReactNode;
+}
+
+const Tab = ({ text, selected, setSelected }: TabProps) => {
+  return (
+    <button
+      onClick={() => setSelected(text)}
+      className={cn(
+        "relative p-[0.65rem] transition-all duration-300 ease-in-out",
+        selected
+          ? "text-white"
+          : "text-slate-400 hover:text-white hover:font-medium duration-0"
+      )}
+    >
+      <p className="relative z-10 min-w-[5rem]">{text}</p>
+      {selected && (
+        <motion.span
+          layoutId="tabs"
+          transition={{ type: "spring", duration: 0.5 }}
+          className="absolute inset-0 border-2 border-gray-600 rounded-full
+          bg-gradient-to-br from-[rgb(75,30,133)] to-[rgba(75,30,133,0.01)]"
+        />
+      )}
+    </button>
+  );
+};
+
+const ProjectTabs = ({ tabs, renderContent }: ProjectTabsProps) => {
+  // State to keep track of the selected tab
+  const [selected, setSelected] = useState<string>(tabs[0]);
 
   return (
-    <div>
-      <Tabs
-        selectedIndex={selectedIndex}
-        onSelect={(index) => setSelectedIndex(index)}
-      >
-        <div className="grid grid-cols-5 justify-self-center mb-[3rem]">
-          {genres.map((genre, index) => (
-            <Tab key={genre}>
-              <button
-                className={`border-2 py-[0.3rem] px-[1.5rem] rounded-[1rem] transition-all duration-300 ${
-                  selectedIndex === index
-                    ? "bg-white text-black"
-                    : "hover:bg-white hover:text-black"
-                }`}
-              >
-                {genre}
-              </button>
-            </Tab>
-          ))}
-        </div>
-
-        {genres.map((genre) => (
-          <TabPanel key={genre}>
-            <ProjectCards genre={genre} />
-          </TabPanel>
+    <>
+      <div className="flex flex-wrap justify-center gap-[1rem]">
+        {tabs.map((tab) => (
+          <Tab
+            text={tab}
+            selected={selected === tab}
+            setSelected={setSelected}
+            key={tab}
+          />
         ))}
-      </Tabs>
-    </div>
+      </div>
+      <div className="mt-[2rem]">{renderContent(selected)}</div>
+    </>
   );
 };
 
