@@ -6,25 +6,25 @@ export const servicesData = [
   {
     id: 1,
     name: "Fronend Development",
-    desc: "I build modern and responsive user interfaces using React.js, TypeScript, JavaScript, and Tailwind CSS for styling and animations.",
+    desc: "I build responsive and user-friendly interfaces using modern technologies, including React, JavaScript, TypeScript, and Tailwind CSS. I focus on creating visually appealing and efficient designs to enhance user experiences.",
     icon: PiCode,
   },
   {
     id: 2,
     name: "Backend Development",
-    desc: "I offer server-side applications using Node.js and Express.js for seamless routing and API integrations.",
+    desc: "I develop robust server-side applications with Node.js, Express.js, and Python. I focus on ensuring seamless integration with the front end, optimized performance, and reliable API functionality.",
     icon: BiServer,
   },
   {
     id: 3,
     name: "Database Management",
-    desc: "I manage and optimize SQL and NoSQL databases using Oracle, MySQL, and MongoDB to ensure data integrity and performance.",
+    desc: "I design and manage databases using SQL and NoSQL technologies like Oracle, MySQL, and MongoDB. I focus on ensuring data integrity, high performance, and efficient data handling.",
     icon: PiDatabase,
   },
   {
     id: 4,
     name: "Agile Software Modeling",
-    desc: "I design and implement UML diagrams using diagramming tools for efficient software development, following Agile methodologies.",
+    desc: "I design software architectural models using UML and diagramming tools to support efficient development. By following Agile methodologies, I ensure streamlined processes and effective collaboration.",
     icon: BsDiagram3,
   },
 ];
