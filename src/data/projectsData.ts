@@ -16,9 +16,8 @@ import {
   SiPrezi,
   SiPython,
   SiReact,
-  SiRender,
   SiTailwindcss,
-  SiVercel,
+  SiUml,
   SiVite,
 } from "react-icons/si";
 import { FiDownload } from "react-icons/fi";
@@ -45,7 +44,6 @@ export const projectsData = [
       { icon: SiVite, name: "Vite" },
       { icon: SiTailwindcss, name: "Tailwind CSS" },
       { icon: SiJavascript, name: "JavaScript" },
-      { icon: SiVercel, name: "Vercel" },
     ],
   },
   {
@@ -67,7 +65,7 @@ export const projectsData = [
       },
       {
         icon: IoLogoYoutube,
-        text: "Demo Video",
+        text: "Demo",
         url: "https://www.youtube.com/watch?v=VT6eddrVVOA&feature=youtu.be",
       },
     ],
@@ -77,7 +75,6 @@ export const projectsData = [
       { icon: SiJavascript, name: "JavaScript" },
       { icon: SiHtml5, name: "HTML" },
       { icon: SiCss3, name: "CSS" },
-      { icon: SiRender, name: "Render" },
     ],
   },
   {
@@ -94,7 +91,7 @@ export const projectsData = [
       },
       {
         icon: IoLogoYoutube,
-        text: "Demo Video",
+        text: "Demo",
         url: "https://www.youtube.com/watch?v=N_yUfrnbgWI&feature=youtu.be",
       },
     ],
@@ -113,7 +110,7 @@ export const projectsData = [
     links: [
       {
         icon: IoLogoGithub,
-        text: "GitHub",
+        text: "Docs",
         url: "https://github.com/Ryo-samuraiJP/PlateMate",
       },
       {
@@ -122,7 +119,10 @@ export const projectsData = [
         ulr: "https://prezi.com/view/kiFUg0jNey3zD5mN1ctl/",
       },
     ],
-    tech_used: [{ icon: SiDiagramsdotnet, name: "diagrams.net" }],
+    tech_used: [
+      { icon: SiUml, name: "UML" },
+      { icon: SiDiagramsdotnet, name: "diagrams.net" },
+    ],
   },
   {
     id: 5,
@@ -138,16 +138,16 @@ export const projectsData = [
       },
       {
         icon: SiGoogledrive,
-        text: "Documentation",
+        text: "Docs",
         url: "https://drive.google.com/file/d/1EPAgZVmzu8FohEzQUeSY3xldoKdnoyNy/view?usp=sharing",
       },
       {
         icon: FiDownload,
-        text: "Download pkt",
+        text: "Download",
         url: "https://drive.usercontent.google.com/u/0/uc?id=1HVgYZu9RMIlfEn8bxssOG3lytE-uWUOh&export=download/",
       },
     ],
-    tech_used: [{ icon: SiCisco, name: "Cisco Packet Tracer" }],
+    tech_used: [{ icon: SiCisco, name: "Packet Tracer" }],
   },
 ];
 
