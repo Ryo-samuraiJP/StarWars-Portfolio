@@ -25,30 +25,38 @@ const NumbersCounter = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-4">
-      <div className="flex items-center gap-[0.5rem]">
-        <h1 className="font-bold tracking-tighter w-[3.5rem] text-left">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-0">
+      <div className="flex items-center justify-end md:justify-normal gap-[0.75rem] md:gap-[0.5rem] md:mb-7 lg:mb-0">
+        <div className="font-bold tracking-tighter w-[3.5rem] text-left text-[3.2rem]">
           <NumbersCounterAnimation value={4} />+
-        </h1>
-        <p className="w-[5rem] font-light">YEARS OF BUILDING SOFTWARE</p>
+        </div>
+        <p className="w-[6.8rem] md:w-[9rem] font-light md:text-center">
+          YEARS OF BUILDING SOFTWARE
+        </p>
       </div>
-      <div className="flex items-center gap-[2.5rem]">
-        <h1 className="font-bold tracking-tighter w-[1.5rem] text-left">
+      <div className="flex items-center justify-end md:justify-normal gap-[2.75rem] md:gap-[2.5rem] md:mb-7 lg:mb-0 md:ml-24 lg:ml-0">
+        <div className="font-bold tracking-tighter w-[1.5rem] text-left text-[3.2rem]">
           <NumbersCounterAnimation value={15} />
-        </h1>
-        <p className="w-[5rem] font-light">CERTIFICATIONS</p>
+        </div>
+        <p className="w-[5rem] font-light md:text-center mr-8 md:mr-0">
+          CERTIFICATIONS
+        </p>
       </div>
-      <div className="flex items-center gap-[0.375rem]">
-        <h1 className="font-bold tracking-tighter w-[3.5rem] text-left">
+      <div className="flex items-center justify-end md:justify-normal gap-[0.75rem] md:gap-[0.375rem]">
+        <div className="font-bold tracking-tighter w-[3.5rem] text-left text-[3.2rem]">
           <NumbersCounterAnimation value={postCount ?? 0} />
-        </h1>
-        <p className="w-[7rem] font-light">POSTS ON DEV COMMUNITY</p>
+        </div>
+        <p className="w-[7rem] font-light md:text-center">
+          POSTS ON DEV COMMUNITY
+        </p>
       </div>
-      <div className="flex items-center gap-[1.75rem]">
-        <h1 className="font-bold tracking-tighter w-[8rem] text-left">
+      <div className="flex items-center justify-end md:justify-normal gap-[2.25rem] md:gap-[1.75rem]">
+        <div className="font-bold tracking-tighter w-[8rem] text-left text-[3.2rem]">
           <NumbersCounterAnimation value={4400} />+
-        </h1>
-        <p className="w-[7rem] font-light">TOTAL POST VIEWS ON DEV</p>
+        </div>
+        <p className="w-[7rem] font-light  md:text-center">
+          TOTAL POST VIEWS ON DEV
+        </p>
       </div>
     </div>
   );
