@@ -19,6 +19,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { FaPlus } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import ShiningButton from "./ShiningButton";
 
@@ -42,8 +43,8 @@ const iconMap: { [key: string]: JSX.Element | string } = {
 
 const CredentialTimeline = () => {
   const [credential, setCredential] = useState(credentialsData.slice(0, 3)); // the number of credentials that are loaded initially
-  const [, setHasMore] = useState(true);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [, setHasMore] = useState(true); // to check if there are more credentials to load
+  const [isExpanded, setIsExpanded] = useState(false); // to check if the credentials are expanded
 
   const toggleCredential = () => {
     if (isExpanded) {
@@ -70,7 +71,7 @@ const CredentialTimeline = () => {
               color: "rgb(203, 213, 225)",
             }}
             contentArrowStyle={{
-              borderRight: `10px solid  rgba(75,30,133,0.65)`,
+              borderRight: `0.75rem solid rgba(75,30,133,0.65)`,
             }}
             date={credential.date}
             icon={
@@ -86,44 +87,58 @@ const CredentialTimeline = () => {
               background: "#fff",
             }}
           >
-            <h3 className="vertical-timeline-element-title text-lg text-slate-100 font-bold">
+            <div className="vertical-timeline-element-title text-base md:text-lg text-slate-100 font-bold">
               {credential.title}
-            </h3>
-            <div className="flex items-center gap-[0.5rem] italic">
-              <h4 className="vertical-timeline-element-subtitle">
-                {credential.organization}
-              </h4>
-              {credential.location && <h4>| &nbsp;{credential.location}</h4>}
             </div>
-            <div className="vertical-timeline-element-title py-[0.75rem]">
+            <div className="flex flex-col md:flex-row md:gap-5 italic">
+              <div className="vertical-timeline-element-subtitle">
+                {credential.organization}
+              </div>
+              {credential.location && (
+                <div className="flex flex-row items-center gap-1">
+                  <div>
+                    <FaLocationDot />
+                  </div>
+                  <div>{credential.location}</div>
+                </div>
+              )}
+            </div>
+            <div className="vertical-timeline-element-title text-sm md:text-base py-3">
               {credential.desc}
             </div>
-
-            <div className="grid grid-cols-2">
+            <div className="grid md:grid-cols-2">
               {credential.skills && credential.skills.length > 0 && (
-                <div className="flex items-center gap-[0.5rem]">
-                  <span className="font-medium">Skills:</span>
-                  <div className="flex gap-[0.375rem]">
-                    {credential.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className={`text-base  ${
-                          typeof iconMap[skill] === "string"
-                            ? "w-max font-light" // If the skill is a text string, set the font to light
-                            : "text-xl" // If the skill is an icon, set the font to normal
-                        }`}
-                      >
-                        {typeof iconMap[skill] === "string"
-                          ? iconMap[skill]
-                          : iconMap[skill]}
-                      </span>
-                    ))}
+                <div className="flex items-center gap-2">
+                  <span className="md:font-medium">Skills:</span>
+                  {/* For icon skills: */}
+                  <div className="flex flex-row gap-3">
+                    {credential.skills
+                      .filter((skill) => typeof iconMap[skill] !== "string")
+                      .map((skill, i) => (
+                        <span key={i} className="text-xl">
+                          {iconMap[skill]}
+                        </span>
+                      ))}
+                  </div>
+                  {/* For text skills: */}
+                  <div className="flex flex-col md:flex-row md:gap-2">
+                    {credential.skills
+                      .filter((skill) => typeof iconMap[skill] === "string")
+                      .map((skill, i) => (
+                        <span key={i} className="text-base md:w-max font-light">
+                          {iconMap[skill]}
+                        </span>
+                      ))}
                   </div>
                 </div>
               )}
-              <div className="flex justify-end">
+              <div className="flex left-0  md:justify-end mt-3 md:-mt-3">
                 {credential.link && (
-                  <a href={credential.link} target="_blank">
+                  <a
+                    href={credential.link}
+                    target="_blank"
+                    className="text-sm md:text-base"
+                  >
                     <ShiningButton text="See Certification" />
                   </a>
                 )}
@@ -142,18 +157,16 @@ const CredentialTimeline = () => {
             justifyContent: "center",
           }}
           icon={
-            <button onClick={toggleCredential} className="pt-[0.5rem]">
+            <button onClick={toggleCredential} className="flex pt-3 lg:pt-2">
               {isExpanded ? (
-                <div className="flex items-center gap-[7.75rem]">
-                  <IoMdClose />
-                  <div className="mb-[0.75rem] font-semibold text-[#8a9198]">
-                    Close
-                  </div>
+                <div className="flex items-center gap-x-24.5 lg:gap-x-[8.25rem]">
+                  <IoMdClose className="" />
+                  <div className="mb-3 font-semibold text-[#8a9198]">Close</div>
                 </div>
               ) : (
-                <div className="flex items-center w-max gap-[10.5rem]">
+                <div className="flex items-center w-max gap-x-[9rem] lg:gap-x-[10.5rem]">
                   <FaPlus />
-                  <div className="mb-[0.75rem] font-semibold text-[#8a9198]">
+                  <div className="mb-3 font-semibold text-[#8a9198]">
                     Load more
                   </div>
                 </div>
