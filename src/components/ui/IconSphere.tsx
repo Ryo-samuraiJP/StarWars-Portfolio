@@ -35,7 +35,7 @@ const icons = [
 
 const IconSphere = () => {
   return (
-    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg bg-background px-20 pb-20 pt-8 ">
+    <div className="relative md:max-w-md lg:max-w-lg md:px-20 pb-20 pt-8 cursor-pointer">
       <IconCloud iconSlugs={icons} />
     </div>
   );
