@@ -3,10 +3,14 @@ import SwiperBlog from "../SwiperBlog";
 const TechBlogSection = () => {
   return (
     <section id="tech-blog">
-      <hr className="mt-[5.5rem] mb-[4rem]" />
-      <p className="text-lg my-[0.5rem] font-bold text-yellow-500">Episode V</p>
-      <h1 className="text-yellow-500 star-wars-font">tech blog</h1>
-      <p className="mt-[1rem] mb-[2.5rem] text-yellow-500">
+      <hr className="my-16" />
+      <p className="md:text-xl my-2 font-bold font-serif text-yellow-500">
+        Episode V
+      </p>
+      <p className="text-yellow-500 star-wars-font text-[1.75rem] md:text-[3rem] lg:text-[3.25rem]">
+        tech blog
+      </p>
+      <p className="mt-4 mb-6 md:mb-10 text-yellow-500 text-sm md:text-base">
         Latest posts on the DEV Community
       </p>
       <SwiperBlog />

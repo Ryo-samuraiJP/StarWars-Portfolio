@@ -4,19 +4,21 @@ import IconSphere from "../components/ui/IconSphere";
 const TechSkillSection = () => {
   return (
     <section id="technical-skill">
-      <hr className="mt-[5.5rem] mb-[4rem]" />
-      <p className="text-lg my-[0.5rem] font-bold text-yellow-500">
+      <hr className="my-16" />
+      <p className="md:text-xl my-2 font-bold font-serif text-yellow-500">
         Episode II
       </p>
-      <h1 className="text-yellow-500 star-wars-font">technical skills</h1>
-      <p className="mt-[1rem] mb-[2.5rem] text-yellow-500">
+      <p className="text-yellow-500 star-wars-font text-[1.75rem] md:text-[3rem] lg:text-[3.25rem]">
+        technical skills
+      </p>
+      <p className="mt-4 mb-6 md:mb-10 text-yellow-500 text-sm md:text-base">
         Skills cloud and primary technologies
       </p>
-      <div className="w-full max-w-[72rem] mx-auto px-[1rem] md:px-[1.5rem]">
+      <div className="w-full max-w-[72rem] mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-start lg:items-center">
-          <div className="relative inline-flex">
+          <div className="relative inline-flex md:ml-24 lg:-ml-10 -mt-10 lg:mt-0">
             <div
-              className="w-[50%] h-[50%] border absolute inset-0 m-auto blur-3xl -z-10 rounded-full bg-violet-800"
+              className="w-[55%] h-[55%] lg:w-[50%] lg:h-[50%] border absolute inset-0 m-auto blur-3xl -z-10 rounded-full bg-violet-800"
               aria-hidden="true"
             ></div>
             <div className="grow">
@@ -26,9 +28,6 @@ const TechSkillSection = () => {
           <div className="lg:w-1/3">
             <SkillsProgress />
           </div>
-        </div>
-        <div className="grow mb-[0.5rem]">
-          <h2 className="text-xl text-slate-100 font-bold my-[1.25rem]"></h2>
         </div>
       </div>
     </section>
