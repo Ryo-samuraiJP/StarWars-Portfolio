@@ -24,7 +24,7 @@ const Tab = ({ text, selected, setSelected }: TabProps) => {
           : "text-slate-400 hover:text-white hover:font-medium duration-0"
       )}
     >
-      <p className="relative z-10 min-w-[5rem]">{text}</p>
+      <p className="relative z-10 min-w-20">{text}</p>
       {selected && (
         <motion.span
           layoutId="tabs"
@@ -43,7 +43,7 @@ const ProjectTabs = ({ tabs, renderContent }: ProjectTabsProps) => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-[1rem]">
+      <div className="md:flex md:flex-wrap justify-center lg:gap-4">
         {tabs.map((tab) => (
           <Tab
             text={tab}
@@ -53,7 +53,7 @@ const ProjectTabs = ({ tabs, renderContent }: ProjectTabsProps) => {
           />
         ))}
       </div>
-      <div className="mt-[2rem]">{renderContent(selected)}</div>
+      <div className="mt-8">{renderContent(selected)}</div>
     </>
   );
 };
