@@ -32,6 +32,8 @@ interface Post {
 const SwiperBlog: React.FC = () => {
   // State to store the fetched posts from DEV.to API
   const [posts, setPosts] = useState<Post[]>([]);
+  // State to store the number of slides per view based on the screen width
+  const [slidesPerView, setSlidesPerView] = useState(1);
 
   // Fetch the latest posts from DEV.to
   useEffect(() => {
@@ -50,13 +52,30 @@ const SwiperBlog: React.FC = () => {
     fetchPosts();
   }, []);
 
+  // Update the number of slides per view based on the screen width
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setSlidesPerView(3);
+      } else if (window.innerWidth >= 768) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(1);
+      }
+    };
+    window.addEventListener("resize", updateSlidesPerView);
+    updateSlidesPerView(); // Run initially
+    return () => window.removeEventListener("resize", updateSlidesPerView);
+  }, []);
+
   return (
     <>
       <Swiper
+        className="w-[90%] md:w-[95%] lg:w-full"
         effect={"coverflow"}
         grabCursor={true} // Enalbe grab cursor for mouse
         centeredSlides={true}
-        slidesPerView={3} // Number of slides per view
+        slidesPerView={slidesPerView}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -82,8 +101,8 @@ const SwiperBlog: React.FC = () => {
           prevEl: ".swiper-button-prev",
           nextEl: ".swiper-button-next",
         }}
-        // Enable loop mode
-        // loop={true}
+        // Enable loop mode if the number of posts is more than slidesPerView
+        loop={posts.length >= slidesPerView}
         modules={[
           EffectCoverflow,
           Pagination,
@@ -95,42 +114,42 @@ const SwiperBlog: React.FC = () => {
         {posts.map((post) => (
           <SwiperSlide
             key={post.id}
-            className="mb-[2.5rem] mt-[0.75rem] border-2 border-gray-600 rounded-lg relative"
+            className="mb-10 mt-3 2xl:mt-5 border-2 border-gray-600 rounded-lg relative"
           >
             <div className="rounded-md bg-gradient-to-br from-[rgba(75,30,133,0.8)] to-[rgba(75,30,133,0.01)]">
               {post.cover_image && (
                 <img
                   src={post.cover_image}
                   alt={post.title}
-                  className="w-full h-full object-cover rounded-md mb-[0.75rem]"
+                  className="w-full h-full object-cover rounded-md mb-3"
                 />
               )}
-              <div className="text-lg font-bold px-[0.25rem]">{post.title}</div>
+              <div className="text-lg font-bold px-1">{post.title}</div>
               <div className="font-light text-gray-300">
                 {post.tag_list.map((tag) => `#${tag}`).join(" ")}
               </div>
-              <div className="flex gap-[0.875rem] mt-[0.25rem] mx-[1rem] text-gray-400">
+              <div className="flex gap-[0.875rem] mt-1 mx-[1rem] text-gray-400">
                 <div className="flex flex-grow flex-cols gap-[0.375rem] items-center">
                   <FaRegHeart className="mt-[0.125rem]" />
                   {post.public_reactions_count}&nbsp;
                   <FaRegComment className="mt-[0.125rem]" />
                   {post.comments_count}
                 </div>
-                <div className="flex gap-[0.25rem] items-center">
+                <div className="flex gap-1 items-center">
                   <IoMdTime className="size-[1.2rem] mt-[0.125rem]" />
                   {post.reading_time_minutes} min read
                 </div>
               </div>
-              <div className="my-[0.25rem]">
+              <div className="my-1">
                 <FormattedDate published_at={post.published_at} />
               </div>
-              <p className="italic text-left px-[1rem] text-gray-100">
+              <p className="italic text-left px-4 text-gray-100">
                 {post.description}
               </p>
               <a href={post.url} target="_blank" rel="noopener noreferrer">
-                <div className="items-center py-[1.25rem]">
+                <div className="items-center py-5">
                   <ShiningButton
-                    icon={<IoMdOpen className="text-[1.5rem]" />}
+                    icon={<IoMdOpen className="text-2xl" />}
                     text="Read more on DEV"
                   />
                 </div>
@@ -138,8 +157,8 @@ const SwiperBlog: React.FC = () => {
             </div>
           </SwiperSlide>
         ))}
-        <div className="swiper-button-prev -ml-[0.75rem] pb-[2.5rem]"></div>
-        <div className="swiper-button-next -mr-[0.75rem] pb-[2.5rem]"></div>
+        <div className="swiper-button-prev -ml-3 pb-10"></div>
+        <div className="swiper-button-next -mr-3 pb-10"></div>
       </Swiper>
     </>
   );
@@ -162,9 +181,7 @@ const FormattedDate: React.FC<{ published_at: string }> = ({
   }, [published_at]);
 
   return (
-    <p className="text-left text-sm text-gray-200 px-[1rem] py-[0.25rem]">
-      {formattedDate}
-    </p>
+    <p className="text-left text-sm text-gray-200 px-4 py-1">{formattedDate}</p>
   );
 };
 
