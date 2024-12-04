@@ -39,7 +39,7 @@ const ReactHookForm = () => {
     setEmailStatus(null);
     setFormStatus(null);
 
-    // Validate email address using emailValidator function before sending the email with EmailJS
+    // Validate email address before sending the email with EmailJS
     const isEmailValid = await validateEmail(data.email);
     if (!isEmailValid) {
       setEmailStatus({
@@ -78,56 +78,58 @@ const ReactHookForm = () => {
   };
 
   return (
-    <Spotlight className="mx-[20rem] relative">
+    <Spotlight className="md:mx-16 lg:mx-80 relative">
       <div className="absolute z-10 inset-0 pointer-events-none">
         <ParticlesAnimation />
       </div>
       <SpotlightCard>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="relative flex flex-col gap-y-[1.5rem] py-[2rem] pb-[2.75rem] border rounded-[1.5em]
+          className="relative flex flex-col gap-y-6 py-8 pb-11 border rounded-3xl
           border-[rgba(75,30,133,0.5)] bg-[linear-gradient(225deg,rgba(75,30,133,0.8),rgb(0,0,0))]"
         >
-          <div className="flex flex-row gap-x-[0.5rem] items-center justify-center mt-[0.5rem] text-[1.5rem]">
+          <div className="flex flex-row gap-x-2 items-center justify-center mt-2 text-lg md:text-2xl">
             <ImRocket />
-            <p>Submit the contact form</p>
+            <p>Let's Get In Touch</p>
           </div>
           <input
             type="text"
             placeholder="Name"
             {...register("name")}
-            className="rounded-[1rem] p-[1rem] mx-[5rem] bg-transparent border border-slate-500"
+            className="rounded-lg md:rounded-xl p-2 md:p-4 mx-7 md:mx-20 bg-transparent border border-slate-500 text-xs md:text-base"
           />
           {/* Display error message if name is not provided */}
           {errors.name && (
-            <span className="text-left text-sm font-medium px-[6rem] -my-[1rem] text-red-600">
+            <div className="flex flex-row items-center gap-1 text-left text-xs md:text-sm font-medium px-24 -mx-16 md:mx-0 -my-4 text-red-600">
+              <MdError />
               {`${errors.name.message}`}
-            </span>
+            </div>
           )}
           <input
             type="email"
             placeholder="Email"
             {...register("email")}
-            className="rounded-[1rem] p-[1rem] mx-[5rem] bg-transparent border border-slate-500"
+            className="rounded-lg md:rounded-xl p-2 md:p-4 mx-7 md:mx-20 bg-transparent border border-slate-500 text-xs md:text-base"
           />
           {/* Display error message if email is not provided */}
           {errors.email && (
-            <span className="text-left text-sm font-medium px-[6rem] -my-[1rem] text-red-600">
+            <div className="flex flex-row items-center gap-1 text-left text-xs md:text-sm font-medium px-24 -mx-16 md:mx-0 -my-4 text-red-600">
+              <MdError />
               {`${errors.email.message}`}
-            </span>
+            </div>
           )}
           {/* Display email validation status */}
           {emailStatus && (
             <span
-              className={`text-left text-sm font-medium px-[6rem] -my-[1rem] ${emailStatus.color}`}
+              className={`text-left text-xs md:text-sm font-medium px-24 -mx-16 md:mx-0 -my-4 ${emailStatus.color}`}
             >
-              <div className="flex flex-row gap-x-[0.25rem] items-center">
+              <div className="flex flex-row gap-x-1 items-center">
                 {emailStatus.color === "text-red-600" ? (
                   // Display error icon if email is invalid
-                  <MdError className="text-[1.125rem]" />
+                  <MdError />
                 ) : (
                   // Display check icon if email is valid
-                  <MdCheckCircle className="text-[1.125rem]" />
+                  <MdCheckCircle />
                 )}
                 {emailStatus.message}
               </div>
@@ -137,71 +139,78 @@ const ReactHookForm = () => {
             type="subject"
             placeholder="Subject"
             {...register("subject")}
-            className="rounded-[1rem] p-[1rem] mx-[5rem] bg-transparent border border-slate-500"
+            className="rounded-lg md:rounded-xl p-2 md:p-4 mx-7 md:mx-20 bg-transparent border border-slate-500 text-xs md:text-base"
           />
           {/* Display error message if subject is not provided */}
           {errors.subject && (
-            <span className="text-left text-sm font-medium px-[6rem] -my-[1rem] text-red-600">
+            <div className="flex flex-row items-center gap-1 text-left text-xs md:text-sm font-medium px-24 -mx-16 md:mx-0 -my-4 text-red-600">
+              <MdError />
               {`${errors.subject.message}`}
-            </span>
+            </div>
           )}
           <textarea
             placeholder="Message"
             {...register("message")}
-            className="rounded-[1rem] p-[1rem] pb-[6rem] mx-[5rem] resize-none bg-transparent border border-slate-500"
+            className="rounded-lg md:rounded-xl p-2 md:p-4 pb-20 md:pb-24 mx-7 md:mx-20 resize-none bg-transparent border border-slate-500 text-xs md:text-base"
           />
           {/* Display error message if message is not provided */}
           {errors.message && (
-            <span className="text-left text-sm font-medium px-[6rem] -my-[1rem] text-red-600">
+            <div className="flex flex-row items-center gap-1 text-left text-xs md:text-sm font-medium px-24 -mx-16 md:mx-0 -my-[1rem] text-red-600">
+              <MdError />
               {`${errors.message.message}`}
-            </span>
+            </div>
           )}
           <button
             disabled={isSubmitting}
             type="submit"
-            className="relative z-10 p-[0.75rem] mt-[0.75rem] mx-[5rem] rounded-lg border border-slate-500 bg-transparent text-slate-400 hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
+            className="relative z-10 p-2 md:p-3 mt-3 mx-7 md:mx-20 rounded-lg md:rounded-xl border border-slate-500 bg-transparent text-slate-400 
+              text-sm md:text-base hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
           >
-            Submit
+            Send Message
           </button>
           {/* Display form submission status */}
           {formStatus && (
             <span
-              className={`text-left text-sm font-medium px-[6rem] -my-[1rem] ${formStatus.color}`}
+              className={`text-left text-xs md:text-sm font-medium px-24 -mx-16 md:mx-0 -my-4 ${formStatus.color}`}
             >
-              <div className="flex flex-row gap-x-[0.25rem] items-center">
+              <div className="flex flex-row gap-x-1 items-center">
                 {formStatus.color === "text-red-600" ? (
                   // Display error icon if form submission failed
-                  <MdError className="text-[1.125rem]" />
+                  <MdError />
                 ) : (
                   // Display check icon if form submission succeeded
-                  <MdCheckCircle className="text-[1.125rem]" />
+                  <MdCheckCircle />
                 )}
                 {formStatus.message}
               </div>
             </span>
           )}
-          <hr className="mx-[2.5rem] bg-slate-600 border-0 h-px" />
-          <p className="text-slate-500 mb-[0.5rem]">
+          <hr className="mx-10 bg-slate-600 border-0 h-px" />
+          <p className="text-slate-500 text-xs md:text-base">
             Or reach out to me through LinkedIn or email
           </p>
-          <div className="flex flex-col gap-y-[1rem] items-center text-slate-500">
+          <div className="flex flex-col md:flex-row justify-center gap-y-2 gap-x-8 items-center text-slate-500">
             <a
               href="https://linkedin.com/in/ryoichihomma/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row gap-x-[0.25rem] items-center hover:text-white hover:underline transition-all duration-300 ease-in-out"
+              className="flex flex-row gap-1 items-center hover:text-white hover:underline transition-all duration-300 ease-in-out"
             >
-              <CiLinkedin className="text-[1.75rem]" />
-              <span>linkedin.com/in/ryoichihomma/</span>
+              <CiLinkedin className="text-2xl" />
+              <span className="text-xs md:text-sm">
+                linkedin.com/in/ryoichihomma/
+              </span>
             </a>
             <a
               href="mailto:r.homma.inbox@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row gap-x-1 items-center hover:text-white hover:underline transition-all duration-300 ease-in-out"
+              className="flex flex-row gap-1 items-center hover:text-white hover:underline transition-all duration-300 ease-in-out"
             >
-              <CiMail className="text-[1.5rem]" />
-              <span>r.homma.inbox@gmail.com</span>
+              <CiMail className="text-2xl" />
+              <span className="text-xs md:text-sm">
+                r.homma.inbox@gmail.com
+              </span>
             </a>
           </div>
         </form>
