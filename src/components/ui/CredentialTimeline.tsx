@@ -90,7 +90,7 @@ const CredentialTimeline = () => {
             <div className="vertical-timeline-element-title text-base md:text-lg text-slate-100 font-bold">
               {credential.title}
             </div>
-            <div className="flex flex-col md:flex-row md:gap-5 italic">
+            <div className="flex flex-col md:flex-row md:gap-5 text-sm md:text-base italic">
               <div className="vertical-timeline-element-subtitle">
                 {credential.organization}
               </div>
@@ -103,7 +103,7 @@ const CredentialTimeline = () => {
                 </div>
               )}
             </div>
-            <div className="vertical-timeline-element-title text-sm md:text-base py-3">
+            <div className="vertical-timeline-element-title text-sm py-3">
               {credential.desc}
             </div>
             <div className="grid md:grid-cols-2">
@@ -111,7 +111,7 @@ const CredentialTimeline = () => {
                 <div className="flex items-center gap-2">
                   <span className="md:font-medium">Skills:</span>
                   {/* For icon skills: */}
-                  <div className="flex flex-row gap-3">
+                  <div className="flex flex-row gap-2">
                     {credential.skills
                       .filter((skill) => typeof iconMap[skill] !== "string")
                       .map((skill, i) => (
@@ -121,11 +121,11 @@ const CredentialTimeline = () => {
                       ))}
                   </div>
                   {/* For text skills: */}
-                  <div className="flex flex-col md:flex-row md:gap-2">
+                  <div className="flex flex-col md:flex-row md:gap-x-2">
                     {credential.skills
                       .filter((skill) => typeof iconMap[skill] === "string")
                       .map((skill, i) => (
-                        <span key={i} className="text-base md:w-max font-light">
+                        <span key={i} className="text-sm md:w-max font-light">
                           {iconMap[skill]}
                         </span>
                       ))}
@@ -159,7 +159,7 @@ const CredentialTimeline = () => {
           icon={
             <button onClick={toggleCredential} className="flex pt-3 lg:pt-2">
               {isExpanded ? (
-                <div className="flex items-center gap-x-24.5 lg:gap-x-[8.25rem]">
+                <div className="flex items-center gap-x-28 lg:gap-x-[8.25rem]">
                   <IoMdClose className="" />
                   <div className="mb-3 font-semibold text-[#8a9198]">Close</div>
                 </div>

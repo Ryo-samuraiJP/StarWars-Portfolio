@@ -43,7 +43,7 @@ const ProjectTabs = ({ tabs, renderContent }: ProjectTabsProps) => {
 
   return (
     <>
-      <div className="md:flex md:flex-wrap justify-center lg:gap-4">
+      <div className="md:flex md:flex-wrap justify-center lg:gap-4 text-xs md:text-sm">
         {tabs.map((tab) => (
           <Tab
             text={tab}

@@ -9,12 +9,12 @@ const Home = () => {
   return (
     <section id="home" className="flex flex-col items-center justify-center">
       <div className="flex flex-col md:flex-row items-center justify-center w-[90%]">
-        <div className="flex mt-[4rem] justify-center md:order-2 lg:mr-10 2xl:mr-20">
+        <div className="flex mt-16 md:mt-24 lg:mt-20 justify-center md:order-2 lg:mr-10 2xl:mr-20">
           <ProfileEffect />
         </div>
-        <div className="flex-1 p-[1rem] mt-[4rem]">
+        <div className="flex-1 p-4 mt-16">
           <div className="space-y-3 md:space-y-4 md:-mr-36">
-            <div className="flex font-medium -mt-14 md:mt-0 text-lg md:text-4xl justify-center md:justify-start text-gray-200">
+            <div className="flex font-medium font-serif -mt-14 md:mt-0 -mb-3 md:mb-0 text-lg md:text-4xl justify-center md:justify-start text-gray-200">
               <p>Hi, I'm&nbsp;</p>
               <p className="text-shadow-neon font-bold text-white">Rio</p>
               <p>&nbsp;based in Canada</p>
@@ -37,7 +37,7 @@ const Home = () => {
                 }}
               />
             </div>
-            <p className="-mx-9 md:mx-0 md:w-[70%] lg:w-[75%] 2xl:w-[70%] md:py-[1.25rem] text-center md:text-left">
+            <p className="-mx-9 md:mx-0 md:w-[70%] lg:w-[75%] 2xl:w-[70%] md:py-5 text-center text-sm md:text-base md:text-left font-thin">
               While I specialize in front-end development with React.js,
               TypeScript/JavaScript, and Tailwind CSS, I am actively expanding
               my expertise to full-stack development by enhancing my skills in
@@ -49,7 +49,7 @@ const Home = () => {
               prompting. Additionally, I am a huge MLB fan who is interested in
               sports science and baseball data analytics!
             </p>
-            <div className="flex flex-col pt-4 md:pt-0 md:flex-row items-center gap-[2.5rem] md:gap-[4.5rem] lg:gap-[3rem]">
+            <div className="flex flex-col pt-4 md:pt-0 md:flex-row items-center gap-10 md:gap-[4.5rem] lg:gap-12">
               <DownloadButton />
               <div className="-mx-12 lg:mx-0 justify-start">
                 <SocialIcons />
@@ -58,7 +58,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap items-center pt-[2rem] pb-[3rem]">
+      <div className="flex flex-wrap items-center pt-8 pb-12">
         <NumbersCounter />
       </div>
       <ScrollDown />

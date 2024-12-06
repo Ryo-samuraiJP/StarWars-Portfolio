@@ -88,13 +88,13 @@ const ReactHookForm = () => {
           className="relative flex flex-col gap-y-6 py-8 pb-11 border rounded-3xl
           border-[rgba(75,30,133,0.5)] bg-[linear-gradient(225deg,rgba(75,30,133,0.8),rgb(0,0,0))]"
         >
-          <div className="flex flex-row gap-x-2 items-center justify-center mt-2 text-lg md:text-2xl">
+          <div className="flex flex-row gap-x-2 items-center justify-center mt-2 text-base md:text-xl">
             <ImRocket />
             <p>Let's Get In Touch</p>
           </div>
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Name*"
             {...register("name")}
             className="rounded-lg md:rounded-xl p-2 md:p-4 mx-7 md:mx-20 bg-transparent border border-slate-500 text-xs md:text-base"
           />
@@ -107,7 +107,7 @@ const ReactHookForm = () => {
           )}
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email Address*"
             {...register("email")}
             className="rounded-lg md:rounded-xl p-2 md:p-4 mx-7 md:mx-20 bg-transparent border border-slate-500 text-xs md:text-base"
           />
@@ -137,7 +137,7 @@ const ReactHookForm = () => {
           )}
           <input
             type="subject"
-            placeholder="Subject"
+            placeholder="Subject*"
             {...register("subject")}
             className="rounded-lg md:rounded-xl p-2 md:p-4 mx-7 md:mx-20 bg-transparent border border-slate-500 text-xs md:text-base"
           />
@@ -149,7 +149,7 @@ const ReactHookForm = () => {
             </div>
           )}
           <textarea
-            placeholder="Message"
+            placeholder="Message*"
             {...register("message")}
             className="rounded-lg md:rounded-xl p-2 md:p-4 pb-20 md:pb-24 mx-7 md:mx-20 resize-none bg-transparent border border-slate-500 text-xs md:text-base"
           />
@@ -163,8 +163,8 @@ const ReactHookForm = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="relative z-10 p-2 md:p-3 mt-3 mx-7 md:mx-20 rounded-lg md:rounded-xl border border-slate-500 bg-transparent text-slate-400 
-              text-sm md:text-base hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
+            className="relative z-10 p-2 md:p-3 mx-7 md:mx-20 rounded-lg md:rounded-xl border border-slate-500 bg-transparent text-slate-400 
+              text-xs md:text-base hover:bg-slate-500 hover:text-white transition-all duration-300 ease-in-out"
           >
             Send Message
           </button>

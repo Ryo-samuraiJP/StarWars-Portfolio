@@ -124,32 +124,32 @@ const SwiperBlog: React.FC = () => {
                   className="w-full h-full object-cover rounded-md mb-3"
                 />
               )}
-              <div className="text-lg font-bold px-1">{post.title}</div>
-              <div className="font-light text-gray-300">
+              <div className="md:text-lg font-bold px-1">{post.title}</div>
+              <div className="text-sm font-light text-gray-300">
                 {post.tag_list.map((tag) => `#${tag}`).join(" ")}
               </div>
-              <div className="flex gap-[0.875rem] mt-1 mx-[1rem] text-gray-400">
-                <div className="flex flex-grow flex-cols gap-[0.375rem] items-center">
+              <div className="flex gap-[0.875rem] mt-1 mx-[1rem] text-xs md:text-sm text-gray-400">
+                <div className="flex flex-grow flex-cols gap-x-1 items-center">
                   <FaRegHeart className="mt-[0.125rem]" />
                   {post.public_reactions_count}&nbsp;
                   <FaRegComment className="mt-[0.125rem]" />
                   {post.comments_count}
                 </div>
                 <div className="flex gap-1 items-center">
-                  <IoMdTime className="size-[1.2rem] mt-[0.125rem]" />
+                  <IoMdTime className="size-4 mt-[0.125rem]" />
                   {post.reading_time_minutes} min read
                 </div>
               </div>
-              <div className="my-1">
+              <div className="font-light my-1">
                 <FormattedDate published_at={post.published_at} />
               </div>
               <p className="italic text-left px-4 text-gray-100">
                 {post.description}
               </p>
               <a href={post.url} target="_blank" rel="noopener noreferrer">
-                <div className="items-center py-5">
+                <div className="text-sm items-center py-5">
                   <ShiningButton
-                    icon={<IoMdOpen className="text-2xl" />}
+                    icon={<IoMdOpen className="text-lg" />}
                     text="Read more on DEV"
                   />
                 </div>

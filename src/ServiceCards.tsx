@@ -88,7 +88,7 @@ const ServiceCards = () => {
                     </div>
                   </div>
                   <div className="grow mb-2">
-                    <div className="text-xl text-slate-100 font-bold my-5 -mx-3">
+                    <div className="text-lg md:text-xl text-slate-100 font-bold my-5 -mx-2">
                       {service.name}
                     </div>
                     <div className="text-[0.875rem] text-slate-400 -mx-3">
