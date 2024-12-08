@@ -1,8 +1,24 @@
 import { FiDownload } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const DownloadButton = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   return (
-    <div className="relative w-[13.125rem] h-[3.125rem] cursor-pointer flex items-center border-2 border-gray-400 shadow-lg shadow-neon rounded-full group">
+    <motion.div
+      className="relative w-[13.125rem] h-[3.125rem] cursor-pointer flex items-center border-2 border-gray-400 shadow-lg shadow-neon rounded-full group"
+      initial={{
+        opacity: 0,
+        y: 100,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ delay: isMobile ? 0 : 0.5, duration: 1.5 }}
+      viewport={{ once: true }}
+    >
       <a
         href="https://drive.usercontent.google.com/u/0/uc?id=1yGdq2gFQcFMqFplehfuVYZ2vOXEhnQMz&export=download"
         download="Rio_Ryoichi_Resume.pdf"
@@ -16,7 +32,7 @@ const DownloadButton = () => {
           <FiDownload className="fill-gray text-xl text-blue-800 font-black" />
         </span>
       </button>
-    </div>
+    </motion.div>
   );
 };
 
