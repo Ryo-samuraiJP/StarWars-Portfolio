@@ -128,7 +128,7 @@ const SwiperBlog: React.FC = () => {
               <div className="text-sm font-light text-gray-300">
                 {post.tag_list.map((tag) => `#${tag}`).join(" ")}
               </div>
-              <div className="flex gap-[0.875rem] mt-1 mx-[1rem] text-xs md:text-sm text-gray-400">
+              <div className="flex gap-[0.875rem] mt-1 mx-4 text-xs md:text-sm text-gray-400">
                 <div className="flex flex-grow flex-cols gap-x-1 items-center">
                   <FaRegHeart className="mt-[0.125rem]" />
                   {post.public_reactions_count}&nbsp;
