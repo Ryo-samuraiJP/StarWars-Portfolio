@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { filterProjects } from "../../data/projectsData";
+import { motion } from "framer-motion";
 
 interface ProjectCardsProps {
   genre: string;
@@ -7,17 +9,60 @@ interface ProjectCardsProps {
 const ProjectCards = ({ genre }: ProjectCardsProps) => {
   const filteredProjects = filterProjects(genre);
 
+  // Check if the image is loaded and in view
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [inViewStates, setInViewStates] = useState<boolean[]>(
+    // Initialize the array with false values for each project
+    new Array(filteredProjects.length).fill(false)
+  );
+
+  // Masks for the image to show/hide
+  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
+
+  const handleViewportEnter = (index: number) => {
+    setInViewStates((prev) => {
+      const newStates = [...prev];
+      newStates[index] = true;
+      return newStates;
+    });
+  };
+
   return (
     <div className="md:flex md:flex-wrap md:mx-8">
-      {filteredProjects.map((project) => (
+      {filteredProjects.map((project, index) => (
         <div key={project.id} className="flex flex-col lg:w-[50%] md:px-6 my-6">
-          <div
+          <motion.div
             className="h-[27.5rem] md:h-[35rem] lg:h-[33rem] px-6 border-2 border-[rgba(75,30,133,0.5)] rounded-3xl bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] 
             font-nunito flex justify-center items-left flex-col backdrop-blur-[.75rem] shadow-md overflow-hidden transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2"
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            transition={{ duration: 1.5 }}
+            viewport={{ once: true }}
           >
-            <div className="rounded-lg overflow-hidden -mt-6 md:-mt-4 border-2 border-gray-400">
-              <img src={project.image} alt="Project" className="object-cover" />
-            </div>
+            {/* Mast image animation */}
+            <motion.div
+              className="rounded-lg overflow-hidden -mt-6 md:-mt-4 border-2 border-gray-400"
+              initial={false}
+              animate={
+                isLoaded && inViewStates[index]
+                  ? { WebkitMaskImage: visibleMask, maskImage: visibleMask } // Show the image with a mask
+                  : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask } // Hide the image with a mask
+              }
+              transition={{ delay: 0.5, duration: 1 }}
+              onViewportEnter={() => handleViewportEnter(index)} // Set the state to true when the image is in view to show the image
+            >
+              <img
+                src={project.image}
+                alt="Project"
+                className="object-cover"
+                onLoad={() => setIsLoaded(true)} // Set the state to true when the image is loaded to show the image
+              />
+            </motion.div>
             <div className="text-xl md:text-2xl font-semibold text-left mt-2 md:mt-4">
               {project.title}
             </div>
@@ -49,7 +94,7 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       ))}
     </div>
