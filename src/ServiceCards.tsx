@@ -16,17 +16,52 @@ import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
 import { servicesData } from "./data/servicesData";
 import { GrMysql } from "react-icons/gr";
 import { Meteors } from "./components/ui/meteros";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const ServiceCards = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isLaptop = useMediaQuery({ query: "(min-width: 1024px)" });
+
   return (
-    <>
-      <div className="w-full max-w-[72rem] mx-auto px-4 md:px-6">
-        <Spotlight className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start lg:max-w-none group">
-          {servicesData.map((service) => (
-            <SpotlightCard key={service.id}>
-              <div
-                className="relative h-full border border-[rgba(75,30,133,0.5)] rounded-[inherit] 
+    <div className="w-full max-w-[72rem] mx-auto px-4 md:px-6">
+      <Spotlight className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start lg:max-w-none group">
+        {servicesData.map((service) => {
+          const isFirst = service.id === 1;
+          const isSecond = service.id === 2;
+          const isThird = service.id === 3;
+          const isFourth = service.id === 4;
+
+          return (
+            <SpotlightCard key={service.id} className="bg-transparent">
+              <motion.div
+                className="relative h-full border-2 border-[rgba(75,30,133,0.5)] rounded-[inherit] 
                 bg-gradient-to-br from-[rgba(75,30,133,0.8)] to-[rgb(0,0,0)] p-10 pb-8 z-20 overflow-hidden"
+                initial={{
+                  opacity: 0,
+                  scale: isLaptop ? 1 : 0.5,
+                  y: isMobile ? -100 : isLaptop ? 100 : 0,
+                }}
+                whileInView={{
+                  scale: 1,
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: !isMobile
+                    ? isFirst
+                      ? 0
+                      : isSecond
+                      ? 0.25
+                      : isThird
+                      ? 0.5
+                      : isFourth
+                      ? 0.75
+                      : 0
+                    : 0.25,
+                  duration: 1.5,
+                }}
+                viewport={{ once: true }}
               >
                 {/* background blur position */}
                 <div
@@ -97,12 +132,12 @@ const ServiceCards = () => {
                   </div>
                 </div>
                 <Meteors number={12} />
-              </div>
+              </motion.div>
             </SpotlightCard>
-          ))}
-        </Spotlight>
-      </div>
-    </>
+          );
+        })}
+      </Spotlight>
+    </div>
   );
 };
 
