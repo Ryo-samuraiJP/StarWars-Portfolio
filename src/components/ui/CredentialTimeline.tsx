@@ -109,7 +109,7 @@ const CredentialTimeline = () => {
             <div className="grid md:grid-cols-2">
               {credential.skills && credential.skills.length > 0 && (
                 <div className="flex items-center gap-2">
-                  <span className="md:font-medium">Skills:</span>
+                  <span className="text-sm md:font-medium">Skills:</span>
                   {/* For icon skills: */}
                   <div className="flex flex-row gap-2">
                     {credential.skills
@@ -164,7 +164,7 @@ const CredentialTimeline = () => {
                   <div className="mb-3 font-semibold text-[#8a9198]">Close</div>
                 </div>
               ) : (
-                <div className="flex items-center w-max gap-x-[9rem] lg:gap-x-[10.5rem]">
+                <div className="flex items-center w-max gap-x-36 lg:gap-x-[10.5rem]">
                   <FaPlus />
                   <div className="mb-3 font-semibold text-[#8a9198]">
                     Load more
