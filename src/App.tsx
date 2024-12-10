@@ -13,7 +13,7 @@ import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <>
       <ShootingStarsBackground />
       <BrowserRouter>
         <NavBar />
@@ -40,7 +40,7 @@ function App() {
         </section>
       </BrowserRouter>
       <Footer />
-    </div>
+    </>
   );
 }
 

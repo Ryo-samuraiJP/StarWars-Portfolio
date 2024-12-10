@@ -7,7 +7,7 @@ const ContactSection = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
-    <section id="contact">
+    <section id="contact" className="overflow-x-hidden">
       <motion.hr
         className="my-24"
         initial={{ width: "0%", marginLeft: "50%" }}
