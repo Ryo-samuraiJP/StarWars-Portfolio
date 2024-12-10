@@ -39,11 +39,13 @@ const TechBlogSection = () => {
       <motion.div
         initial={{
           opacity: 0,
-          y: -100,
+          y: isMobile ? 0 : -100,
+          x: isMobile ? -200 : 0,
         }}
         whileInView={{
           opacity: 1,
           y: 0,
+          x: 0,
         }}
         transition={{ delay: isMobile ? 0.25 : 0.4, duration: 1.5 }}
         viewport={{ once: true }}
