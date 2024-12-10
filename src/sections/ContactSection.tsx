@@ -1,3 +1,4 @@
+import Globe from "../components/ui/ContactWithGlobe";
 import ReactHookForm from "../ReactHookForm";
 
 const ContactSection = () => {
@@ -13,7 +14,14 @@ const ContactSection = () => {
       <p className="mt-4 mb-6 md:mb-10 text-yellow-500 text-sm md:text-base">
         Feel free to get in touch for any inquiries
       </p>
-      <ReactHookForm />
+      <div className="grid grid-rows md:grid-cols-2 lg:space-x-10 md:w-[95%] lg:w-[90%]">
+        <div className="md:order-2">
+          <ReactHookForm />
+        </div>
+        <div className="flex justify-center">
+          <Globe />
+        </div>
+      </div>
     </section>
   );
 };
