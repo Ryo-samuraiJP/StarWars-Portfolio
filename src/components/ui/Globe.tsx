@@ -22,7 +22,7 @@ const GLOBE_CONFIG: COBEOptions = {
   ],
 };
 
-function Globe({
+export function Globe({
   className,
   config = GLOBE_CONFIG,
 }: {
@@ -81,5 +81,3 @@ function Globe({
     </div>
   );
 }
-
-export default Globe;
