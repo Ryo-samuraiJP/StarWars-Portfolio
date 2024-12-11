@@ -29,12 +29,13 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
   };
 
   return (
-    <div className="md:flex md:flex-wrap md:mx-8">
+    <div className="sm:grid sm:grid-cols-2 sm:gap-x-3 lg:gap-x-0">
       {filteredProjects.map((project, index) => (
-        <div key={project.id} className="flex flex-col lg:w-[50%] md:px-6 my-6">
+        <div key={project.id} className="flex flex-col my-6">
           <motion.div
-            className="h-[27.5rem] md:h-[35rem] lg:h-[33rem] px-6 border-2 border-[rgba(75,30,133,0.5)] rounded-3xl bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] 
-            font-nunito flex justify-center items-left flex-col backdrop-blur-[.75rem] shadow-md overflow-hidden transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2"
+            className="h-[27.5rem] sm:h-[29rem] md:h-[30rem] lg:h-[33rem] sm:mx-1 lg:mx-5 xl:mx-12 px-6 sm:px-7 md:px-8.5 lg:px-12 
+              border-2 border-[rgba(75,30,133,0.5)] rounded-3xl bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] 
+              flex flex-col justify-center items-left transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2"
             initial={{
               opacity: 0,
             }}
@@ -63,30 +64,31 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
                 onLoad={() => setIsLoaded(true)} // Set the state to true when the image is loaded to show the image
               />
             </motion.div>
-            <div className="text-xl md:text-2xl font-semibold text-left mt-2 md:mt-4">
+            <div className="text-xl lg:text-2xl font-semibold text-left mt-2 lg:mt-4">
               {project.title}
             </div>
             <p className="text-base font-light text-left">{project.desc}</p>
-            <div className="grid grid-cols-2 md:flex md:flex-row gap-2 md:gap-3 pr-3 md:pr-0 my-5 text-sm">
+            <div className="grid grid-cols-2 lg:flex lg:flex-row gap-2 sm:gap-2.5 md:gap-3 pr-3 md:pr-0 my-5 text-sm">
               {project.links.map((link, index) => (
                 <button
                   key={index}
-                  className="flex items-center justify-center gap-x-2 border-2 py-1 md:px-3 rounded-2xl transition-all duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center justify-center gap-x-2 border-2 py-1 sm:px-4 md:px-3 lg:px-4 rounded-2xl 
+                    transition-all duration-300 hover:bg-white hover:text-black"
                 >
                   <link.icon className="text-[1.2rem]" />
                   <span>{link.text}</span>
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-x-3 md:gap-x-4 mt text-sm md:text-base">
-              <p className="font-semibold text-left ">Skill Used:</p>
-              <div className="flex flex-row gap-2 md:gap-3">
+            <div className="flex items-center gap-x-3 lg:gap-x-4 mt-2 text-sm lg:text-base">
+              <p className="font-semibold text-left">Skill Used:</p>
+              <div className="flex flex-row gap-2 md:gap-2.5 lg:gap-3">
                 {project.tech_used.map((tech, index) => (
                   <div key={index} className="relative group">
                     <tech.icon className="text-xl" />
                     <div
-                      className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1
-                      border-2 rounded-full opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
+                      className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1 border-2 rounded-full
+                        opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
                     >
                       {tech.name}
                     </div>
