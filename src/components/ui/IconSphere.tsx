@@ -1,43 +1,11 @@
+import { icons } from "../../data/iconCloudData";
 import { IconCloud } from "./skills-cloud";
 import { motion } from "framer-motion";
-
-const icons = [
-  "html5",
-  "css3",
-  "markdown",
-  "tailwindcss",
-  "javascript",
-  "ejs",
-  "typescript",
-  "react",
-  "vite",
-  "npm",
-  "swiper",
-  "scrollreveal",
-  "nodedotjs",
-  "express",
-  "postman",
-  "python",
-  "flask",
-  "c",
-  "java",
-  "axios",
-  "mongodb",
-  "oracle",
-  "mysql",
-  "vercel",
-  "netlify",
-  "render",
-  "git",
-  "github",
-  "githubactions",
-  "uml",
-];
 
 const IconSphere = () => {
   return (
     <motion.div
-      className="relative md:max-w-md lg:max-w-lg md:px-20 pb-20 pt-8 cursor-pointer"
+      className="relative md:max-w-md xl:max-w-lg md:px-20 pb-20 pt-8 cursor-pointer"
       initial={{
         opacity: 0,
         scale: 0,
