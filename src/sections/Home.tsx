@@ -6,20 +6,22 @@ import SocialIcons from "../components/ui/SocialIcons";
 import NumbersCounter from "../components/ui/NumbersCounter";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import { FaCanadianMapleLeaf } from "react-icons/fa";
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
     <section id="home" className="flex flex-col items-center justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-center w-[90%]">
-        <div className="flex mt-16 md:mt-24 lg:mt-20 justify-center md:order-2 lg:mr-10 2xl:mr-20">
+      <div className="flex flex-col sm:flex-row items-center justify-center w-[90%]">
+        <div className="flex mt-16 sm:mt-0 md:mt-24 lg:mt-20 justify-center sm:order-2 2xl:mr-20">
           <ProfileEffect />
         </div>
         <div className="flex-1 p-4 mt-16">
-          <div className="space-y-3 md:space-y-4 md:-mr-36">
+          <div className="space-y-3 sm:space-y-4 sm:mr-9 md:-mr-36 lg:-mr-28 xl:-mr-36">
             <motion.div
-              className="flex font-medium font-serif -mt-14 md:mt-0 -mb-3 md:mb-0 text-lg md:text-4xl justify-center md:justify-start text-gray-200"
+              className="flex font-medium font-serif -mx-5 sm:-mx-14 md:-mx-0 -mt-14 sm:-mt-5 lg:mt-0 -mb-3 md:mb-0
+                text-lg sm:text-2xl md:text-3xl justify-center sm:justify-start text-gray-200 items-center"
               initial={{
                 opacity: 0,
                 x: isMobile ? 0 : -200,
@@ -33,13 +35,16 @@ const Home = () => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <p>Hi, I'm&nbsp;</p>
-              <p className="text-shadow-neon font-bold text-white">Rio</p>
-              <p>&nbsp;based in Canada</p>
+              <p className="sm:ml-5 md:ml-0">Hi, I'm</p>
+              <p className="text-shadow-neon font-bold text-white">
+                &nbsp;Rio&nbsp;
+              </p>
+              <p>based in Canada&nbsp;</p>
+              <FaCanadianMapleLeaf className="sm:text-lg md:text-2xl text-red-500" />
             </motion.div>
             <motion.div
-              className="flex flex-row -mx-16 md:mx-0 text-3xl md:text-[2.5rem] lg:text-6xl justify-center md:justify-start
-              text-white text-shadow-neon star-wars-font"
+              className="flex flex-row justify-center sm:justify-start -mx-16 sm:-mx-9 md:-mx-0  
+                text-2xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] text-white text-shadow-neon star-wars-font"
               initial={{
                 opacity: 0,
                 x: isMobile ? 0 : -200,
@@ -58,7 +63,7 @@ const Home = () => {
                   strings: [
                     "software engineer",
                     "web developer",
-                    "ai evaluator",
+                    "ai llm trainer",
                   ],
                   delay: 50,
                   deleteSpeed: 30,
@@ -68,7 +73,8 @@ const Home = () => {
               />
             </motion.div>
             <motion.p
-              className="-mx-9 md:mx-0 md:w-[70%] lg:w-[75%] 2xl:w-[70%] md:py-5 text-center text-sm md:text-base md:text-left font-thin"
+              className="-mx-9 md:mx-0 md:w-[70%] lg:w-[75%] 2xl:w-[70%] md:py-3 lg:py-4
+                text-center text-sm sm:text-base sm:text-left font-thin"
               initial={{
                 opacity: 0,
                 x: isMobile ? 0 : -200,
@@ -82,21 +88,22 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 1 }}
               viewport={{ once: true }}
             >
-              While I specialize in front-end development with React.js,
-              TypeScript/JavaScript, and Tailwind CSS, I am actively expanding
-              my expertise to full-stack development by enhancing my skills in
-              the MERN stack. As a recent CS graduate in Canada, I seek
-              opportunities to work with talented teams in building secure and
-              efficient software solutions. I am passionate about learning new
-              technologies and contributing to organizations by leveraging my
-              extensive expertise in web development, teamwork, and effective AI
-              prompting. Additionally, I am a huge MLB fan who is interested in
-              sports science and baseball data analytics!
+              Aspiring developer proficient in React.js, TypeScript, JavaScript,
+              Tailwind CSS, and Framer Motion, with experience in AI language
+              model evaluation. Currently expanding into full-stack development
+              by mastering the MERN stack. As a recent CS graduate in Canada, I
+              seek opportunities to work with talented teams in building secure
+              and efficient software solutions. I am passionate about learning
+              new technologies and contributing to innovative projects by
+              leveraging my extensive knowledge and expertise in web
+              development, AI language model evaluation, and effective AI
+              prompting. Additionally, I am a huge MLB fan interested in sports
+              science and baseball data analytics!
             </motion.p>
-            <div className="flex flex-col pt-4 md:pt-0 md:flex-row items-center gap-10 md:gap-[4.5rem] lg:gap-12">
+            <div className="flex flex-col pt-4 md:pt-0 sm:flex-row items-center gap-10 sm:gap-[16rem] md:gap-[4.5rem] lg:gap-12">
               <DownloadButton />
               <motion.div
-                className="-mx-12 lg:mx-0 justify-start"
+                className="-mx-24 sm:-mx-56 md:-mx-12 lg:mx-0 justify-start"
                 initial={{
                   opacity: 0,
                   y: 100,
@@ -114,7 +121,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap items-center pt-8 pb-12">
+      <div className="flex flex-wrap items-center pt-8 pb-20">
         <NumbersCounter />
       </div>
       <ScrollDown />
