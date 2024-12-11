@@ -13,6 +13,7 @@ interface ProjectTabsProps {
   renderContent: (selectedTab: string) => React.ReactNode;
 }
 
+// Tab component to render each tab
 const Tab = ({ text, selected, setSelected }: TabProps) => {
   return (
     <button
@@ -43,7 +44,8 @@ const ProjectTabs = ({ tabs, renderContent }: ProjectTabsProps) => {
 
   return (
     <>
-      <div className="md:flex md:flex-wrap justify-center lg:gap-4 text-xs md:text-sm">
+      <div className="md:flex md:flex-wrap justify-center lg:gap-4 text-xs sm:text-sm">
+        {/* Map through the tabs and render each tab component with the props */}
         {tabs.map((tab) => (
           <Tab
             text={tab}
