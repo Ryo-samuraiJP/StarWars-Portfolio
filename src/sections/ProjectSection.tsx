@@ -28,14 +28,14 @@ const ProjectSection = () => {
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <p className="md:text-xl my-2 font-bold font-serif text-yellow-500">
+        <p className="sm:text-xl my-2 font-bold font-serif text-yellow-500">
           Episode I
         </p>
-        <p className="text-yellow-500 star-wars-font text-[1.75rem] md:text-[3rem] lg:text-[3.25rem]">
-          featured projects
+        <p className="text-yellow-500 star-wars-font text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+          project
         </p>
-        <p className="mt-4 mb-6 md:mb-10 text-yellow-500 text-sm md:text-base">
-          Featured works categorized by genre
+        <p className="mt-4 mb-6 sm:mb-10 text-yellow-500 text-sm sm:text-base">
+          Featured projects categorized by genre
         </p>
       </motion.div>
       <motion.div
