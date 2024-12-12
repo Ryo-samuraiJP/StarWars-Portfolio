@@ -5,6 +5,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        starwars__opening: ["Trade Gothic", "sans-serif"],
+      },
       animation: {
         "profile-effect": "profile__effect 8s ease-in-out infinite 1s",
         scrolldown: "scrolldown-guide 2s infinite",
