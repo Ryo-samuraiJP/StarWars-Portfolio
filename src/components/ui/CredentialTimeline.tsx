@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -45,17 +45,29 @@ const CredentialTimeline = () => {
   const [credential, setCredential] = useState(credentialsData.slice(0, 3)); // the number of credentials that are loaded initially
   const [, setHasMore] = useState(true); // to check if there are more credentials to load
   const [isExpanded, setIsExpanded] = useState(false); // to check if the credentials are expanded
+  const loadMoreRef = useRef<HTMLButtonElement>(null); // to reference for the Plus icon ("Load more" button)
+  const [loadMorePosition, setLoadMorePosition] = useState<number | null>(null); // to store the position of the "Load more" button
 
   const toggleCredential = () => {
     if (isExpanded) {
-      setCredential(credentialsData.slice(0, 5)); // Reset to initial credential
+      setCredential(credentialsData.slice(0, 3)); // Reset to initial credential
       setHasMore(true);
+      if (loadMorePosition !== null) {
+        window.scrollTo({ top: loadMorePosition, behavior: "auto" }); // Set the scroll position to the stored position without scrolling
+      }
     } else {
+      setLoadMorePosition(window.scrollY); // Store the current scroll position
       setCredential(credentialsData); // Load all credential
-      setHasMore(false);
+      setHasMore(false); // No more credential to load
     }
     setIsExpanded(!isExpanded);
   };
+
+  useEffect(() => {
+    if (!isExpanded && loadMorePosition !== null) {
+      window.scrollTo({ top: loadMorePosition, behavior: "auto" }); // Set the scroll position to the stored position without scrolling
+    }
+  }, [isExpanded, loadMorePosition]);
 
   return (
     <>
@@ -121,7 +133,7 @@ const CredentialTimeline = () => {
                       ))}
                   </div>
                   {/* For text skills: */}
-                  <div className="flex flex-col md:flex-row md:gap-x-2">
+                  <div className="flex flex-col sm:flex-row sm:gap-x-1.5 md:gap-x-2">
                     {credential.skills
                       .filter((skill) => typeof iconMap[skill] === "string")
                       .map((skill, i) => (
@@ -132,12 +144,12 @@ const CredentialTimeline = () => {
                   </div>
                 </div>
               )}
-              <div className="flex left-0  md:justify-end mt-3 md:-mt-3">
+              <div className="flex left-0 justify-end mt-3 sm:-mt-7 md:-mt-3">
                 {credential.link && (
                   <a
                     href={credential.link}
                     target="_blank"
-                    className="text-sm md:text-base"
+                    className="text-xs sm:text-sm md:text-base"
                   >
                     <ShiningButton text="See Certification" />
                   </a>
@@ -146,7 +158,6 @@ const CredentialTimeline = () => {
             </div>
           </VerticalTimelineElement>
         ))}
-
         {/* Add a button to toggle the credential */}
         <VerticalTimelineElement
           iconStyle={{
@@ -157,10 +168,14 @@ const CredentialTimeline = () => {
             justifyContent: "center",
           }}
           icon={
-            <button onClick={toggleCredential} className="flex pt-3 lg:pt-2">
+            <button
+              onClick={toggleCredential}
+              className="flex pt-3 lg:pt-2"
+              ref={loadMoreRef} // Reference to the "Load more" button
+            >
               {isExpanded ? (
                 <div className="flex items-center gap-x-28 lg:gap-x-[8.25rem]">
-                  <IoMdClose className="" />
+                  <IoMdClose />
                   <div className="mb-3 font-semibold text-[#8a9198]">Close</div>
                 </div>
               ) : (
