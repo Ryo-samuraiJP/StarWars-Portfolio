@@ -35,7 +35,8 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
           <motion.div
             className="h-[27.5rem] sm:h-[29rem] md:h-[30rem] lg:h-[33rem] sm:mx-1 lg:mx-5 xl:mx-12 px-6 sm:px-7 md:px-8.5 lg:px-12 
               border-2 border-[rgba(75,30,133,0.5)] rounded-3xl bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] 
-              flex flex-col justify-center items-left transition-all duration-300 cursor-pointer hover:transform hover:-translate-y-2"
+              flex flex-col justify-center items-left transition-all duration-300 hover:transform hover:-translate-y-2
+              relative z-10"
             initial={{
               opacity: 0,
             }}
@@ -73,7 +74,8 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
                 <button
                   key={index}
                   className="flex items-center justify-center gap-x-2 border-2 py-1 sm:px-4 md:px-3 lg:px-4 rounded-2xl 
-                    transition-all duration-300 hover:bg-white hover:text-black"
+                    transition-all duration-300 hover:bg-white hover:text-black cursor-pointer relative z-10"
+                  onClick={() => window.open(link.url, "_blank")}
                 >
                   <link.icon className="text-[1.2rem]" />
                   <span>{link.text}</span>
@@ -85,7 +87,7 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
               <div className="flex flex-row gap-2 md:gap-2.5 lg:gap-3">
                 {project.tech_used.map((tech, index) => (
                   <div key={index} className="relative group">
-                    <tech.icon className="text-xl" />
+                    <tech.icon className="text-xl cursor-pointer" />
                     <div
                       className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1 border-2 rounded-full
                         opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"

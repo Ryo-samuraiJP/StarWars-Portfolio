@@ -13,6 +13,7 @@ import {
   SiGoogledrive,
   SiHtml5,
   SiJavascript,
+  SiNumpy,
   SiPrezi,
   SiPython,
   SiReact,
@@ -49,7 +50,7 @@ export const projectsData = [
   {
     id: 2,
     title: "AI Visual Doppelganger",
-    desc: "AI-powered replication web application",
+    desc: "Image replication web tool powered by AI",
     image: ai_visual_doppelganger,
     genre: ["Web", "AI / ML"],
     links: [
@@ -72,6 +73,7 @@ export const projectsData = [
     tech_used: [
       { icon: SiFlask, name: "Flask" },
       { icon: SiPython, name: "Python" },
+      { icon: SiNumpy, name: "NumPy" },
       { icon: SiJavascript, name: "JavaScript" },
       { icon: SiHtml5, name: "HTML" },
       { icon: SiCss3, name: "CSS" },
@@ -106,17 +108,17 @@ export const projectsData = [
     title: "PlateMate Architecural Model",
     desc: "Food delivery system architectural design",
     image: platemate_architecture,
-    genre: "Other",
+    genre: "Others",
     links: [
       {
         icon: IoLogoGithub,
-        text: "Docs",
+        text: "GitHub",
         url: "https://github.com/Ryo-samuraiJP/PlateMate",
       },
       {
         icon: SiPrezi,
         text: "Demo",
-        ulr: "https://prezi.com/view/kiFUg0jNey3zD5mN1ctl/",
+        url: "https://prezi.com/view/U2BLmG4mcBCIPllKAI79/",
       },
     ],
     tech_used: [
@@ -129,7 +131,7 @@ export const projectsData = [
     title: "Campus Network Simulator",
     desc: "Network infrastructure design for campus",
     image: campus_network_simulator,
-    genre: "Other",
+    genre: "Others",
     links: [
       {
         icon: IoLogoGithub,
@@ -147,7 +149,7 @@ export const projectsData = [
         url: "https://drive.usercontent.google.com/u/0/uc?id=1HVgYZu9RMIlfEn8bxssOG3lytE-uWUOh&export=download/",
       },
     ],
-    tech_used: [{ icon: SiCisco, name: "Packet Tracer" }],
+    tech_used: [{ icon: SiCisco, name: "Cisco Packet Tracer" }],
   },
 ];
 
