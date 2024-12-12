@@ -69,7 +69,7 @@ export function Globe({
   return (
     <div
       className={cn(
-        "absolute aspect-[1/1] w-[18.75rem] lg:w-[23.125rem]",
+        "absolute aspect-[1/1] w-[18.75rem] sm:w-[17.5rem] md:w-[19rem] lg:w-[23.125rem]",
         className
       )}
     >

@@ -24,7 +24,7 @@ const ContactWithGlobe = () => {
         transition={{ delay: isMobile ? 0.25 : 0.4, duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-row gap-x-2 items-center justify-center md:justify-normal mb-4 mt-10 lg:mt-11 md:ml-11 lg:ml-20 text-lg lg:text-xl font-thin">
+        <div className="flex flex-row gap-x-2 items-center justify-center md:justify-normal mb-4 mt-10 lg:mt-11 md:ml-11 lg:ml-20 md:text-lg lg:text-xl font-thin">
           <BsPencilSquare />
           <p>GET IN TOUCH</p>
         </div>
@@ -40,7 +40,7 @@ const ContactWithGlobe = () => {
             >
               <div className="flex flex-row gap-x-1 items-center">
                 <FaLinkedin className="text-xl lg:text-2xl" />
-                <span>Connect me</span>
+                <span className="sm:text-sm md:text-base">Connect me</span>
               </div>
               <span className="text-[.9rem] lg:text-base hover:underline">
                 @in/ryoichihomma
@@ -58,7 +58,7 @@ const ContactWithGlobe = () => {
             >
               <div className="flex flex-row gap-x-1 items-center">
                 <IoMdMail className="text-xl lg:text-2xl" />
-                <span>Email me</span>
+                <span className="sm:text-sm md:text-base">Email me</span>
               </div>
               <span className="text-[.9rem] lg:text-base hover:underline">
                 r.homma.inbox@gmail.com
@@ -67,7 +67,9 @@ const ContactWithGlobe = () => {
           </div>
           <div className="flex flex-row gap-x-1 z-10 lg:ml-2 group hover:text-slate-300 transition-all duration-300 ease-in-out">
             <FaLocationDot className="text-xl lg:text-2xl" />
-            <p className="text-[.9rem] lg:text-base">Resident in BC, Canada</p>
+            <p className="sm:text-sm md:text-[.9rem] lg:text-base">
+              Based in BC, Canada
+            </p>
             <FaCanadianMapleLeaf className="text-xl lg:text-2xl fill-transparent group-hover:fill-red-500 transition-all duration-300 ease-in-out" />
           </div>
         </div>
@@ -85,7 +87,7 @@ const ContactWithGlobe = () => {
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <Globe className="flex relative md:-ml-8 -mt-5" />
+        <Globe className="flex relative sm:-ml-3 md:-ml-10 -mt-5" />
       </motion.div>
     </div>
   );

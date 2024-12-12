@@ -7,7 +7,7 @@ const ContactSection = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
-    <section id="contact" className="overflow-x-hidden">
+    <section id="contact" className="">
       <motion.hr
         className="my-24"
         initial={{ width: "0%", marginLeft: "50%" }}
@@ -27,20 +27,20 @@ const ContactSection = () => {
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <p className="md:text-xl my-2 font-bold font-serif text-yellow-500">
+        <p className="sm:text-xl my-2 font-bold font-serif text-yellow-500">
           Episode VI
         </p>
-        <p className="text-yellow-500 star-wars-font text-[1.75rem] md:text-[3rem] lg:text-[3.25rem]">
-          contact me
+        <p className="text-yellow-500 star-wars-font text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+          contact
         </p>
-        <p className="mt-4 mb-6 md:mb-10 text-yellow-500 text-sm md:text-base">
+        <p className="mt-4 mb-6 md:mb-10 text-yellow-500 text-sm sm:text-base">
           Feel free to get in touch for any inquiries
         </p>
       </motion.div>
-      <div className="grid grid-rows md:grid-cols-2 lg:space-x-10 md:w-[95%] lg:w-[90%]">
+      <div className="grid grid-rows sm:grid-cols-2 lg:space-x-10 sm:w-[97%] md:w-[95%] lg:w-[90%]">
         {/* Framer motion animation for ReactHookForm */}
         <motion.div
-          className="md:order-2"
+          className="sm:order-2"
           initial={{
             opacity: 0,
             x: 200,
