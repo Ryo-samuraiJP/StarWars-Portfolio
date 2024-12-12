@@ -71,6 +71,9 @@ const NavBar = () => {
   // Set that the menu is initially closed
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Set large screen to display the menu by default on large screens
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
+
   const handleRouteClick = (routeId: string) => {
     setPrevActiveRoute(activeRoute);
     setActiveRoute(routeId);
@@ -100,6 +103,31 @@ const NavBar = () => {
     };
   }, [lastScrollY]);
 
+  // Add an event listener to handle the resize event and update the visibility of the navigation bar on large screens
+  useEffect(() => {
+    const handleResize = () => {
+      const isLarge = window.innerWidth >= 1024;
+      setIsLargeScreen(isLarge);
+      if (isLarge) {
+        setIsMenuOpen(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Set the menu open by default on large screens
+  useEffect(() => {
+    if (isLargeScreen) {
+      setIsMenuOpen(true);
+    }
+  }, [isLargeScreen]); // Update the menu open state when the large screen state changes
+
   return (
     <nav
       className={`fixed top-2 lg:-top-7 left-0 right-0 z-30 flex items-center justify-between px-4 lg:px-80 
@@ -107,7 +135,7 @@ const NavBar = () => {
         ${isVisible ? "translate-y-0" : "-translate-y-[600%]"}`}
     >
       {/* Logo as text */}
-      <div className="text-2xl md:text-3xl text-yellow-500 star-wars-font lg:mt-9 lg:-mx-72">
+      <div className="text-2xl sm:text-3xl text-yellow-500 star-wars-font lg:mt-9 lg:-mx-72">
         <p>ryoichi</p>
         <p>homma</p>
       </div>
@@ -119,63 +147,86 @@ const NavBar = () => {
         >
           {isMenuOpen ? <IoMdCloseCircle /> : <IoMdMenu />}
         </button>
-        <div
-          className={`absolute inset-x-0 flex lg:flex-row ${
-            isMenuOpen ? "flex flex-col" : "hidden"
-          } lg:flex items-center border border-gray-600 rounded-xl lg:rounded-full 
-            px-10 md:px-20 lg:px-0 py-3 lg:py-0 -ml-28 md:-ml-32 lg:-ml-0
-            bg-black bg-opacity-60 backdrop-blur-lg shadow-xl shadow-sky-800 lg:shadow-sky-950`}
-        >
-          {/* AnimatePresence component to animate the border of the active route */}
-          <AnimatePresence initial={false}>
+        {/* Toggle nav menu control */}
+        {/* Animate the navigation bar with the AnimatePresence component */}
+        <AnimatePresence>
+          {(isMenuOpen || isLargeScreen) && (
             <motion.div
-              key={activeRoute}
-              className={`absolute inset-y-0 lg:border-2 border-blue-400 rounded-full bg-transparent ${
-                isMenuOpen ? "shadow-none" : "shadow-md shadow-sky-500"
-              }`}
-              initial={{ x: `${getRouteIndex(prevActiveRoute) * 100}%` }}
-              animate={{ x: `${getRouteIndex(activeRoute) * 100}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              style={{
-                width: `${100 / routes.length}%`,
-                height: isMenuOpen ? "100%" : "auto",
+              // Styling for sidebar/navbar
+              className={`absolute inset-x-0 flex lg:flex-row ${
+                isMenuOpen || isLargeScreen ? "flex flex-col" : "hidden"
+              } lg:flex items-center border border-gray-600 rounded-xl lg:rounded-full 
+                py-3 lg:py-0 -ml-28 md:-ml-32 lg:-ml-28 lg:-mr-40 xl:-ml-20 xl:-mr-20 2xl:ml-10 2xl:mr-0
+                bg-black bg-opacity-60 backdrop-blur-lg shadow-xl shadow-sky-800 lg:shadow-sky-950`}
+              initial={{
+                opacity: 0,
+                x: 100,
               }}
-            />
-          </AnimatePresence>
-          {/* Add the routes to the navigation bar as links */}
-          {routes.map((route) => (
-            <HashLink
-              key={route.id}
-              to={route.path}
-              smooth={true}
-              className={`relative z-10 flex items-center py-[0.625rem] md:py-2 lg:w-full
-                hover:text-sky-300 transition-all duration-300 
-                ${
-                  activeRoute === route.id
-                    ? "font-bold lg:font-normal text-sky-300"
-                    : "text-gray-500"
-                }`}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              exit={{
+                opacity: 0,
+                x: 100,
+              }}
+              transition={{ duration: 0.5 }}
             >
-              {/* Add a motion button to animate the route click */}
-              <motion.button
-                onClick={() => handleRouteClick(route.id)}
-                className={`flex items-center w-full lg:justify-center ${
-                  isMenuOpen ? "hover:visible" : ""
-                }`}
-              >
-                <div className="mr-16 md:mr-20 lg:hidden text-xl">
-                  {route.icon}
-                </div>
-                <span
-                  className="absolute lg:relative ml-7 md:ml-8 lg:ml-0 -mx-5 md:-mx-14 lg:mx-0
-                    text-sm md:text-base text-white hover:underline transition-all duration-300"
+              {/* AnimatePresence component to animate the border of the active route */}
+              <AnimatePresence initial={false}>
+                <motion.div
+                  key={activeRoute}
+                  // Styling for the border of the active route
+                  className={`absolute inset-y-0 lg:border-2 border-blue-400 rounded-full bg-transparent shadow-md shadow-sky-500 ${
+                    isMenuOpen
+                      ? "shadow-none"
+                      : "shadow-transparent lg:shadow-sky-500"
+                  }`}
+                  initial={{ x: `${getRouteIndex(prevActiveRoute) * 100}%` }}
+                  animate={{ x: `${getRouteIndex(activeRoute) * 100}%` }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  style={{
+                    width: `${100 / routes.length}%`,
+                    height: isMenuOpen ? "100%" : "auto",
+                  }}
+                />
+              </AnimatePresence>
+              {/* Add the routes to the navigation bar as links */}
+              {routes.map((route) => (
+                <HashLink
+                  key={route.id}
+                  to={route.path}
+                  smooth={true}
+                  className={`relative z-10 flex items-center py-[0.625rem] md:py-2 lg:w-full
+                    hover:text-sky-300 transition-all duration-300 
+                    ${
+                      activeRoute === route.id
+                        ? "font-bold lg:font-normal text-sky-300"
+                        : "text-gray-500"
+                    }`}
                 >
-                  {route.label}
-                </span>
-              </motion.button>
-            </HashLink>
-          ))}
-        </div>
+                  {/* Add a motion button to animate the route click */}
+                  <motion.button
+                    onClick={() => handleRouteClick(route.id)}
+                    className={`flex items-center w-full lg:justify-center ${
+                      isMenuOpen ? "hover:visible" : ""
+                    }`}
+                  >
+                    <div className="mr-16 md:mr-20 lg:hidden text-xl">
+                      {route.icon}
+                    </div>
+                    <span
+                      className="absolute lg:relative ml-7 md:ml-8 lg:ml-0 -mx-5 md:-mx-14 lg:mx-0
+                        text-sm md:text-base text-white hover:underline transition-all duration-300"
+                    >
+                      {route.label}
+                    </span>
+                  </motion.button>
+                </HashLink>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
