@@ -1,61 +1,8 @@
 import { HashLink } from "react-router-hash-link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  FaCode,
-  FaDev,
-  FaHandshake,
-  FaHome,
-  FaLaptopCode,
-  FaPaperPlane,
-} from "react-icons/fa";
-import { IoBriefcase } from "react-icons/io5";
 import { IoMdCloseCircle, IoMdMenu } from "react-icons/io";
-
-const routes = [
-  {
-    id: "home",
-    label: "Home",
-    path: "/#home",
-    icon: <FaHome />,
-  },
-  {
-    id: "project",
-    label: "Project",
-    path: "/#project",
-    icon: <FaLaptopCode />,
-  },
-  {
-    id: "technical-skill",
-    label: "Tech Skill",
-    path: "/#technical-skill",
-    icon: <FaCode />,
-  },
-  {
-    id: "service",
-    label: "Service",
-    path: "/#service",
-    icon: <FaHandshake />,
-  },
-  {
-    id: "credential",
-    label: "Credential",
-    path: "/#credential",
-    icon: <IoBriefcase />,
-  },
-  {
-    id: "tech-blog",
-    label: "Tech Blog",
-    path: "/#tech-blog",
-    icon: <FaDev />,
-  },
-  {
-    id: "contact",
-    label: "Contact",
-    path: "/#contact",
-    icon: <FaPaperPlane />,
-  },
-];
+import { routesMenu } from "./routes/routesMenu";
 
 const NavBar = () => {
   // Set that active and previous routes are initially "home" as default
@@ -80,9 +27,9 @@ const NavBar = () => {
     setIsMenuOpen(false);
   };
 
-  // Get the index of the route in the routes array by the route ID
+  // Get the index of the route in the routesMenu array by the route ID
   const getRouteIndex = (routeId: string) =>
-    routes.findIndex((route) => route.id === routeId);
+    routesMenu.findIndex((route) => route.id === routeId);
 
   // Add an event listener to handle the scroll event and update the visibility of the navigation bar
   useEffect(() => {
@@ -160,17 +107,20 @@ const NavBar = () => {
                 bg-black bg-opacity-60 backdrop-blur-lg shadow-xl shadow-sky-800 lg:shadow-sky-950`}
               initial={{
                 opacity: 0,
-                x: 100,
+                x: 200,
               }}
               animate={{
                 opacity: 1,
                 x: 0,
               }}
+              // Animate the exit transition to fade out and move to the right side
               exit={{
                 opacity: 0,
-                x: 100,
+                x: 200,
               }}
-              transition={{ duration: 0.5 }}
+              transition={{
+                duration: isLargeScreen ? 1.5 : 0.5,
+              }}
             >
               {/* AnimatePresence component to animate the border of the active route */}
               <AnimatePresence initial={false}>
@@ -186,13 +136,13 @@ const NavBar = () => {
                   animate={{ x: `${getRouteIndex(activeRoute) * 100}%` }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   style={{
-                    width: `${100 / routes.length}%`,
+                    width: `${100 / routesMenu.length}%`,
                     height: isMenuOpen ? "100%" : "auto",
                   }}
                 />
               </AnimatePresence>
-              {/* Add the routes to the navigation bar as links */}
-              {routes.map((route) => (
+              {/* Add the routesMenu to the navigation bar as links */}
+              {routesMenu.map((route) => (
                 <HashLink
                   key={route.id}
                   to={route.path}
