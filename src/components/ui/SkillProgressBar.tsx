@@ -12,6 +12,7 @@ const SkillProgressBar = () => {
       <Spotlight className="grid gap-6 lg:grid-cols-1 items-start group">
         {skillsData.map((category, index) => (
           <motion.div
+            key={index}
             initial={{
               opacity: 0,
               x: !isLaptop ? (index % 2 === 0 ? -200 : 200) : 200,
