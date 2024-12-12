@@ -44,7 +44,7 @@ const Home = () => {
             </motion.div>
             <motion.div
               className="flex flex-row justify-center sm:justify-start -mx-16 sm:-mx-9 md:-mx-0  
-                text-2xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] text-white text-shadow-neon star-wars-font"
+                text-2xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[3.5rem] text-white text-shadow-neon star-wars-font"
               initial={{
                 opacity: 0,
                 x: isMobile ? 0 : -200,
@@ -121,9 +121,20 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap items-center pt-8 pb-20">
+      <motion.div
+        className="flex flex-wrap items-center pt-8 pb-20"
+        initial={{
+          opacity: 0,
+          y: isMobile ? 100 : 150,
+        }}
+        {...((isMobile && { whileInView: { opacity: 1, y: 0 } }) || {
+          animate: { opacity: 1, y: 0 },
+        })}
+        transition={{ delay: isMobile ? 0 : 0.6, duration: 1.5 }}
+        viewport={{ once: true }}
+      >
         <NumbersCounter />
-      </div>
+      </motion.div>
       <ScrollDown />
     </section>
   );

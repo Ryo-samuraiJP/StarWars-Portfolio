@@ -15,7 +15,7 @@ const ScrollDown = () => {
         opacity: 1,
         y: 0,
       }}
-      transition={{ delay: isMobile ? 0 : 0.85, duration: 1.5 }}
+      transition={{ delay: isMobile ? 0 : 0.75, duration: 1.5 }}
       viewport={{ once: true }}
     >
       <div className="absolute bottom-[1.875rem] left-[50%] w-[0.375rem] h-[0.375rem] -ml-[0.188rem] bg-white rounded-full animate-scrolldown shadow-[0px_-5px_3px_1px_rgba(42,84,112,0.4)]"></div>
