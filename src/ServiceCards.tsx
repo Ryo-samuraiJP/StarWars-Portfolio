@@ -20,56 +20,47 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 const ServiceCards = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isLaptop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isSmall = useMediaQuery({ query: "(min-width: 640px)" }); // For horizontal animation (used when less than 640px), same as Tailwind sm:prefix
+  const isXLarge = useMediaQuery({ query: "(min-width: 1280px)" }); // For scale and vertical animation, same as Tailwind xl:prefix
 
   return (
     <div className="w-full max-w-[72rem] mx-auto px-4 md:px-6">
-      <Spotlight className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start lg:max-w-none group">
-        {servicesData.map((service) => {
-          const isFirst = service.id === 1;
-          const isSecond = service.id === 2;
-          const isThird = service.id === 3;
-          const isFourth = service.id === 4;
-
-          return (
-            <SpotlightCard key={service.id} className="bg-transparent">
-              <motion.div
-                className="relative h-full border-2 border-[rgba(75,30,133,0.5)] rounded-[inherit] 
-                bg-gradient-to-br from-[rgba(75,30,133,0.8)] to-[rgb(0,0,0)] p-10 pb-8 z-20 overflow-hidden"
-                initial={{
-                  opacity: 0,
-                  scale: isLaptop ? 1 : 0.5,
-                  y: isMobile ? -100 : isLaptop ? 100 : 0,
-                }}
-                whileInView={{
-                  scale: 1,
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: !isMobile
-                    ? isFirst
-                      ? 0
-                      : isSecond
-                      ? 0.25
-                      : isThird
-                      ? 0.5
-                      : isFourth
-                      ? 0.75
-                      : 0
-                    : 0.25,
-                  duration: 1.5,
-                }}
-                viewport={{ once: true }}
+      <Spotlight className="mx-auto grid gap-6 sm:grid-cols-2 xl:grid-cols-4 items-start lg:max-w-none group">
+        {servicesData.map((service, index) => (
+          <motion.div
+            className="h-full"
+            key={service.id}
+            initial={{
+              opacity: 0,
+              scale: !isSmall || isXLarge ? 1 : 0.5,
+              y: isXLarge ? 100 : 0,
+              x: !isSmall ? (index % 2 === 0 ? 200 : -200) : 0,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+            }}
+            transition={{
+              delay: index * 0.25,
+              duration: 1.5,
+            }}
+            viewport={{ once: true }}
+          >
+            <SpotlightCard>
+              <div
+                className="h-full relative border-2 border-[rgba(75,30,133,0.5)] rounded-[inherit] 
+                bg-gradient-to-br from-[rgba(75,30,133,0.8)] to-[rgb(0,0,0)] p-10 pb-8 z-20"
               >
                 {/* background blur position */}
-                <div
-                  className="absolute mb-[18.5rem] xl:mb-[23rem] bottom-0 translate-y-[50%] left-[50%] -translate-x-[50%] pointer-events-none -z-10 w-[50%] aspect-square"
+                {/* <div
+                  className="absolute mb-[20rem] sm:mb-[18.75rem] lg:mb-[16rem] xl:mb-[23rem] bottom-0 
+                    translate-y-[50%] left-[50%] -translate-x-[50%] pointer-events-none -z-10 w-[50%] aspect-square"
                   aria-hidden="true"
                 >
-                  <div className="absolute inset-0 translate-z-0 bg-purple-900 rounded-full blur-[2.5rem]"></div>
-                </div>
+                  <div className="absolute inset-0 translate-z-0 bg-purple-900 rounded-full blur-2xl lg:blur-3xl xl:blur-2xl"></div>
+                </div> */}
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="relative inline-flex p-10">
                     <div className="grow">
@@ -79,6 +70,7 @@ const ServiceCards = () => {
                           <SiReact className="text-xl relative z-10 -mt-5" />
                         )}
                       </div>
+                      {/* Icon positions in solar system */}
                       <div className="absolute inset-2 border-2 border-slate-500 rounded-full">
                         {(service.id === 1 && (
                           <>
@@ -132,10 +124,10 @@ const ServiceCards = () => {
                   </div>
                 </div>
                 <Meteors number={12} />
-              </motion.div>
+              </div>
             </SpotlightCard>
-          );
-        })}
+          </motion.div>
+        ))}
       </Spotlight>
     </div>
   );
