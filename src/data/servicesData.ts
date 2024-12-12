@@ -6,7 +6,7 @@ export const servicesData = [
   {
     id: 1,
     name: "Fronend Development",
-    desc: "I build responsive and user-friendly interfaces using modern technologies, including React, JavaScript, TypeScript, and Tailwind CSS. I focus on creating visually appealing and efficient designs to enhance user experiences.",
+    desc: "I build animated, responsive, and user-friendly interfaces using React, TypeScript, JavaScript, Tailwind CSS, and Framer Motion. I focus on creating visually appealing and efficient designs to enhance user experiences.",
     icon: PiCode,
   },
   {
