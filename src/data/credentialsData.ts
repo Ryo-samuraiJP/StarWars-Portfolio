@@ -22,7 +22,7 @@ export const credentialsData: ICredentialsData[] = [
     date: "Jun 2024 - Present",
     organization: "Outlier",
     icon: outlier,
-    location: "San Francisco, CA, US (Remote)",
+    location: "San Francisco, US (Remote)",
     desc: "I evaluated roughly 400+ AI prompts and responses across various categories and constraints to ensure high-quality outputs. Throughout this experience, I developed expertise in effective AI prompting even in areas where it typically struggles, generative AI tools, and analytical skills. Leveraging my computer science background, I ensured accurate AI responses to CS-related questions. I also ranked and rewrote AI responses to correct errors in grammar, typos, phrasing, factuality, and other aspects, improving writing quality and obtaining client satisfaction. Additionally, I reviewed about 20 tasks from other evaluators, providing feedback to improve quality and demonstrating critical thinking and quality assurance abilities.",
     skills: ["AI Prompting", "Critical Thinking", "Quality Assurance"],
   },
