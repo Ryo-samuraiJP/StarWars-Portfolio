@@ -79,10 +79,10 @@ const NavBar = () => {
     <nav
       className={`fixed top-2 lg:-top-7 left-0 right-0 z-30 flex items-center justify-between px-4 lg:px-80 
         transition-transform duration-300 ease-in-out
-        ${isVisible ? "translate-y-0" : "-translate-y-[600%]"}`}
+        ${isVisible ? "translate-y-0" : "-translate-y-[700%]"}`}
     >
       {/* Logo as text */}
-      <div className="text-2xl sm:text-3xl text-yellow-500 star-wars-font lg:mt-9 lg:-mx-72">
+      <div className="text-2xl sm:text-3xl text-yellow-500 star-wars-font -space-y-2 lg:mt-9 lg:-mx-72">
         <p>ryoichi</p>
         <p>homma</p>
       </div>
@@ -98,8 +98,8 @@ const NavBar = () => {
         {/* Animate the navigation bar with the AnimatePresence component */}
         <AnimatePresence>
           {(isMenuOpen || isLargeScreen) && (
+            // Framer motion animation for the navigation bar
             <motion.div
-              // Styling for sidebar/navbar
               className={`absolute inset-x-0 flex lg:flex-row ${
                 isMenuOpen || isLargeScreen ? "flex flex-col" : "hidden"
               } lg:flex items-center border border-gray-600 rounded-xl lg:rounded-full 
@@ -124,9 +124,9 @@ const NavBar = () => {
             >
               {/* AnimatePresence component to animate the border of the active route */}
               <AnimatePresence initial={false}>
+                {/* Framer motion animation for the border of the active route */}
                 <motion.div
                   key={activeRoute}
-                  // Styling for the border of the active route
                   className={`absolute inset-y-0 lg:border-2 border-blue-400 rounded-full bg-transparent shadow-md shadow-sky-500 ${
                     isMenuOpen
                       ? "shadow-none"
