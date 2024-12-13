@@ -25,8 +25,8 @@ const NumbersCounter = () => {
   }, []);
 
   return (
-    <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-y-6 sm:gap-x-16 lg:gap-x-52 xl:gap-0">
-      <div className="flex items-center justify-end sm:justify-normal gap-[0.75rem] sm:gap-[2.5rem] md:gap-[0.5rem] sm:mb-7 xl:mb-0">
+    <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-y-6 md:gap-x-16 lg:gap-x-52 xl:gap-0">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-4 sm:gap-x-11 md:gap-x-3 sm:mb-7 xl:mb-0">
         <div className="font-bold tracking-tighter w-4 md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={4} />+
         </div>
@@ -34,7 +34,7 @@ const NumbersCounter = () => {
           YEARS OF BUILDING SOFTWARE
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-[2.75rem] sm:gap-[2.75rem] md:gap-[2.5rem] sm:mb-7 xl:mb-0 sm:ml-24 xl:ml-0">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-12 md:gap-x-11 sm:mb-7 xl:mb-0 sm:ml-24 xl:ml-0">
         <div className="font-bold tracking-tighter w-6 text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={15} />
         </div>
@@ -42,7 +42,7 @@ const NumbersCounter = () => {
           CERTIFICATIONS
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-[0.75rem] sm:gap-[1.75rem] md:gap-[0.375rem]">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-5 sm:gap-x-8 md:gap-x-3.5">
         <div className="font-bold tracking-tighter w-8 md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={postCount ?? 0} />
         </div>
@@ -50,7 +50,7 @@ const NumbersCounter = () => {
           POSTS ON DEV COMMUNITY
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-[2.25rem] sm:gap-[3.5rem] md:gap-[1.75rem]">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-[2.75rem] sm:gap-x-14 md:gap-x-8">
         <div className="font-bold tracking-tighter w-[6.25rem] md:w-32 text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={4400} />+
         </div>
