@@ -34,7 +34,7 @@ const NumbersCounter = () => {
           YEARS OF BUILDING SOFTWARE
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-12 md:gap-x-11 sm:mb-7 xl:mb-0 sm:ml-24 xl:ml-0">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-12 md:gap-x-11 lg:gap-x-[3.25rem] sm:mb-7 xl:mb-0 sm:ml-24 xl:ml-0">
         <div className="font-bold tracking-tighter w-6 text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={15} />
         </div>
@@ -42,7 +42,7 @@ const NumbersCounter = () => {
           CERTIFICATIONS
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-5 sm:gap-x-8 md:gap-x-3.5">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-6 sm:gap-x-8 md:gap-x-3.5 lg:gap-x-5">
         <div className="font-bold tracking-tighter w-8 md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={postCount ?? 0} />
         </div>
@@ -50,7 +50,7 @@ const NumbersCounter = () => {
           POSTS ON DEV COMMUNITY
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-[2.75rem] sm:gap-x-14 md:gap-x-8">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-14 md:gap-x-8 lg:gap-x-11">
         <div className="font-bold tracking-tighter w-[6.25rem] md:w-32 text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={4400} />+
         </div>
