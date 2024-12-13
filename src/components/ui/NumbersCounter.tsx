@@ -46,11 +46,11 @@ const NumbersCounter = () => {
         <div className="font-bold tracking-tighter w-8 md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={postCount ?? 0} />
         </div>
-        <p className="w-28 font-light text-sm md:text-base text-right sm:text-center">
+        <p className="w-28 lg:w-32 font-light text-sm md:text-base text-right sm:text-center">
           POSTS ON DEV COMMUNITY
         </p>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-14 md:gap-x-8 lg:gap-x-11">
+      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-14 md:gap-x-8 lg:gap-x-[3.25rem]">
         <div className="font-bold tracking-tighter w-[6.25rem] md:w-32 text-left text-5xl sm:text-[3.2rem]">
           <NumbersCounterAnimation value={4400} />+
         </div>
