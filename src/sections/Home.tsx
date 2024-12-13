@@ -35,7 +35,7 @@ const Home = () => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <p className="sm:ml-5 md:ml-0">Hi, I'm</p>
+              <p className="sm:ml-7 md:ml-0">Hi, I'm</p>
               <p className="text-shadow-neon font-bold text-white">
                 &nbsp;Rio&nbsp;
               </p>
@@ -43,8 +43,8 @@ const Home = () => {
               <FaCanadianMapleLeaf className="sm:text-lg md:text-2xl text-red-500" />
             </motion.div>
             <motion.div
-              className="flex flex-row justify-center sm:justify-start -mx-16 sm:-mx-9 md:-mx-0  
-                text-2xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[3.5rem] text-white text-shadow-neon star-wars-font"
+              className="flex flex-row justify-center sm:justify-start -mx-16 sm:-mx-20 md:-mx-0 sm:-ml-7 md:-ml-0
+                text-2xl sm:text-3xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[3.5rem] text-white text-shadow-neon star-wars-font"
               initial={{
                 opacity: 0,
                 x: isMobile ? 0 : -200,
@@ -73,7 +73,7 @@ const Home = () => {
               />
             </motion.div>
             <motion.p
-              className="-mx-9 md:mx-0 md:w-[70%] lg:w-[75%] 2xl:w-[70%] md:py-3 lg:py-4
+              className="-mx-7 md:mx-0 md:w-[70%] lg:w-[75%] 2xl:w-[70%] md:py-3 lg:py-4
                 text-center text-sm sm:text-base sm:text-left font-thin"
               initial={{
                 opacity: 0,
@@ -100,10 +100,13 @@ const Home = () => {
               prompting. Additionally, I am a huge MLB fan interested in sports
               science and baseball data analytics!
             </motion.p>
-            <div className="flex flex-col pt-4 md:pt-0 sm:flex-row items-center gap-10 sm:gap-[16rem] md:gap-[4.5rem] lg:gap-12">
+            <div
+              className="flex flex-col sm:flex-row items-center gap-10 sm:gap-[19rem] md:gap-[4.5rem] lg:gap-12
+              pt-4 md:pt-0 sm:-mx-3 lg:-mx-0"
+            >
               <DownloadButton />
               <motion.div
-                className="-mx-24 sm:-mx-56 md:-mx-12 lg:mx-0 justify-start"
+                className="-mx-24 sm:-mx-72 md:-mx-12 lg:mx-0 justify-start"
                 initial={{
                   opacity: 0,
                   y: 100,
