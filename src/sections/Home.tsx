@@ -11,16 +11,40 @@ import Saturn from "../assets/images/Saturn.png";
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1023px)",
+  });
+  const isLaptop = useMediaQuery({
+    query: "(min-width: 1024px) and (max-width: 1440px)",
+  });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1441px)" });
 
   return (
     <section id="home" className="flex flex-col items-center justify-center">
       <div className="flex flex-col sm:flex-row items-center justify-center w-[90%]">
-        <img
+        <motion.img
           src={Saturn}
           alt="Saturn"
           className="absolute -z-10 w-[80%] sm:w-[55%] md:w-[45%] lg:w-[40%] 2xl:w-[35%]
             top-20 sm:top-24 md:top-28 lg:top-12 xl:top-5 2xl:top-7 
             right-40 sm:right-14 md:right-[5.5rem] lg:right-44 xl:right-[10.5rem] 2xl:right-[23rem]"
+          initial={{
+            opacity: 0,
+            scale: 0,
+            y: isMobile ? 0 : isDesktop ? 250 : 200,
+            x: isMobile || isLaptop ? 200 : isTablet ? 100 : 300,
+          }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            x: 0,
+          }}
+          transition={{
+            delay: isMobile || isDesktop ? 0.25 : 0.5,
+            duration: isDesktop ? 2.5 : 2,
+          }}
+          viewport={{ once: true }}
         />
         <div className="flex mt-16 sm:mt-0 md:mt-24 lg:mt-20 justify-center sm:order-2 2xl:mr-5">
           <ProfileEffect />
@@ -69,8 +93,8 @@ const Home = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "software engineer",
                     "web developer",
+                    "software engineer",
                     "ai llm trainer",
                   ],
                   delay: 50,
@@ -132,20 +156,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <motion.div
-        className="flex flex-wrap items-center pt-8 pb-20"
-        initial={{
-          opacity: 0,
-          y: isMobile ? 100 : 150,
-        }}
-        {...((isMobile && { whileInView: { opacity: 1, y: 0 } }) || {
-          animate: { opacity: 1, y: 0 },
-        })}
-        transition={{ delay: isMobile ? 0 : 0.6, duration: 1.5 }}
-        viewport={{ once: true }}
-      >
+      <div className="flex flex-wrap items-center pt-8 pb-20">
         <NumbersCounter />
-      </motion.div>
+      </div>
       <ScrollDown />
     </section>
   );
