@@ -7,6 +7,7 @@ import NumbersCounter from "../components/ui/NumbersCounter";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { FaCanadianMapleLeaf } from "react-icons/fa";
+import Saturn from "../assets/images/Saturn.png";
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -14,7 +15,14 @@ const Home = () => {
   return (
     <section id="home" className="flex flex-col items-center justify-center">
       <div className="flex flex-col sm:flex-row items-center justify-center w-[90%]">
-        <div className="flex mt-16 sm:mt-0 md:mt-24 lg:mt-20 justify-center sm:order-2 2xl:mr-20">
+        <img
+          src={Saturn}
+          alt="Saturn"
+          className="absolute -z-10 w-[80%] sm:w-[55%] md:w-[45%] lg:w-[40%] 2xl:w-[35%]
+            top-20 sm:top-24 md:top-28 lg:top-12 xl:top-5 2xl:top-7 
+            right-40 sm:right-14 md:right-[5.5rem] lg:right-44 xl:right-[10.5rem] 2xl:right-[23rem]"
+        />
+        <div className="flex mt-16 sm:mt-0 md:mt-24 lg:mt-20 justify-center sm:order-2 2xl:mr-5">
           <ProfileEffect />
         </div>
         <div className="flex-1 p-4 mt-16">
@@ -88,7 +96,7 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 1 }}
               viewport={{ once: true }}
             >
-              Aspiring developer proficient in React.js, TypeScript, JavaScript,
+              Aspiring developer proficient in React, TypeScript, JavaScript,
               Tailwind CSS, and Framer Motion, with experience in AI language
               model evaluation. Currently expanding into full-stack development
               by mastering the MERN stack. As a recent CS graduate in Canada, I
