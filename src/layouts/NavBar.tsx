@@ -2,7 +2,7 @@ import { HashLink } from "react-router-hash-link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoMdCloseCircle, IoMdMenu } from "react-icons/io";
-import { routesMenu } from "./routes/routesMenu";
+import { routesMenu } from "../routes/routesMenu";
 
 const NavBar = () => {
   // Set that active and previous routes are initially "home" as default

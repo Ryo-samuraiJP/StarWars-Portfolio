@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import SocialIcons from "./components/ui/SocialIcons";
+import SocialIcons from "../components/SocialIcons";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -33,8 +33,8 @@ const Footer = () => {
           the code awakens
         </h1>
         <p className="mt-4 sm:mx-16 lg:mx-[12rem] xl:mx-80 text-yellow-500 text-xs sm:text-base">
-          Reach out to me today and let's discuss how I can help you achieve
-          your goals. Let's build something impactful together!
+          Contact me today and discuss how I can help you achieve your goals.
+          Let's build something that solves real problems together!
         </p>
       </motion.div>
       <motion.div

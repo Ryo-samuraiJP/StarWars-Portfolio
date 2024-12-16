@@ -1,13 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { contactFormSchema, TContactFormSchema } from "./lib/types";
-import sendEmailWithEmailjs from "./lib/emailjs";
-import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
+import { contactFormSchema, TContactFormSchema } from "../lib/types";
+import sendEmailWithEmailjs from "../lib/emailjs";
+import Spotlight, { SpotlightCard } from "./ui/spotlight-card";
 import { ImRocket } from "react-icons/im";
-import validateEmail from "./api/emailValidatorWithZeroBounceApi";
+import validateEmail from "../api/emailValidatorWithZeroBounceApi";
 import { MdError, MdCheckCircle } from "react-icons/md";
-import ParticlesAnimation from "./components/ui/particles-animation";
+import ParticlesAnimation from "./ui/particles-animation";
 
 const ReactHookForm = () => {
   // State for email validation status

@@ -1,15 +1,15 @@
-import "./App.css";
+import "./styles/App.css";
 import { BrowserRouter } from "react-router-dom";
 import Home from "./sections/Home";
-import NavBar from "./NavBar";
-import ShootingStarsBackground from "./ShootingStarsBackground";
+import NavBar from "./layouts/NavBar";
+import ShootingStarsBackground from "./components/ShootingStarsBackground";
 import TechSkillSection from "./sections/TechSkillSection";
 import ProjectSection from "./sections/ProjectSection";
 import ServiceSection from "./sections/ServiceSection";
 import CredentialSection from "./sections/CredentialSection";
 import TechBlogSection from "./sections/TechBlogSection";
 import ContactSection from "./sections/ContactSection";
-import Footer from "./Footer";
+import Footer from "./layouts/Footer";
 import { useEffect, useState } from "react";
 import LoadingScreen from "./loadingScreen";
 

@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaYoutube, FaDev } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { SocialIconsAnimation } from "./social-icons-animation";
+import { SocialIconsAnimation } from "./ui/social-icons-animation";
 
 const iconData = [
   {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NumbersCounterAnimation } from "./numbers-counter-animation";
+import { NumbersCounterAnimation } from "./ui/numbers-counter-animation";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 

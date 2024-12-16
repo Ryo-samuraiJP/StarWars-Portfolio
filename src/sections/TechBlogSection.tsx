@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import SwiperBlog from "../SwiperBlog";
+import SwiperBlog from "../components/SwiperBlog";
 import { motion } from "framer-motion";
 
 const TechBlogSection = () => {

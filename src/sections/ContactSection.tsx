@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
-import ReactHookForm from "../ReactHookForm";
+import ReactHookForm from "../components/ReactHookForm";
 import { motion } from "framer-motion";
-import ContactWithGlobe from "../components/ui/ContactWithGlobe";
+import ContactWithGlobe from "../components/ContactWithGlobe";
 
 const ContactSection = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });

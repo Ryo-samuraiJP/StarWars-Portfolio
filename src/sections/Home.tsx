@@ -1,9 +1,9 @@
 import Typewriter from "typewriter-effect";
-import DownloadButton from "../components/ui/DownloadButton";
-import ProfileEffect from "../components/ui/ProfileEffect";
-import ScrollDown from "../components/ui/ScrollDown";
-import SocialIcons from "../components/ui/SocialIcons";
-import NumbersCounter from "../components/ui/NumbersCounter";
+import DownloadButton from "../components/DownloadButton";
+import ProfileEffect from "../components/ProfileEffect";
+import ScrollDown from "../components/ScrollDown";
+import SocialIcons from "../components/SocialIcons";
+import NumbersCounter from "../components/NumbersCounter";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { FaCanadianMapleLeaf } from "react-icons/fa";

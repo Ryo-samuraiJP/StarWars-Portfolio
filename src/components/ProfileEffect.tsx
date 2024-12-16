@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import profile from "../../assets/images/profile.jpeg";
+import profile from "./../assets/images/profile.jpeg";
 import { motion } from "framer-motion";
 
 const ProfileEffect = () => {

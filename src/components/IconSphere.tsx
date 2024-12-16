@@ -1,5 +1,5 @@
-import { icons } from "../../data/iconCloudData";
-import { IconCloud } from "./skills-cloud";
+import { icons } from "../data/iconCloudData";
+import { IconCloud } from "./ui/skills-cloud";
 import { motion } from "framer-motion";
 
 const IconSphere = () => {
