@@ -37,7 +37,7 @@ export const skillsData = [
         name: "TypeScript",
         icon: SiTypescript,
         color: "#3178C6",
-        progress: 50,
+        progress: 60,
       },
       {
         name: "JavaScript",
@@ -61,7 +61,7 @@ export const skillsData = [
         name: "HTML",
         icon: SiHtml5,
         color: "#E34F26",
-        progress: 90,
+        progress: 95,
       },
     ],
   },

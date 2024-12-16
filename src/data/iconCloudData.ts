@@ -7,6 +7,8 @@ export const icons = [
   "ejs",
   "typescript",
   "react",
+  "reacthookform",
+  "zod",
   "vite",
   "npm",
   "swiper",
@@ -29,4 +31,5 @@ export const icons = [
   "github",
   "githubactions",
   "uml",
+  "diagramsdotnet",
 ];
