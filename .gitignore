@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Files containing sensitive data like API keys and IDs
+src/api/emailValidatorWithZeroBounceApi.ts
+src/lib/emailjs.ts
