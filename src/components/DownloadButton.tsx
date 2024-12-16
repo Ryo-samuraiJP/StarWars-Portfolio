@@ -20,7 +20,7 @@ const DownloadButton = () => {
       viewport={{ once: true }}
     >
       <a
-        href="https://drive.usercontent.google.com/u/0/uc?id=1yGdq2gFQcFMqFplehfuVYZ2vOXEhnQMz&export=download"
+        href="https://drive.usercontent.google.com/u/0/uc?id=1du64XPxr8GDaOoIWUNxP4_SwYYqU4p8L&export=download"
         download="Rio_Ryoichi_Resume.pdf"
         className="absolute w-full h-full top-0 left-0 z-10"
       ></a>
@@ -28,7 +28,7 @@ const DownloadButton = () => {
         <span className="left-0 text-left text-white text-shadow-neon font-semibold transform transition-all duration-300 group-hover:text-transparent">
           Download Resume
         </span>
-        <span className="absolute right-0 h-full w-10 bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:w-full">
+        <span className="absolute right-0 h-full w-9 sm:w-9 lg:w-8 xl:w-9 bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:w-full">
           <FiDownload className="fill-gray text-xl text-blue-800 font-black" />
         </span>
       </button>
