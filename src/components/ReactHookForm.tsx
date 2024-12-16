@@ -5,10 +5,10 @@ import {
   contactFormSchema,
   TContactFormSchema,
 } from "../lib/types-of-contact-form-schema";
-import { sendEmailWithEmailjs } from "../lib/email-js";
+import sendEmailWithEmailjs from "../lib/emailjs";
 import Spotlight, { SpotlightCard } from "./ui/spotlight-card";
 import { ImRocket } from "react-icons/im";
-import { validateEmail } from "../api/emailValidatorWithZeroBounceApi";
+import validateEmail from "../api/emailValidatorWithZeroBounceApi";
 import { MdError, MdCheckCircle } from "react-icons/md";
 import ParticlesAnimation from "./ui/particles-animation";
 
