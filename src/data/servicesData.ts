@@ -23,7 +23,7 @@ export const servicesData = [
   },
   {
     id: 4,
-    name: "Agile Software Modeling",
+    name: "Agile Architecture Design",
     desc: "I design software architectural models using UML and diagramming tools to support efficient development. By following Agile methodologies, I ensure streamlined processes and effective collaboration.",
     icon: BsDiagram3,
   },
