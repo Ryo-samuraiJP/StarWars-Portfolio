@@ -32,9 +32,9 @@ const Footer = () => {
         <h1 className="text-yellow-500 star-wars-font text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
           the code awakens
         </h1>
-        <p className="mt-4 sm:mx-16 lg:mx-[12rem] xl:mx-80 text-yellow-500 text-xs sm:text-base">
-          Contact me today and discuss how I can help you achieve your goals.
-          Let's build something that solves real problems together!
+        <p className="mt-4 sm:mx-10 md:mx-16 lg:mx-48 xl:mx-80 text-yellow-500 text-xs sm:text-base">
+          Reach out to me today and let's discuss how I can help you achieve
+          your goals. Let's build something that solves real problems together!
         </p>
       </motion.div>
       <motion.div
