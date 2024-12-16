@@ -1,7 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { contactFormSchema, TContactFormSchema } from "../lib/types";
+import {
+  contactFormSchema,
+  TContactFormSchema,
+} from "../lib/types-of-contact-form-schema";
 import sendEmailWithEmailjs from "../lib/emailjs";
 import Spotlight, { SpotlightCard } from "./ui/spotlight-card";
 import { ImRocket } from "react-icons/im";
