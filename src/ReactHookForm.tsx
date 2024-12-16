@@ -5,7 +5,7 @@ import { contactFormSchema, TContactFormSchema } from "./lib/types";
 import sendEmailWithEmailjs from "./lib/emailjs";
 import Spotlight, { SpotlightCard } from "./components/ui/spotlight-card";
 import { ImRocket } from "react-icons/im";
-import validateEmail from "./lib/emailValidator";
+import validateEmail from "./api/emailValidatorWithZeroBounceApi";
 import { MdError, MdCheckCircle } from "react-icons/md";
 import ParticlesAnimation from "./components/ui/particles-animation";
 
