@@ -14,6 +14,7 @@ import {
 import ShiningButton from "./components/ui/ShiningButton";
 import { IoMdOpen, IoMdTime } from "react-icons/io";
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
+import { fetchDevPosts } from "./api/fetchPostsWithDevApi";
 
 // DEV.to API response type definition
 interface Post {
@@ -35,21 +36,13 @@ const SwiperBlog: React.FC = () => {
   // State to store the number of slides per view based on the screen width
   const [slidesPerView, setSlidesPerView] = useState(1);
 
-  // Fetch the latest posts from DEV.to
+  // Fetch DEV posts by username when the component is mounted
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch(
-          "https://dev.to/api/articles?username=ryoichihomma"
-        );
-        const data = await response.json();
-        setPosts(data.slice(0, 5));
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
+    const getPosts = async () => {
+      const data = await fetchDevPosts("ryoichihomma");
+      setPosts(data.slice(0, 5));
     };
-
-    fetchPosts();
+    getPosts();
   }, []);
 
   // Update the number of slides per view based on the screen width
