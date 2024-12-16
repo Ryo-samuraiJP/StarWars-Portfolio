@@ -18,12 +18,12 @@ interface ICredentialsData {
 export const credentialsData: ICredentialsData[] = [
   {
     id: 1,
-    title: "AI Trainer / Evaluator",
+    title: "AI (Language Model) Trainer",
     date: "Jun 2024 - Present",
     organization: "Outlier",
     icon: outlier,
     location: "San Francisco, US (Remote)",
-    desc: "I evaluated roughly 400+ AI prompts and responses across various categories and constraints to ensure high-quality outputs. Throughout this experience, I developed expertise in effective AI prompting even in areas where it typically struggles, generative AI tools, and analytical skills. Leveraging my computer science background, I ensured accurate AI responses to CS-related questions. I also ranked and rewrote AI responses to correct errors in grammar, typos, phrasing, factuality, and other aspects, improving writing quality and obtaining client satisfaction. Additionally, I reviewed about 20 tasks from other evaluators, providing feedback to improve quality and demonstrating critical thinking and quality assurance abilities.",
+    desc: "Evaluated roughly 850+ AI prompts and responses across various categories and constraints to ensure high-quality outputs, developing expertise in effective AI prompting even in areas where it typically struggles, generative AI tools, and analytical skills. Ensured that AI language models responded correctly to programming and mathematical questions using the CS background, effectively enhancing problem-solving skills. Ranked and rewrote AI responses to correct errors in grammar, typos, phrasing, factuality, and more aspects, improving writing quality and obtaining client satisfaction. Reviewed 20+ tasks completed by other contributors and provided feedback to improve the product quality, demonstrating critical thinking and quality assurance abilities.",
     skills: ["AI Prompting", "Critical Thinking", "Quality Assurance"],
   },
   // {
