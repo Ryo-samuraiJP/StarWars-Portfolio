@@ -82,7 +82,14 @@ const NavBar = () => {
         ${isVisible ? "translate-y-0" : "-translate-y-[700%]"}`}
     >
       {/* Logo as text */}
-      <div className="text-2xl sm:text-3xl text-yellow-500 star-wars-font -space-y-2 lg:mt-9 lg:-mx-72">
+      <div
+        className="text-2xl sm:text-3xl text-yellow-500 star-wars-font -space-y-2 lg:mt-9 lg:-mx-72 hover:cursor-pointer"
+        // Scroll to the top of the page when the text logo is clicked
+        onClick={() => {
+          handleRouteClick("home");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
         <p>ryoichi</p>
         <p>homma</p>
       </div>
