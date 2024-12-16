@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment variables 
-.env
+# Files containing sensitive data like API keys and IDs
+src/api/emailValidatorWithZeroBounceApi.ts
+src/lib/email-js.ts
