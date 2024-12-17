@@ -14,13 +14,13 @@ const NumbersCounter = () => {
     const fetchDevData = async () => {
       try {
         const res = await fetch(
-          "https://dev.to/api/articles?username=ryoichihomma"
+          "https://dev.to/api/articles?username=ryoichihomma&per_page=100"
         );
         const data = await res.json();
 
         // console.log("Fetched data:", data); // Degugger
 
-        setPostCount(data.length + 1);
+        setPostCount(data.length);
       } catch (error) {
         console.error("Error fetching DEV data:", error);
       }
