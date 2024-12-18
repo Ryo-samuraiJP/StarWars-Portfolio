@@ -84,19 +84,38 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
             </div>
             <div className="flex items-center gap-x-3 lg:gap-x-4 mt-2 text-sm lg:text-base">
               <p className="font-semibold text-left">Skill Used:</p>
-              <div className="flex flex-row gap-2 md:gap-2.5 lg:gap-3">
-                {project.tech_used.map((tech, index) => (
-                  <div key={index} className="relative group">
-                    <tech.icon className="text-xl cursor-pointer" />
-                    <div
-                      className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1 border-2 rounded-full
+              {project.tech_used.length > 7 ? (
+                <div
+                  className="flex flex-row gap-2 md:gap-2.5 lg:gap-3
+                  w-[65%] sm:w-[63%] md:w-[70%] xl:w-[75%] overflow-hidden overflow-x-scroll scrollbarX"
+                >
+                  {project.tech_used.map((tech, index) => (
+                    <div key={index} className="relative group">
+                      <tech.icon className="text-xl cursor-pointer mb-1.5" />
+                      <div
+                        className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1 border-2 rounded-full
                         opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
-                    >
-                      {tech.name}
+                      >
+                        {tech.name}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-row gap-2 md:gap-2.5 lg:gap-3">
+                  {project.tech_used.map((tech, index) => (
+                    <div key={index} className="relative group">
+                      <tech.icon className="text-xl cursor-pointer" />
+                      <div
+                        className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1 border-2 rounded-full
+                        opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
+                      >
+                        {tech.name}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         </div>

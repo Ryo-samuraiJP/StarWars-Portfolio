@@ -2,30 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Star Wars font */
 @font-face {
   font-family: "StarJedi";
   src: url("/src/assets/fonts/Starjhol.ttf") format("truetype");
 }
-
 .star-wars-font {
   font-family: "StarJedi", sans-serif;
 }
 
+/* Custom scrollbar */
+.scrollbarX::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.scrollbarX::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.scrollbarX::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* Swiper */
 .swiper-button-prev,
 .swiper-button-next {
   @apply text-gray-500 !important;
   @apply hidden xl:block !important;
 }
-
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   @apply text-gray-300 transition-all duration-300 ease-in-out !important;
 }
-
 .swiper-pagination-bullet {
   @apply bg-slate-50 -mb-[0.8rem] p-[0.325rem] rounded-full !important;
 }
-
 .swiper-pagination-bullet-active {
   @apply bg-slate-300 transition-all duration-300 ease-in-out !important;
 }
