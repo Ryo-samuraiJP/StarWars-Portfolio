@@ -1,4 +1,5 @@
 import { IoLogoGithub, IoLogoYoutube, IoMdOpen } from "react-icons/io";
+import portfolio from "./../assets/images/portfolio.png";
 import itone from "./../assets/images/itone.png";
 import ai_visual_doppelganger from "./../assets/images/ai_visual_doppelganger.jpg";
 import platemate from "./../assets/images/platemate.jpeg";
@@ -6,21 +7,31 @@ import platemate_architecture from "./../assets/images/platemate_architecture.pn
 import campus_network_simulator from "./../assets/images/network_simulator.png";
 import {
   SiAndroidstudio,
+  SiAxios,
   SiCisco,
   SiCss3,
   SiDiagramsdotnet,
+  SiDotenv,
+  SiExpress,
   SiFlask,
   SiGoogledrive,
   SiHtml5,
   SiJavascript,
+  SiNodedotjs,
   SiNumpy,
+  SiPostman,
   SiPrezi,
   SiPython,
   SiReact,
+  SiReacthookform,
+  SiSwiper,
   SiTailwindcss,
+  SiTypescript,
   SiUml,
   SiVite,
+  SiZod,
 } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
 import { FiDownload } from "react-icons/fi";
 import { BsFiletypeXml } from "react-icons/bs";
 import { AiOutlineJava } from "react-icons/ai";
@@ -28,6 +39,36 @@ import { AiOutlineJava } from "react-icons/ai";
 export const projectsData = [
   {
     id: 1,
+    title: "Full-Stack Personal Portfolio",
+    desc: "Modern animated portfolio themed on Star Wars",
+    image: portfolio,
+    genre: "Web",
+    links: [
+      { icon: IoMdOpen, text: "Live", url: "https://www.ryoichihomma.me/" },
+      {
+        icon: IoLogoGithub,
+        text: "GitHub",
+        url: "https://github.com/Ryo-samuraiJP/Fullstack-Portfolio",
+      },
+    ],
+    tech_used: [
+      { icon: SiReact, name: "React" },
+      { icon: SiVite, name: "Vite" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: TbBrandFramerMotion, name: "Framer Motion" },
+      { icon: SiSwiper, name: "Swiper" },
+      { icon: SiAxios, name: "Axios" },
+      { icon: SiNodedotjs, name: "Node.js" },
+      { icon: SiExpress, name: "Express.js" },
+      { icon: SiPostman, name: "Postman" },
+      { icon: SiDotenv, name: "dotenv" },
+      { icon: SiReacthookform, name: "React Hook Form" },
+      { icon: SiZod, name: "Zod" },
+    ],
+  },
+  {
+    id: 2,
     title: "iTone",
     desc: "Music streaming web application inspired by Spotify",
     image: itone,
@@ -48,7 +89,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "AI Visual Doppelganger",
     desc: "Image replication web tool powered by AI",
     image: ai_visual_doppelganger,
@@ -80,7 +121,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "PlateMate",
     desc: "Food delivery mobile application for Android OS",
     image: platemate,
@@ -104,7 +145,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "PlateMate Architecural Model",
     desc: "Food delivery system architectural design",
     image: platemate_architecture,
@@ -127,7 +168,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Campus Network Simulator",
     desc: "Network infrastructure design for campus",
     image: campus_network_simulator,

@@ -122,12 +122,12 @@ const Home = () => {
             >
               Aspiring developer proficient in React, TypeScript, JavaScript,
               Tailwind CSS, and Framer Motion, with experience in AI language
-              model evaluation. Currently expanding into full-stack development
-              by mastering the MERN stack. As a recent CS graduate in Canada, I
-              seek opportunities to work with talented teams in building secure
-              and efficient software solutions. I am passionate about learning
-              new technologies and contributing to innovative projects by
-              leveraging my extensive knowledge and expertise in web
+              model evaluation. Continuously enhancing front-end skills and
+              expanding into the MERN stack. As a recent CS graduate in Canada,
+              I seek opportunities to work with talented teams in building
+              secure and efficient software solutions. I am passionate about
+              learning new technologies and contributing to innovative projects
+              by leveraging my extensive knowledge and expertise in web
               development, AI language model evaluation, and effective AI
               prompting. Additionally, I am a huge MLB fan interested in sports
               science and baseball data analytics!
