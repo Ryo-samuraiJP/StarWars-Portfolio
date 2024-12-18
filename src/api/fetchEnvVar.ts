@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Fetch environment variables from the server
 export const fetchEnvVar = async () => {
+  // Send a GET request to the server in order to fetch environment variables
   try {
     const response = await axios.get("http://localhost:3000/api/env");
     return response.data;

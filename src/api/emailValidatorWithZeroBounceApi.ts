@@ -1,16 +1,10 @@
 import axios from "axios";
-import { fetchEnvVar } from "./fetchEnvVar";
 
-// Validate an email address using the ZeroBounce API
 export const validateEmail = async (email: string): Promise<boolean> => {
-  const env = await fetchEnvVar();
-  // Get the ZeroBounce API key from the environment variables fetched from the server
-  const apiKey = env.ZEROBOUNCE_API_KEY;
-
-  // Validate the email address using the ZeroBounce API and return the result
+  // Send a GET request to the server in order to validate an email address using ZeroBounce API
   try {
     const response = await axios.get(
-      `https://api.zerobounce.net/v2/validate?api_key=${apiKey}&email=${email}`
+      `http://localhost:3000/api/validate-email?email=${email}`
     );
     return response.data.status === "valid";
   } catch (error) {
