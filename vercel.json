@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/api/env",
+      "dest": "/api/env",
+      "methods": ["GET"],
+      "headers": {
+        "cache-control": "s-maxage=1, stale-while-revalidate"
+      }
+    }
+  ]
+}
