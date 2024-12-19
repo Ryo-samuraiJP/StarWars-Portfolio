@@ -8,7 +8,8 @@ dotenv.config(); // Load environment variables from .env file
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors()); // Enable CORS for all requests to the server
+// Enable CORS for all requests to the server
+app.use(cors({ origin: "https://www.ryoichihomma.me" })); // frontend domain
 
 // API endpoint to get the environment variables from the server side
 app.get("/api/env", (req, res) => {
