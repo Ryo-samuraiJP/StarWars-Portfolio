@@ -1,11 +1,8 @@
 import axios from "axios";
 
-const BASE_URL =
-  process.env.BASE_URL ||
-  "https://fullstack-portfolio-f6wfqbcgn-ryo-samuraijps-projects.vercel.app"; // Remote server domain
+const BASE_URL = process.env.VITE_BASE_URL || "http://localhost:3000";
 
 export const validateEmail = async (email: string): Promise<boolean> => {
-  // Send a GET request to the server in order to validate an email address using ZeroBounce API
   try {
     const response = await axios.get(
       `${BASE_URL}/api/validate-email?email=${email}`

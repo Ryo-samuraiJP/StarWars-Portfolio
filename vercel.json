@@ -5,7 +5,8 @@
       "dest": "/api/env",
       "methods": ["GET"],
       "headers": {
-        "cache-control": "s-maxage=1, stale-while-revalidate"
+        "cache-control": "s-maxage=1, stale-while-revalidate",
+        "Authorization": "Bearer 6asB3Wo1kGIMjpfBrcGL0JOD"
       }
     },
     {
@@ -13,7 +14,8 @@
       "dest": "/api/validate-email",
       "methods": ["GET"],
       "headers": {
-        "cache-control": "s-maxage=1, stale-while-revalidate"
+        "cache-control": "s-maxage=1, stale-while-revalidate",
+        "Authorization": "Bearer 6asB3Wo1kGIMjpfBrcGL0JOD"
       }
     }
   ]

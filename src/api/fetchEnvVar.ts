@@ -1,11 +1,8 @@
 import axios from "axios";
 
-const BASE_URL =
-  process.env.BASE_URL ||
-  "https://fullstack-portfolio-f6wfqbcgn-ryo-samuraijps-projects.vercel.app"; // Remote server domain
+const BASE_URL = process.env.VITE_APP_BASE_URL || "http://localhost:3000";
 
 export const fetchEnvVar = async () => {
-  // Send a GET request to the server in order to fetch environment variables
   try {
     const response = await axios.get(`${BASE_URL}/api/env`);
     return response.data;
