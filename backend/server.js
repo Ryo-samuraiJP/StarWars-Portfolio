@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Enable CORS for all requests to the server
-app.use(cors({ origin: "https://www.ryoichihomma.me" })); // frontend domain
+app.use(cors({ origin: process.env.BASE_URL })); // frontend domain
 
 // API endpoint to get the environment variables from the server side
 app.get("/api/env", (req, res) => {

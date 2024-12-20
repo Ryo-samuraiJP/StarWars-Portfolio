@@ -7,6 +7,14 @@
       "headers": {
         "cache-control": "s-maxage=1, stale-while-revalidate"
       }
+    },
+    {
+      "src": "/api/validate-email",
+      "dest": "/api/validate-email",
+      "methods": ["GET"],
+      "headers": {
+        "cache-control": "s-maxage=1, stale-while-revalidate"
+      }
     }
   ]
 }
