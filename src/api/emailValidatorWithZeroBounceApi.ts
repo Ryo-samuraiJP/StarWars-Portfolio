@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+const BASE_URL =
+  import.meta.env.VITE_BASE_URL ||
+  `https://${process.env.VERCEL_URL}` ||
+  "http://localhost:3000";
 
 export const validateEmail = async (email: string): Promise<boolean> => {
   try {
