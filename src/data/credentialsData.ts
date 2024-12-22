@@ -24,7 +24,15 @@ export const credentialsData: ICredentialsData[] = [
     icon: outlier,
     location: "San Francisco, US (Remote)",
     desc: "Evaluated roughly 850+ AI prompts and responses across various categories and constraints to ensure high-quality outputs, developing expertise in effective AI prompting even in areas where it typically struggles, generative AI tools, and analytical skills. Ensured that AI language models responded correctly to programming and mathematical questions using the CS background, effectively enhancing problem-solving skills. Ranked and rewrote AI responses to correct errors in grammar, typos, phrasing, factuality, and more aspects, improving writing quality and obtaining client satisfaction. Reviewed 20+ tasks completed by other contributors and provided feedback to improve the product quality, demonstrating critical thinking and quality assurance abilities.",
-    skills: ["AI Prompting", "Critical Thinking", "Quality Assurance"],
+    skills: [
+      "AI Prompting",
+      "Analytical Skills",
+      "Critical Thinking",
+      "Problem-Solving",
+      "Generative AI Tools",
+      "Quality Assurance",
+      "Quality Auditing",
+    ],
   },
   // {
   //   id: 2,

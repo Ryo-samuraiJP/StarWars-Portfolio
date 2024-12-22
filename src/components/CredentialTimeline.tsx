@@ -37,8 +37,12 @@ const iconMap: { [key: string]: JSX.Element | string } = {
   Typescript: <SiTypescript />,
   Npm: <SiNpm />,
   "AI Prompting": "AI prompting,",
+  "Analytical Skills": "analytical skills,",
   "Critical Thinking": "critical thinking,",
-  "Quality Assurance": "quality assurance, etc.",
+  "Problem-Solving": "problem-solving,",
+  "Generative AI Tools": "generative AI tools,",
+  "Quality Assurance": "quality assurance,",
+  "Quality Auditing": "quality auditing, etc.",
 };
 
 const CredentialTimeline = () => {
@@ -120,10 +124,10 @@ const CredentialTimeline = () => {
             </div>
             <div className="grid md:grid-cols-2">
               {credential.skills && credential.skills.length > 0 && (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center">
                   <span className="text-sm md:font-medium">Skills:</span>
                   {/* For icon skills: */}
-                  <div className="flex flex-row gap-2">
+                  <div className="flex flex-row gap-x-2 ml-2">
                     {credential.skills
                       .filter((skill) => typeof iconMap[skill] !== "string")
                       .map((skill, i) => (
@@ -133,14 +137,22 @@ const CredentialTimeline = () => {
                       ))}
                   </div>
                   {/* For text skills: */}
-                  <div className="flex flex-col sm:flex-row sm:gap-x-1.5 md:gap-x-2">
-                    {credential.skills
-                      .filter((skill) => typeof iconMap[skill] === "string")
-                      .map((skill, i) => (
-                        <span key={i} className="text-sm md:w-max font-light">
-                          {iconMap[skill]}
-                        </span>
-                      ))}
+                  <div className="flex flex-col sm:ml-0.5">
+                    <div
+                      className="grid grid-flow-col gap-x-1.5 overflow-hidden overflow-x-scroll scrollbarX
+                        w-[23%] sm:w-[50%] md:w-[65%] lg:w-[43%] xl:w-[48%]"
+                    >
+                      {credential.skills
+                        .filter((skill) => typeof iconMap[skill] === "string")
+                        .map((skill, i) => (
+                          <span
+                            key={i}
+                            className="text-sm sm:text-base w-max mb-0.5 font-light"
+                          >
+                            {iconMap[skill]}
+                          </span>
+                        ))}
+                    </div>
                   </div>
                 </div>
               )}
