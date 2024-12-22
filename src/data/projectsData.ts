@@ -12,14 +12,11 @@ import {
   SiCss3,
   SiDiagramsdotnet,
   SiDotenv,
-  SiExpress,
   SiFlask,
   SiGoogledrive,
   SiHtml5,
   SiJavascript,
-  SiNodedotjs,
   SiNumpy,
-  SiPostman,
   SiPrezi,
   SiPython,
   SiReact,
@@ -31,7 +28,7 @@ import {
   SiVite,
   SiZod,
 } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
+import { TbApi, TbBrandFramerMotion } from "react-icons/tb";
 import { FiDownload } from "react-icons/fi";
 import { BsFiletypeXml } from "react-icons/bs";
 import { AiOutlineJava } from "react-icons/ai";
@@ -39,8 +36,8 @@ import { AiOutlineJava } from "react-icons/ai";
 export const projectsData = [
   {
     id: 1,
-    title: "Full-Stack Personal Portfolio",
-    desc: "Modern animated portfolio themed on Star Wars",
+    title: "StarWars Portfolio",
+    desc: "Modern portfolio animated with Framer Motion and Swiper",
     image: portfolio,
     genre: "Web",
     links: [
@@ -59,10 +56,8 @@ export const projectsData = [
       { icon: TbBrandFramerMotion, name: "Framer Motion" },
       { icon: SiSwiper, name: "Swiper" },
       { icon: SiAxios, name: "Axios" },
-      { icon: SiNodedotjs, name: "Node.js" },
-      { icon: SiExpress, name: "Express.js" },
-      { icon: SiPostman, name: "Postman" },
-      { icon: SiDotenv, name: "dotenv" },
+      { icon: TbApi, name: "APIs" },
+      { icon: SiDotenv, name: "Dotenv" },
       { icon: SiReacthookform, name: "React Hook Form" },
       { icon: SiZod, name: "Zod" },
     ],

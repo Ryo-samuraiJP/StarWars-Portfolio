@@ -83,11 +83,11 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
               ))}
             </div>
             <div className="flex items-center gap-x-3 lg:gap-x-4 mt-2 text-sm lg:text-base">
-              <p className="font-semibold text-left">Skill Used:</p>
-              {project.tech_used.length > 7 ? (
+              <p className="font-semibold text-left">Tech Used:</p>
+              {project.tech_used.length > 6 ? (
                 <div
                   className="flex flex-row gap-2 md:gap-2.5 lg:gap-3
-                  w-[65%] sm:w-[63%] md:w-[70%] xl:w-[75%] overflow-hidden overflow-x-scroll scrollbarX"
+                  w-[65%] sm:w-[63%] md:w-[70%] lg:w-[73%] xl:w-[75%] overflow-hidden xl:overflow-visible overflow-x-scroll scrollbarX"
                 >
                   {project.tech_used.map((tech, index) => (
                     <div key={index} className="relative group">
