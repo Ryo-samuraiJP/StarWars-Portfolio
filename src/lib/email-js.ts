@@ -1,15 +1,14 @@
 import emailjs from "@emailjs/browser";
 import { TContactFormSchema } from "./types-of-contact-form-schema";
 import { validateEmail } from "../api/emailValidatorWithZeroBounceApi";
-import { fetchEnvVar } from "../api/fetchEnvVar";
+
+// Load EmailJS service ID, template ID, and public key from environment variables (set in .env file)
+const SERVICE_ID = process.env.EMAILJS_SERVICE_ID || "";
+const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID || "";
+const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY || "";
 
 export const sendEmailWithEmailjs = async (data: TContactFormSchema) => {
-  const env = await fetchEnvVar();
-  // Get EmailJS IDs and key from the environment variables fetched from the server
-  const SERVICE_ID = env.EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = env.EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = env.EMAILJS_PUBLIC_KEY;
-
+  // Validate email address using emailValidator function before sending the email with EmailJS
   const isEmailValid = await validateEmail(data.email);
   if (!isEmailValid) {
     throw new Error("Email address is invalid");

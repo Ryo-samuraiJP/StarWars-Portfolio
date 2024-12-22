@@ -1,11 +1,13 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+// Load ZeroBounce API key from environment variables (set in .env file)
+const ZEROBOUNCE_API_KEY = process.env.ZEROBOUNCE_API_KEY;
 
+// Validate email address using ZeroBounce API
 export const validateEmail = async (email: string): Promise<boolean> => {
   try {
     const response = await axios.get(
-      `${BASE_URL}/api/validate-email?email=${email}`
+      `https://api.zerobounce.net/v2/validate?api_key=${ZEROBOUNCE_API_KEY}&email=${email}`
     );
     return response.data.status === "valid";
   } catch (error) {
