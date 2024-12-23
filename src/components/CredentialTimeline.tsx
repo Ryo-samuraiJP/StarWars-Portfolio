@@ -137,17 +137,17 @@ const CredentialTimeline = () => {
                       ))}
                   </div>
                   {/* For text skills: */}
-                  <div className="flex flex-col sm:ml-0.5">
+                  <div className="overflow-auto md:overflow-visible">
                     <div
-                      className="grid grid-flow-col gap-x-1.5 overflow-hidden overflow-x-scroll scrollbarX
-                        w-[23%] sm:w-[50%] md:w-[65%] lg:w-[43%] xl:w-[48%]"
+                      className="flex flex-row whitespace-nowrap gap-x-1 sm:gap-x-1.5 overflow-hidden
+                        overflow-x-scroll scrollbarX w-[23%] sm:w-[50%] md:w-[63%] lg:w-[91%] xl:w-[48%]"
                     >
                       {credential.skills
                         .filter((skill) => typeof iconMap[skill] === "string")
                         .map((skill, i) => (
                           <span
                             key={i}
-                            className="text-sm sm:text-base w-max mb-0.5 font-light"
+                            className="text-sm sm:text-base mb-1 sm:mb-0.5 font-light"
                           >
                             {iconMap[skill]}
                           </span>
