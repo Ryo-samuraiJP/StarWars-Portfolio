@@ -37,6 +37,7 @@ const ProfileEffect = () => {
           delay: 0.5,
           duration: isLaptop ? 2.5 : 2,
         }}
+        viewport={{ once: true }}
       />
       <motion.div
         className="bg-cover bg-center bg-no-repeat shadow-[inset_0_0_0_9px_rgba(225,225,225,0.3)]
