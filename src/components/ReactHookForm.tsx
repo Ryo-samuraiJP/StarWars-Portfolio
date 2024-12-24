@@ -10,7 +10,7 @@ import { ImRocket } from "react-icons/im";
 import { MdError, MdCheckCircle } from "react-icons/md";
 import ParticlesAnimation from "./ui/particles-animation";
 import { validateEmail } from "../api/emailValidatorWithZeroBounceApi";
-import { sendEmailWithEmailjs } from "../lib/email-js";
+import { sendEmailWithEmailjs } from "../api/autoReplyWithEmailJsApi";
 
 const ReactHookForm = () => {
   // State for email validation status

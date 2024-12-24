@@ -1,6 +1,6 @@
 import axios from "axios";
-import { TContactFormSchema } from "./types-of-contact-form-schema";
-import { validateEmail } from "../api/emailValidatorWithZeroBounceApi";
+import { TContactFormSchema } from "../lib/types-of-contact-form-schema";
+import { validateEmail } from "./emailValidatorWithZeroBounceApi";
 
 // Load EmailJS service ID, template ID, and public key from environment variables (set in .env file)
 const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
