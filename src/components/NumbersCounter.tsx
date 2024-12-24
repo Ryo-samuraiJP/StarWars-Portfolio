@@ -30,7 +30,7 @@ const NumbersCounter = () => {
 
   return (
     <motion.div
-      className="grid sm:grid-cols-2 xl:grid-cols-4 gap-y-6 md:gap-x-16 lg:gap-x-52 xl:gap-0"
+      className="flex flex-col xl:flex-row xl:gap-x-14"
       initial={{
         opacity: 0,
         y: isMobile ? 100 : 150,
@@ -41,37 +41,41 @@ const NumbersCounter = () => {
       transition={{ delay: isMobile ? 0 : 0.6, duration: 1.5 }}
       viewport={{ once: true }}
     >
-      <div className="flex items-center justify-end sm:justify-normal gap-x-4 sm:gap-x-11 md:gap-x-3 xl:gap-x-0 sm:mb-7 xl:mb-0">
-        <div className="font-bold tracking-tighter w-4 md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
-          <NumbersCounterAnimation value={4} />+
+      <div className="sm:flex sm:flex-row sm:gap-x-40 md:gap-x-48 lg:gap-x-96 xl:gap-x-14">
+        <div className="flex items-center justify-end md:justify-normal sm:gap-x-0 md:gap-x-2.5 lg:gap-x-0 mb-5 sm:mb-12 lg:mb-16 xl:mb-0">
+          <div className="font-bold tracking-tighter md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
+            <NumbersCounterAnimation value={4} />+
+          </div>
+          <p className="w-20 sm:w-36 md:w-40 lg:w-44 font-light text-sm md:text-base text-right sm:text-center">
+            YEARS OF BUILDING SOFTWARE
+          </p>
         </div>
-        <p className="w-[6.8rem] sm:w-[9rem] lg:w-40 font-light text-sm md:text-base text-right sm:text-center">
-          YEARS OF BUILDING SOFTWARE
-        </p>
+        <div className="flex items-center justify-end md:justify-normal gap-x-3 sm:gap-x-4 lg:gap-x-5 xl:gap-x-4 mb-5 sm:mb-12 lg:mb-16 xl:mb-0">
+          <div className="font-bold tracking-tighter text-left text-5xl sm:text-[3.2rem]">
+            <NumbersCounterAnimation value={15} />
+          </div>
+          <p className="font-light text-sm md:text-base text-right sm:text-center">
+            CERTIFICATIONS
+          </p>
+        </div>
       </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-12 md:gap-x-11 lg:gap-x-14 xl:gap-x-11 sm:mb-7 xl:mb-0 sm:ml-24 xl:ml-0">
-        <div className="font-bold tracking-tighter w-6 text-left text-5xl sm:text-[3.2rem]">
-          <NumbersCounterAnimation value={15} />
+      <div className="sm:flex sm:flex-row sm:gap-x-24 md:gap-x-32 lg:gap-x-[20.5rem] xl:gap-x-14">
+        <div className="flex items-center justify-end md:justify-normal sm:gap-x-2 md:gap-x-2.5 xl:gap-x-2 mb-5 sm:mb-0">
+          <div className="font-bold tracking-tighter text-left text-5xl sm:text-[3.2rem]">
+            <NumbersCounterAnimation value={postCount ?? 0} />
+          </div>
+          <p className="w-28 md:w-32 font-light text-sm md:text-base text-right sm:text-center">
+            POSTS ON DEV COMMUNITY
+          </p>
         </div>
-        <p className="w-16 font-light text-sm md:text-base text-right sm:text-center mr-8 md:mr-0">
-          CERTIFICATIONS
-        </p>
-      </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-6 sm:gap-x-8 md:gap-x-3.5 lg:gap-x-5 xl:gap-x-0">
-        <div className="font-bold tracking-tighter w-8 md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
-          <NumbersCounterAnimation value={postCount ?? 0} />
+        <div className="flex items-center justify-end md:justify-normal sm:gap-x-0.5 md:gap-x-2.5 lg:gap-x-3.5 xl:gap-x-2">
+          <div className="font-bold tracking-tighter text-left text-5xl sm:text-[3.2rem]">
+            <NumbersCounterAnimation value={4700} />+
+          </div>
+          <p className="w-28 font-light text-sm md:text-base text-right sm:text-center">
+            TOTAL POST VIEWS ON DEV
+          </p>
         </div>
-        <p className="w-28 lg:w-32 font-light text-sm md:text-base text-right sm:text-center">
-          POSTS ON DEV COMMUNITY
-        </p>
-      </div>
-      <div className="flex items-center justify-end sm:justify-normal gap-x-12 sm:gap-x-14 md:gap-x-8 lg:gap-x-14 xl:gap-x-8">
-        <div className="font-bold tracking-tighter w-[6.25rem] md:w-32 text-left text-5xl sm:text-[3.2rem]">
-          <NumbersCounterAnimation value={4500} />+
-        </div>
-        <p className="w-28 font-light text-sm md:text-base text-right sm:text-center">
-          TOTAL POST VIEWS ON DEV
-        </p>
       </div>
     </motion.div>
   );
