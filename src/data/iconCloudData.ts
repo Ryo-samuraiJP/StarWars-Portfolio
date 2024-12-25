@@ -13,6 +13,7 @@ export const icons = [
   "npm",
   "swiper",
   "scrollreveal",
+  "dotenv",
   "nodedotjs",
   "express",
   "postman",

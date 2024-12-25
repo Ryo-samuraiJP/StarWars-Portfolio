@@ -37,7 +37,7 @@ export const projectsData = [
   {
     id: 1,
     title: "StarWars Portfolio",
-    desc: "Modern portfolio animated with Framer Motion and Swiper",
+    desc: "Modern web portfolio animated by Framer Motion",
     image: portfolio,
     genre: "Web",
     links: [
@@ -45,7 +45,7 @@ export const projectsData = [
       {
         icon: IoLogoGithub,
         text: "GitHub",
-        url: "https://github.com/Ryo-samuraiJP/Fullstack-Portfolio",
+        url: "https://github.com/Ryo-samuraiJP/StarWars-Portfolio",
       },
     ],
     tech_used: [
