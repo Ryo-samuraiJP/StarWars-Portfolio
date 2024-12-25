@@ -2,22 +2,27 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 const ScrollDown = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  // To adjust the delay and duration of the animation for special cases
+  const isSpecial = useMediaQuery({
+    query: "(min-width: 1280px) and (min-height: 941px)",
+  });
 
   return (
     <motion.div
       className="relative w-[1.875rem] h-[3.125rem] ml-[0.938rem] border-[0.188rem] rounded-[3.125rem] mb-4 cursor-pointer"
       initial={{
         opacity: 0,
-        y: 150,
+        scale: 0,
+        y: 200,
       }}
       whileInView={{
         opacity: 1,
+        scale: 1,
         y: 0,
       }}
       transition={{
-        delay: isMobile ? 0.25 : 0,
-        duration: 1.5,
+        delay: isSpecial ? 1 : 0,
+        duration: isSpecial ? 2 : 1.5,
       }}
       viewport={{ once: true }}
     >
