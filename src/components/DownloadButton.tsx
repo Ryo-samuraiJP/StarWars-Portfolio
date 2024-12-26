@@ -20,8 +20,8 @@ const DownloadButton = () => {
       viewport={{ once: true }}
     >
       <a
-        href="https://drive.usercontent.google.com/u/0/uc?id=1Wk5cGEU3aXp3dOkvNZLTQdxVSA4acMRe&export=download"
-        download="Ryoichi_(Rio)_Homma__Resume_2024.pdf"
+        href="https://drive.usercontent.google.com/u/0/uc?id=1norB0OdLPNzw-EppDWUXzmU5NxXkF4Md&export=download"
+        download="Ryoichi_(Rio)_Homma__Resume_2025.pdf"
         className="absolute w-full h-full top-0 left-0 z-10"
       ></a>
       <button className="w-full h-full flex items-center px-5 relative overflow-hidden rounded-full focus:outline-none ">
