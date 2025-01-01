@@ -25,16 +25,28 @@
 
 ## Technologies Used
 
-- **Main**: React | Vite | TypeScript | Tailwind CSS | Framer Motion ([Motion](https://github.com/motiondivision/motion))
+- **Main**: 
+  
+![React](https://img.shields.io/badge/React-20232a.svg?style=for-the-badge&logo=react&logoColor=61DAFB&logoSize=auto)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E&logoSize=auto)
+![TypeScript](https://img.shields.io/badge/TypeScript-%20?style=for-the-badge&logo=TypeScript&logoColor=FFF&color=3178C6)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white&logoSize=auto)
+![Framer Motion](https://custom-icon-badges.demolab.com/badge/Framer%20Motion-fff?style=for-the-badge&logo=framermotion&logoSize=auto)
+![Axios](https://img.shields.io/badge/Axios%20-%20?style=for-the-badge&logo=Axios&color=%235A29E4)
+![Dotenv](https://img.shields.io/badge/Dotenv%20-%20?style=for-the-badge&logo=Dotenv&color=000)
+![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=Swiper&logoSize=auto)
+![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form%20-%20?style=for-the-badge&logo=React-Hook-Form&logoColor=FFF&color=EC5990)
+![Zod](https://img.shields.io/badge/Zod%20-%20?style=for-the-badge&logo=Zod&color=3E67B1)
+
 - **APIs**: [DEV](https://dev.to/) | [ZeroBounce](https://www.zerobounce.net/?campaignid=1070376639&groupid=51898694789&adid=357518452232&gad_source=1&gclid=CjwKCAiAgoq7BhBxEiwAVcW0LMdzKjcZ8BMVprGFfN1mfI5fHrDwWLAH0lVsd5-JWTMw6h_i8Yf6eBoCxIsQAvD_BwE) | [EmailJS](https://www.emailjs.com/)
-- **Other Libraries and Tools**: Axios | Postman | [Dotenv](https://github.com/motdotla/dotenv) | [React Hook Form](https://github.com/react-hook-form/react-hook-form) | [Zod](https://github.com/colinhacks/zod) |  [Swiper](https://github.com/nolimits4web/swiper) | [react-icons](https://github.com/react-icons/react-icons) | [react-icon-cloud](https://github.com/teaguestockwell/react-icon-cloud) | [cobe](https://github.com/shuding/cobe) | [react-vertical-timeline](https://github.com/stephane-monnot/react-vertical-timeline)  [typewriterjs](https://github.com/tameemsafi/typewriterjs) | etc.
+- **Other Open Source Libraries**: [react-icons](https://github.com/react-icons/react-icons) | [typewriterjs](https://github.com/tameemsafi/typewriterjs) | [react-icon-cloud](https://github.com/teaguestockwell/react-icon-cloud) | [react-vertical-timeline](https://github.com/stephane-monnot/react-vertical-timeline) | [cobe](https://github.com/shuding/cobe) | etc.
 
 ## Installation
-- Prerequisites: npm is installed on your local machine.
+- Prerequisites: Git is installed on your local machine.
 
 1. Clone the repo: 
 ```
-git clone https://github.com/Ryo-samuraiJP/StarWars-Portfolio.git
+git clone https://github.com/your_username/StarWars-Portfolio.git
 ```
 
 2. Install dependencies:
@@ -47,7 +59,7 @@ npm install
 - React
 - Vite
 - Tailwind CSS
-- Framer Motion (Motion)
+- Framer Motion ([Motion](https://motion.dev/))
 - Swiper
 - Axios
 - Dotenv
