@@ -87,7 +87,7 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
               {project.tech_used.length > 6 ? (
                 <div
                   className="flex flex-row gap-2 md:gap-2.5 lg:gap-3
-                  w-[65%] sm:w-[63%] md:w-[70%] lg:w-[73%] xl:w-[75%] overflow-hidden xl:overflow-visible overflow-x-scroll scrollbarX"
+                  w-[65%] sm:w-[63%] md:w-[70%] lg:w-[73%] xl:w-[77%] overflow-hidden overflow-x-scroll scrollbarX"
                 >
                   {project.tech_used.map((tech, index) => (
                     <div key={index} className="relative group">

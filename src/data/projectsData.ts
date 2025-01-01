@@ -21,10 +21,12 @@ import {
   SiPython,
   SiReact,
   SiReacthookform,
+  SiRender,
   SiSwiper,
   SiTailwindcss,
   SiTypescript,
   SiUml,
+  SiVercel,
   SiVite,
   SiZod,
 } from "react-icons/si";
@@ -60,6 +62,7 @@ export const projectsData = [
       { icon: SiDotenv, name: "Dotenv" },
       { icon: SiReacthookform, name: "React Hook Form" },
       { icon: SiZod, name: "Zod" },
+      { icon: SiVercel, name: "Vercel" },
     ],
   },
   {
@@ -81,6 +84,7 @@ export const projectsData = [
       { icon: SiVite, name: "Vite" },
       { icon: SiTailwindcss, name: "Tailwind CSS" },
       { icon: SiJavascript, name: "JavaScript" },
+      { icon: SiVercel, name: "Vercel" },
     ],
   },
   {
@@ -113,6 +117,7 @@ export const projectsData = [
       { icon: SiJavascript, name: "JavaScript" },
       { icon: SiHtml5, name: "HTML" },
       { icon: SiCss3, name: "CSS" },
+      { icon: SiRender, name: "Render" },
     ],
   },
   {
