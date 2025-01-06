@@ -7,13 +7,11 @@ import platemate_architecture from "./../assets/images/platemate_architecture.pn
 import campus_network_simulator from "./../assets/images/network_simulator.png";
 import {
   SiAndroidstudio,
-  SiAxios,
   SiCisco,
   SiCss3,
   SiDiagramsdotnet,
   SiDotenv,
   SiFlask,
-  SiGoogledrive,
   SiHtml5,
   SiJavascript,
   SiNumpy,
@@ -22,7 +20,6 @@ import {
   SiReact,
   SiReacthookform,
   SiRender,
-  SiSwiper,
   SiTailwindcss,
   SiTypescript,
   SiUml,
@@ -56,8 +53,6 @@ export const projectsData = [
       { icon: SiTypescript, name: "TypeScript" },
       { icon: SiTailwindcss, name: "Tailwind CSS" },
       { icon: TbBrandFramerMotion, name: "Framer Motion" },
-      { icon: SiSwiper, name: "Swiper" },
-      { icon: SiAxios, name: "Axios" },
       { icon: TbApi, name: "APIs" },
       { icon: SiDotenv, name: "Dotenv" },
       { icon: SiReacthookform, name: "React Hook Form" },
@@ -112,8 +107,8 @@ export const projectsData = [
     ],
     tech_used: [
       { icon: SiFlask, name: "Flask" },
-      { icon: SiPython, name: "Python" },
       { icon: SiNumpy, name: "NumPy" },
+      { icon: SiPython, name: "Python" },
       { icon: SiJavascript, name: "JavaScript" },
       { icon: SiHtml5, name: "HTML" },
       { icon: SiCss3, name: "CSS" },
@@ -154,7 +149,7 @@ export const projectsData = [
       {
         icon: IoLogoGithub,
         text: "GitHub",
-        url: "https://github.com/Ryo-samuraiJP/PlateMate",
+        url: "https://github.com/Ryo-samuraiJP/PlateMate?tab=readme-ov-file#architectural-model",
       },
       {
         icon: SiPrezi,
@@ -180,9 +175,9 @@ export const projectsData = [
         url: "https://github.com/Ryo-samuraiJP/Campus-Network-Simulator",
       },
       {
-        icon: SiGoogledrive,
+        icon: IoLogoGithub,
         text: "Docs",
-        url: "https://drive.google.com/file/d/1EPAgZVmzu8FohEzQUeSY3xldoKdnoyNy/view?usp=sharing",
+        url: "https://github.com/Ryo-samuraiJP/Campus-Network-Simulator/blob/main/Documentation%20of%20Campus%20Network%20Simulator%20-%20Ryoichi%20Homma.pdf",
       },
       {
         icon: FiDownload,

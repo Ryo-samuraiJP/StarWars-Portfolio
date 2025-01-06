@@ -33,7 +33,7 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
       {filteredProjects.map((project, index) => (
         <div key={project.id} className="flex flex-col my-6">
           <motion.div
-            className="h-[27.5rem] sm:h-[29rem] md:h-[30rem] lg:h-[33rem] sm:mx-1 lg:mx-5 xl:mx-12 px-6 sm:px-7 md:px-8.5 lg:px-12 
+            className="h-[30rem] sm:h-[29rem] md:h-[30rem] lg:h-[33rem] sm:mx-1 lg:mx-5 xl:mx-12 px-6 sm:px-7 md:px-8.5 lg:px-12 
               border-2 border-[rgba(75,30,133,0.5)] rounded-3xl bg-gradient-to-br from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)] 
               flex flex-col justify-center items-left transition-all duration-300 hover:transform hover:-translate-y-2
               relative z-10"
@@ -82,17 +82,22 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-x-3 lg:gap-x-4 mt-2 text-sm lg:text-base">
+            <div className="flex items-center gap-x-3 mt-2 text-sm lg:text-base">
               <p className="font-semibold text-left">Tech Used:</p>
               {/* // Display the tech icons in a scrollbarX if more than 6 icons */}
               {project.tech_used.length > 6 ? (
                 <div
-                  className="flex flex-row gap-2 md:gap-2.5 lg:gap-3
-                  w-[65%] sm:w-[63%] md:w-[70%] lg:w-[73%] xl:w-[77%] overflow-hidden overflow-x-scroll scrollbarX"
+                  className={`flex flex-row gap-x-2 md:gap-x-2.5 lg:gap-x-3 overflow-hidden xl:overflow-visible
+                  w-[65%] sm:w-[63%] md:w-[70%] lg:w-[73%] xl:w-[77%] overflow-x-scroll scrollbarX ${
+                    // Hide the scrollbarX if less than 8 icons
+                    project.tech_used.length < 8
+                      ? "lg:overflow-visible lg:-mb-1.5 xl:-mb-0"
+                      : ""
+                  }`}
                 >
                   {project.tech_used.map((tech, index) => (
                     <div key={index} className="relative group">
-                      <tech.icon className="text-xl cursor-pointer mb-1.5" />
+                      <tech.icon className="text-xl cursor-pointer mb-1.5 xl:mb-0" />
                       <div
                         className="absolute top-full left-[50%] transform -translate-x-[50%] mt-2 w-max px-2 py-1 border-2 rounded-full
                         opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
@@ -103,7 +108,7 @@ const ProjectCards = ({ genre }: ProjectCardsProps) => {
                   ))}
                 </div>
               ) : (
-                <div className="flex flex-row gap-2 md:gap-2.5 lg:gap-3">
+                <div className="flex flex-row gap-x-2 md:gap-x-2.5 lg:gap-x-3">
                   {project.tech_used.map((tech, index) => (
                     <div key={index} className="relative group">
                       <tech.icon className="text-xl cursor-pointer" />
