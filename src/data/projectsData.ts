@@ -141,7 +141,7 @@ export const projectsData = [
   },
   {
     id: 5,
-    title: "PlateMate Architecural Model",
+    title: "PlateMate Architectural Model",
     desc: "Food delivery system architectural design",
     image: platemate_architecture,
     genre: "Others",
