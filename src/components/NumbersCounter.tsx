@@ -97,7 +97,7 @@ const NumbersCounter = () => {
             <NumbersCounterAnimation value={postCount ?? 0} />
           </div>
           <p className="w-28 md:w-32 font-light text-sm md:text-base text-right sm:text-center">
-            POSTS ON DEV COMMUNITY
+            TECH BLOG POSTS ON DEV
           </p>
         </motion.div>
         <motion.div
@@ -116,7 +116,7 @@ const NumbersCounter = () => {
           viewport={{ once: true }}
         >
           <div className="font-bold tracking-tighter text-left text-5xl sm:text-[3.2rem]">
-            <NumbersCounterAnimation value={4700} />+
+            <NumbersCounterAnimation value={5000} />+
           </div>
           <p className="w-28 font-light text-sm md:text-base text-right sm:text-center">
             TOTAL POST VIEWS ON DEV
