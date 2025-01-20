@@ -19,7 +19,7 @@
 - **Credential Showcase**: A timeline of professional and educational backgrounds with detailed descriptions, skills, and links to certifications.
 - **Skill Showcase**: Modern user-friendly interface to showcase skills I'm familiar with and primary technologies I'm proficient in the most, including their percentages.
 - **Full Responsive Design**: The website is fully responsive and works on mobile, tablet, laptop, and desktop devices.
-- **Modern Animation**: The website is animated by Framer Motion, including revealing animations, loading screen like Star Wars opening scence, and scrolling slideshow using Swiper.
+- **Modern Animation**: The website is animated by Framer Motion, including revealing animations, loading screen like Star Wars opening scene, and scrolling slideshow using Swiper.
 
 **PS**: Framer Motion was recently renamed to [**Motion**](https://motion.dev/blog/framer-motion-is-now-independent-introducing-motion) in November 2024. 
 
