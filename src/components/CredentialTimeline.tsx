@@ -7,13 +7,17 @@ import "react-vertical-timeline-component/style.min.css";
 import { credentialsData } from "../data/credentialsData";
 import {
   SiAxios,
+  SiC,
+  SiCss3,
   SiExpress,
   SiGit,
+  SiHtml5,
   SiJavascript,
   SiMongodb,
   SiNodedotjs,
   SiNpm,
   SiPostman,
+  SiPython,
   SiReact,
   SiTailwindcss,
   SiTypescript,
@@ -22,25 +26,35 @@ import { FaPlus } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import ShiningButton from "./ShiningButton";
+import { TbBrandCSharp, TbSql } from "react-icons/tb";
+import { AiOutlineJava } from "react-icons/ai";
 
 // Map of icons for skill icons and skill text strings
 const iconMap: { [key: string]: JSX.Element | string } = {
   Axios: <SiAxios />,
+  C: <SiC />,
+  CSharp: <TbBrandCSharp />,
+  CSS: <SiCss3 />,
   Express: <SiExpress />,
   Git: <SiGit />,
+  HTML: <SiHtml5 />,
+  Java: <AiOutlineJava />,
   Javascript: <SiJavascript />,
   Mongodb: <SiMongodb />,
   Nodedotjs: <SiNodedotjs />,
   Postman: <SiPostman />,
+  Python: <SiPython />,
   React: <SiReact />,
+  SQL: <TbSql />,
   Tailwindcss: <SiTailwindcss />,
   Typescript: <SiTypescript />,
   Npm: <SiNpm />,
+  "Generative AI Tools": "generative AI tools,",
+  "Prompt Engineering": "prompt engineering,",
   "AI Prompting": "AI prompting,",
-  "Analytical Skills": "analytical skills,",
   "Critical Thinking": "critical thinking,",
   "Problem-Solving": "problem-solving,",
-  "Generative AI Tools": "generative AI tools,",
+  "Analytical Skills": "analytical skills,",
   "Quality Assurance": "quality assurance,",
   "Quality Auditing": "quality auditing, etc.",
 };
@@ -127,7 +141,7 @@ const CredentialTimeline = () => {
                 <div className="flex items-center">
                   <span className="text-sm md:font-medium">Skills:</span>
                   {/* For icon skills: */}
-                  <div className="flex flex-row gap-x-2 ml-2">
+                  <div className="flex flex-row gap-x-1 sm:gap-x-2 ml-2">
                     {credential.skills
                       .filter((skill) => typeof iconMap[skill] !== "string")
                       .map((skill, i) => (
@@ -140,7 +154,7 @@ const CredentialTimeline = () => {
                   <div className="overflow-auto md:overflow-visible">
                     <div
                       className="flex flex-row whitespace-nowrap gap-x-1 sm:gap-x-1.5 overflow-hidden
-                        overflow-x-scroll scrollbarX w-[23%] sm:w-[50%] md:w-[63%] lg:w-[91%] xl:w-[48%]"
+                        overflow-x-scroll scrollbarX w-[20%] sm:w-[43%] md:w-[55%] lg:w-[80%] xl:w-[41%]"
                     >
                       {credential.skills
                         .filter((skill) => typeof iconMap[skill] === "string")
