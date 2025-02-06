@@ -1,4 +1,3 @@
-import { BsDatabase } from "react-icons/bs";
 import {
   SiTypescript,
   SiTailwindcss,
@@ -13,6 +12,7 @@ import {
   SiGithubactions,
   SiNodedotjs,
   SiReact,
+  SiOracle,
 } from "react-icons/si";
 
 export interface Skill {
@@ -52,13 +52,13 @@ export const skillsData = [
         progress: 80,
       },
       {
-        name: "CSS",
+        name: "CSS3",
         icon: SiCss3,
         color: "#1572B6",
         progress: 80,
       },
       {
-        name: "HTML",
+        name: "HTML5",
         icon: SiHtml5,
         color: "#E34F26",
         progress: 95,
@@ -70,13 +70,13 @@ export const skillsData = [
     category: "Backend Development",
     skills: [
       {
-        name: "Node",
+        name: "Node.js",
         icon: SiNodedotjs,
         color: "#5FA04E",
         progress: 60,
       },
       {
-        name: "Express",
+        name: "Express.js",
         icon: SiExpress,
         color: "#FCFCFCFC",
         progress: 50,
@@ -88,16 +88,16 @@ export const skillsData = [
         progress: 50,
       },
       {
-        name: "SQL",
-        icon: BsDatabase,
-        color: "#E10098",
-        progress: 70,
+        name: "OracleDB",
+        icon: SiOracle,
+        color: "#C74634",
+        progress: 60,
       },
       {
         name: "Python",
         icon: SiPython,
         color: "#3776AB",
-        progress: 60,
+        progress: 50,
       },
     ],
   },
@@ -109,7 +109,7 @@ export const skillsData = [
         name: "Git",
         icon: SiGit,
         color: "#F05032",
-        progress: 70,
+        progress: 80,
       },
       {
         name: "GitHub",
