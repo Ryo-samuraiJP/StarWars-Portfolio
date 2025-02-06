@@ -88,15 +88,15 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 1 }}
               viewport={{ once: true }}
             >
-              Aspiring developer proficient in React, TypeScript, JavaScript,
-              Tailwind CSS, and Framer Motion, with experience in AI language
-              model evaluation. Continuously enhancing front-end skills and
-              expanding into the MERN stack. As a recent CS graduate in Canada,
-              I seek opportunities to work with talented teams in building
-              secure and efficient software solutions. I am passionate about
-              learning new technologies and contributing to innovative projects
-              by leveraging my extensive knowledge and expertise in web
-              development, AI language model evaluation, and effective AI
+              Aspiring software engineer/developer proficient in React,
+              TypeScript, JavaScript, Tailwind CSS, and Framer Motion, with
+              experience in AI training (LLM evaluation). Continuously enhancing
+              front-end skills and expanding into the MERN stack. As a recent CS
+              graduate in Canada, I seek opportunities to work with talented
+              teams in building secure and efficient software solutions. I am
+              passionate about learning new technologies and contributing to
+              innovative projects by leveraging my extensive knowledge and
+              expertise in web development, LLM evaluation, and effective AI
               prompting. Additionally, I am a huge MLB fan interested in sports
               science and baseball data analytics!
             </motion.p>
