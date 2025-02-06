@@ -18,6 +18,7 @@ import { GrMysql } from "react-icons/gr";
 import { Meteors } from "./ui/meteros";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import { TbApi } from "react-icons/tb";
 
 const ServiceCards = () => {
   const isSmall = useMediaQuery({ query: "(min-width: 640px)" }); // For horizontal animation (used when less than 640px), same as Tailwind sm:prefix
@@ -64,13 +65,14 @@ const ServiceCards = () => {
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="relative inline-flex p-10">
                     <div className="grow">
+                      {/* Innermost circle of the solar system */}
                       <div className="absolute inset-6 border-2 border-slate-400 rounded-full">
                         {/* Fetch the service objects from the servicesData array and reder them here */}
                         {service.id === 1 && (
                           <SiReact className="text-xl relative z-10 -mt-5" />
                         )}
                       </div>
-                      {/* Icon positions in solar system */}
+                      {/* Middle circle of the solar system */}
                       <div className="absolute inset-2 border-2 border-slate-500 rounded-full">
                         {(service.id === 1 && (
                           <>
@@ -94,6 +96,7 @@ const ServiceCards = () => {
                             <SiDiagramsdotnet className="text-xl relative z-10 mt-4" />
                           ))}
                       </div>
+                      {/* Outermost circle of the solar system */}
                       <div className="absolute -inset-2 border-2 border-slate-600 rounded-full">
                         {(service.id === 1 && (
                           <>
@@ -102,7 +105,10 @@ const ServiceCards = () => {
                           </>
                         )) ||
                           (service.id === 2 && (
-                            <SiPython className="text-xl relative z-10 mt-[6.25rem] ml-7" />
+                            <>
+                              <SiPython className="text-xl relative z-10 mt-20 ml-3" />
+                              <TbApi className="text-xl relative z-10 mt-4 ml-20" />
+                            </>
                           )) ||
                           (service.id === 3 && (
                             <GrMysql className="text-xl relative z-10 mt-[6.25rem] ml-8" />
