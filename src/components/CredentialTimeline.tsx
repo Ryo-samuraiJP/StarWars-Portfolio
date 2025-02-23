@@ -196,20 +196,18 @@ const CredentialTimeline = () => {
           icon={
             <button
               onClick={toggleCredential}
-              className="flex pt-3 lg:pt-2"
+              className="flex"
               ref={loadMoreRef} // Reference to the "Load more" button
             >
               {isExpanded ? (
                 <div className="flex items-center gap-x-28 lg:gap-x-[8.25rem]">
-                  <IoMdClose />
-                  <div className="mb-3 font-semibold text-[#8a9198]">Close</div>
+                  <IoMdClose className="mb-2 sm:mb-3" />
+                  <div className="font-semibold text-[#8a9198]">Close</div>
                 </div>
               ) : (
                 <div className="flex items-center w-max gap-x-36 lg:gap-x-[10.5rem]">
-                  <FaPlus />
-                  <div className="mb-3 font-semibold text-[#8a9198]">
-                    Load more
-                  </div>
+                  <FaPlus className="mb-2 sm:mb-3" />
+                  <div className="font-semibold text-[#8a9198]">Load more</div>
                 </div>
               )}
             </button>
