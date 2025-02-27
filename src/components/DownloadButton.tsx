@@ -20,7 +20,7 @@ const DownloadButton = () => {
       viewport={{ once: true }}
     >
       <a
-        href="https://drive.google.com/file/d/13_iwUKlCI9AAzLRYVp2wK5-ybIqGkI1A/view?usp=sharing"
+        href="https://drive.google.com/file/d/1HXfVknJQvDJGQAkP5Gy-HNFt0V75z4yo/view?usp=sharing"
         target="_blank"
         download="Ryoichi_(Rio)_Homma__Resume_2025.pdf"
         className="absolute w-full h-full top-0 left-0 z-10"
