@@ -13,6 +13,7 @@ import {
   SiNodedotjs,
   SiReact,
   SiOracle,
+  SiAmazonwebservices,
 } from "react-icons/si";
 
 export interface Skill {
@@ -79,7 +80,7 @@ export const skillsData = [
         name: "Express.js",
         icon: SiExpress,
         color: "#FCFCFCFC",
-        progress: 50,
+        progress: 60,
       },
       {
         name: "MongoDB",
@@ -103,8 +104,14 @@ export const skillsData = [
   },
   {
     id: 3,
-    category: "DevOps",
+    category: "Cloud & DevOps",
     skills: [
+      {
+        name: "AWS",
+        icon: SiAmazonwebservices,
+        color: "#FF9000",
+        progress: 40,
+      },
       {
         name: "Git",
         icon: SiGit,

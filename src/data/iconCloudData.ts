@@ -28,6 +28,8 @@ export const icons = [
   "vercel",
   "netlify",
   "render",
+  "amazonwebservices",
+  "amazons3",
   "git",
   "github",
   "githubactions",
