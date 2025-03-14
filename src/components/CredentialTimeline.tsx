@@ -201,12 +201,12 @@ const CredentialTimeline = () => {
             >
               {isExpanded ? (
                 <div className="flex items-center gap-x-28 lg:gap-x-[8.25rem]">
-                  <IoMdClose className="mb-2 sm:mb-3" />
+                  <IoMdClose className="-mb-2.5 md:mb-3" />
                   <div className="font-semibold text-[#8a9198]">Close</div>
                 </div>
               ) : (
                 <div className="flex items-center w-max gap-x-36 lg:gap-x-[10.5rem]">
-                  <FaPlus className="mb-2 sm:mb-3" />
+                  <FaPlus className="-mb-2.5 md:mb-3" />
                   <div className="font-semibold text-[#8a9198]">Load more</div>
                 </div>
               )}
