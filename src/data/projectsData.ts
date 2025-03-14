@@ -1,4 +1,5 @@
 import { IoLogoGithub, IoLogoYoutube, IoMdOpen } from "react-icons/io";
+import rag_chatbot from "./../assets/images/rag_chatbot.png";
 import portfolio from "./../assets/images/portfolio.png";
 import itone from "./../assets/images/itone.png";
 import ai_visual_doppelganger from "./../assets/images/ai_visual_doppelganger.jpg";
@@ -6,15 +7,19 @@ import platemate from "./../assets/images/platemate.jpeg";
 import platemate_architecture from "./../assets/images/platemate_architecture.png";
 import campus_network_simulator from "./../assets/images/network_simulator.png";
 import {
+  SiAmazons3,
+  SiAmazonwebservices,
   SiAndroidstudio,
   SiCisco,
   SiCss3,
   SiDiagramsdotnet,
   SiDotenv,
   SiFlask,
+  SiGoogledrive,
   SiHtml5,
   SiJavascript,
   SiNumpy,
+  SiOpensearch,
   SiPrezi,
   SiPython,
   SiReact,
@@ -35,6 +40,30 @@ import { AiOutlineJava } from "react-icons/ai";
 export const projectsData = [
   {
     id: 1,
+    title: "RAG Chatbot in Amazon Bedrock",
+    desc: "RAG chatbot for several use cases solving real problems",
+    image: rag_chatbot,
+    genre: "AI / ML",
+    links: [
+      {
+        icon: IoLogoGithub,
+        text: "GitHub",
+        url: "https://github.com/Ryo-samuraiJP/RAG-Chatbot-in-AmazonBedrock",
+      },
+      {
+        icon: SiGoogledrive,
+        text: "Docs",
+        url: "https://drive.google.com/file/d/1q_Tdz_m4Zty3XiQAxinzxfZFH6I6k66z/view?usp=sharing",
+      },
+    ],
+    tech_used: [
+      { icon: SiAmazonwebservices, name: "Amazon Bedrock" },
+      { icon: SiAmazons3, name: "Amazon S3" },
+      { icon: SiOpensearch, name: "OpenSearch Serverless" },
+    ],
+  },
+  {
+    id: 2,
     title: "StarWars Portfolio",
     desc: "Modern web portfolio animated by Framer Motion",
     image: portfolio,
@@ -61,7 +90,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "iTone",
     desc: "Music streaming web application inspired by Spotify",
     image: itone,
@@ -83,9 +112,9 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "AI Visual Doppelganger",
-    desc: "Image replication web tool powered by AI",
+    desc: "AI-powered image replication web tool",
     image: ai_visual_doppelganger,
     genre: ["Web", "AI / ML"],
     links: [
@@ -116,7 +145,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "PlateMate",
     desc: "Food delivery mobile application for Android OS",
     image: platemate,
@@ -140,7 +169,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "PlateMate Architectural Model",
     desc: "Food delivery system architectural design",
     image: platemate_architecture,
@@ -163,7 +192,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Campus Network Simulator",
     desc: "Network infrastructure design for campus",
     image: campus_network_simulator,
@@ -175,9 +204,9 @@ export const projectsData = [
         url: "https://github.com/Ryo-samuraiJP/Campus-Network-Simulator",
       },
       {
-        icon: IoLogoGithub,
+        icon: SiGoogledrive,
         text: "Docs",
-        url: "https://github.com/Ryo-samuraiJP/Campus-Network-Simulator/blob/main/Documentation%20of%20Campus%20Network%20Simulator%20-%20Ryoichi%20Homma.pdf",
+        url: "https://drive.google.com/file/d/1EPAgZVmzu8FohEzQUeSY3xldoKdnoyNy/view?usp=sharing",
       },
       {
         icon: FiDownload,
