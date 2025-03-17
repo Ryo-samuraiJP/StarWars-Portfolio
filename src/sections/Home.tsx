@@ -91,14 +91,14 @@ const Home = () => {
               Aspiring software engineer/developer proficient in React,
               TypeScript, JavaScript, Tailwind CSS, and Framer Motion, with
               experience in AI training (LLM evaluation). Continuously enhancing
-              front-end skills and expanding into the MERN stack. As a recent CS
-              graduate in Canada, I seek opportunities to work with talented
-              teams in building secure and efficient software solutions. I am
-              passionate about learning new technologies and contributing to
-              innovative projects by leveraging my extensive knowledge and
-              expertise in web development, LLM evaluation, and effective AI
-              prompting. Additionally, I am a huge MLB fan interested in sports
-              science and baseball data analytics!
+              the MERN stack and exploring AWS. As a recent CS graduate in
+              Canada, I seek opportunities to work with talented teams in
+              building secure and efficient software solutions. I am passionate
+              about learning new technologies and contributing to innovative
+              projects by leveraging my extensive knowledge and expertise in web
+              development, LLM evaluation, and effective AI prompting.
+              Additionally, I am a huge MLB fan interested in sports science and
+              baseball data analytics!
             </motion.p>
             <div
               className="flex flex-col sm:flex-row items-center gap-10 sm:gap-[19rem] md:gap-[4.5rem] lg:gap-12
