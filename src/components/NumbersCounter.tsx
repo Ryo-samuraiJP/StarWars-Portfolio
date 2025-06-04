@@ -116,7 +116,7 @@ const NumbersCounter = () => {
           viewport={{ once: true }}
         >
           <div className="font-bold tracking-tighter text-left text-5xl sm:text-[3.2rem]">
-            <NumbersCounterAnimation value={6000} />+
+            <NumbersCounterAnimation value={7000} />+
           </div>
           <p className="w-28 font-light text-sm md:text-base text-right sm:text-center">
             TOTAL POST VIEWS ON DEV
