@@ -19,6 +19,7 @@ import {
   SiPostman,
   SiPython,
   SiReact,
+  SiNextdotjs,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
@@ -45,6 +46,7 @@ const iconMap: { [key: string]: JSX.Element | string } = {
   Postman: <SiPostman />,
   Python: <SiPython />,
   React: <SiReact />,
+  Nextjs: <SiNextdotjs />,
   SQL: <TbSql />,
   Tailwindcss: <SiTailwindcss />,
   Typescript: <SiTypescript />,
@@ -134,7 +136,13 @@ const CredentialTimeline = () => {
               )}
             </div>
             <div className="vertical-timeline-element-title text-sm py-3">
-              {credential.desc}
+              {credential.desc &&
+                credential.desc.split("\n").map((line, idx) => (
+                  <span key={idx}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
             </div>
             <div className="grid md:grid-cols-2">
               {credential.skills && credential.skills.length > 0 && (
