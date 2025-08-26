@@ -1,3 +1,5 @@
+import cajon from "../assets/images/cajon.png";
+import comsquare from "../assets/images/comsquare.png";
 import outlier from "../assets/images/outlier.jpeg";
 import linkedin from "../assets/images/linkedin.png";
 import mozilla from "../assets/images/mozilla.jpg";
@@ -177,7 +179,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "Outlier",
     icon: outlier,
     location: "San Francisco, CA (Remote)",
-    desc: "Evaluated 870+ AI prompts/responses across various categories and constraints to ensure high-quality outputs, understanding of the LLM behavior, generative AI tools, prompt engineering, and effective AI prompting. Ensured that the LLM responded correctly to programming and mathematical prompts, effectively enhancing problem-solving skills. Justified 870+ AI responses based on a hierarchy of various dimensions and rewrote them to fix errors, enhancing critical thinking and analytical skills. Reviewed 60+ AI prompts/responses completed by other evaluators and provided feedback to improve the production quality, resulting in successful client satisfaction and demonstrating quality assurance and auditing abilities.",
+    desc: "Worked on prompt engineering, factual verification, evaluation, and localization to ensure the quality of large language models (LLMs) prior to customer release.\n・Designed and refined about 450 prompts in English and Japanese across diverse categories and constraints, deepening understanding of LLM behavior and mastering prompt engineering techniques using Markdown to optimize AI model performance and user intent alignment.\n・Researched and analyzed the factual accuracy of roughly 900 AI-generated texts without relying on AI tools, applying expertise in mathematics and programming (HTML, CSS, JavaScript, Python) while also developing strong cross-domain research and source reliability assessment skills.\n・Evaluated approximately 900 AI-generated responses against predefined constraints and hierarchical quality dimensions, selecting the most appropriate output, correcting grammatical/typographical errors, and enhancing localization for improved clarity and cultural alignment.\n・Conducted final reviews of more than 60 tasks completed by team members, providing corrections and feedback that contributed to high customer satisfaction, while strengthening skills in critical thinking, quality assurance, and quality auditing.",
     skills: [
       "Generative AI Tools",
       "Prompt Engineering",
@@ -188,5 +190,25 @@ export const credentialsData: ICredentialsData[] = [
       "Quality Assurance",
       "Quality Auditing",
     ],
+  },
+  {
+    id: 18,
+    title: "Software Engineer Intern",
+    date: "Jun 2025 - Jul 2025",
+    organization: "Cajon, Inc.",
+    icon: cajon,
+    location: "Tokyo, Japan (Remote)",
+    desc: "Worked on data analysis for a SaaS-based recruitment platform, ”Salon Jobs”, for hairstylists operated by a beauty industry marketing company.\n・Collaborated in a 3-person team to analyze user behavior on the ”Salon Jobs” platform, focusing on conversion rates (CVR) from site visits to job applications.\n・Queried user data using SQL via Blazer to calculate application rates, conversions (CV), and CVR, identifying drop-off points in the user journey, and extracted insights on factors affecting user engagement.\n・Proposed data-driven strategies to improve CV and CVR, including UI/UX enhancements and feature improvements.",
+    skills: ["SQL"],
+  },
+  {
+    id: 19,
+    title: "Software Engineer Intern",
+    date: "Jun 2025 - Present",
+    organization: "COMSQUARE Co., Ltd.",
+    icon: comsquare,
+    location: "Tokyo, Japan (Remote)",
+    desc: "Worked on AI feasibility validation, quality assurance, and UI/UX improvements for telephony SaaS products such as CallTracker and VoiceX.\n・Advised on the feasibility of integrating an AI module into VoiceX to detect customer harassment, leveraging prior experience as an AI Trainer and in building the RAG chatbot using AWS, which enabled rapid prototyping and secured executive approval for implementation.\n・Tested CallTracker more than 50 times to ensure proper functionality and UI accuracy by entering predefined inputs into user fields, verifying expected outcomes, and confirming data reflection in browser storage using Developer Tools.\n・Expected to start enhancing UI/UX for SaaS products using Next.js, TypeScript, and CSS, focusing on improving usability and user engagement.",
+    skills: ["Nextjs", "Typescript", "CSS"],
   },
 ];
