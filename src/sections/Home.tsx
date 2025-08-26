@@ -88,8 +88,8 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 1 }}
               viewport={{ once: true }}
             >
-              Aspiring software engineer/developer proficient in React,
-              TypeScript, JavaScript, Tailwind CSS, and Framer Motion, with
+              Software engineer/developer proficient in React, TypeScript,
+              JavaScript, Tailwind CSS, and Framer Motion, with 1+ year of
               experience in AI training (LLM evaluation). Continuously enhancing
               the MERN stack and exploring AWS. As a recent CS graduate in
               Canada, I seek opportunities to work with talented teams in
