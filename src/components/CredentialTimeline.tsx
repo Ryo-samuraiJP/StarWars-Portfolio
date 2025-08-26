@@ -60,7 +60,7 @@ const iconMap: { [key: string]: JSX.Element | string } = {
 };
 
 const CredentialTimeline = () => {
-  const [credential, setCredential] = useState(credentialsData.slice(0, 3)); // the number of credentials that are loaded initially
+  const [credential, setCredential] = useState(credentialsData.slice(-3)); // the last three of credentials that are loaded initially
   const [, setHasMore] = useState(true); // to check if there are more credentials to load
   const [isExpanded, setIsExpanded] = useState(false); // to check if the credentials are expanded
   const loadMoreRef = useRef<HTMLButtonElement>(null); // to reference for the Plus icon ("Load more" button)
@@ -68,7 +68,7 @@ const CredentialTimeline = () => {
 
   const toggleCredential = () => {
     if (isExpanded) {
-      setCredential(credentialsData.slice(0, 3)); // Reset to initial credential
+      setCredential(credentialsData.slice(-3)); // Reset to the last three credentials
       setHasMore(true);
       if (loadMorePosition !== null) {
         window.scrollTo({ top: loadMorePosition, behavior: "auto" }); // Set the scroll position to the stored position without scrolling
@@ -91,7 +91,7 @@ const CredentialTimeline = () => {
     <>
       <VerticalTimeline layout={"2-columns"}>
         {/* Loop through the credentialsData array and display each credential as a VerticalTimelineElement */}
-        {credential.map((credential, index) => (
+        {[...credential].reverse().map((credential, index) => (
           <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work text-left"
