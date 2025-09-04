@@ -1,5 +1,5 @@
 # StarWars Portfolio
-[StarWars Portfolio](https://www.ryoichihomma.me/) is a modern animated web portfolio themed-on Star Wars that showcases my skills, projects, work experience, tech blogs, educational background, and certifications. 
+[StarWars Portfolio](https://rio-homma.netlify.app/) is a modern animated web portfolio themed-on Star Wars that showcases my skills, projects, work experience, tech blogs, educational background, and certifications. 
 
 ## Table of Contents
 - [Features](#features)
