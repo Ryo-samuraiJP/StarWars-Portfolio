@@ -12,10 +12,12 @@ import {
   SiUml,
   SiVite,
 } from "react-icons/si";
-import Spotlight, { SpotlightCard } from "./ui/spotlight-card";
-import { servicesData } from "../data/servicesData";
+import Spotlight, {
+  SpotlightCard,
+} from "../../../components/ui/spotlight-card";
+import { servicesData } from "../../../data/servicesData";
 import { GrMysql } from "react-icons/gr";
-import { Meteors } from "./ui/meteros";
+import { Meteors } from "../../../components/ui/meteros";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { TbApi } from "react-icons/tb";

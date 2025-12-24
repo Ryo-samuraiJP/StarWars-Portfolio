@@ -1,6 +1,8 @@
-import { skillsData } from "../data/skillsData";
-import { Meteors } from "./ui/meteros";
-import Spotlight, { SpotlightCard } from "./ui/spotlight-card";
+import { skillsData } from "../../../data/skillsData";
+import { Meteors } from "../../../components/ui/meteros";
+import Spotlight, {
+  SpotlightCard,
+} from "../../../components/ui/spotlight-card";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 

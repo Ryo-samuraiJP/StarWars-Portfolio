@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TContactFormSchema } from "../lib/types-of-contact-form-schema";
+import { TContactFormSchema } from "../sections/Contact/lib/contact-form-schema";
 import { validateEmail } from "./emailValidatorWithZeroBounceApi";
 
 // Load EmailJS service ID, template ID, and public key from environment variables (set in .env file)

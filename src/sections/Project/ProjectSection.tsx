@@ -1,6 +1,6 @@
-import { genres } from "../data/projectsData";
-import ProjectCards from "../components/ProjectCards";
-import ProjectTabs from "../components/ProjectTabs";
+import { genres } from "../../data/projectsData";
+import ProjectCards from "./components/ProjectCards";
+import ProjectTabs from "./components/ProjectTabs";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 

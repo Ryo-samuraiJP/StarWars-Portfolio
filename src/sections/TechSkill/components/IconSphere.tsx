@@ -1,4 +1,4 @@
-import { icons } from "../data/iconCloudData";
+import { icons } from "../../../data/iconCloudData";
 import { IconCloud } from "./ui/skills-cloud";
 import { motion } from "framer-motion";
 

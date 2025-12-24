@@ -4,7 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { credentialsData } from "../data/credentialsData";
+import { credentialsData } from "../../../data/credentialsData";
 import {
   SiAxios,
   SiC,
@@ -26,7 +26,7 @@ import {
 import { FaPlus } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
-import ShiningButton from "./ShiningButton";
+import ShiningButton from "../../TechBlog/components/ShiningButton";
 import { TbBrandCSharp, TbSql } from "react-icons/tb";
 import { AiOutlineJava } from "react-icons/ai";
 

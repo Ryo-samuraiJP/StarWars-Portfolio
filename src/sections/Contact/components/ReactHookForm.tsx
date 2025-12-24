@@ -4,13 +4,15 @@ import { useState } from "react";
 import {
   contactFormSchema,
   TContactFormSchema,
-} from "../lib/types-of-contact-form-schema";
-import Spotlight, { SpotlightCard } from "./ui/spotlight-card";
+} from "../lib/contact-form-schema";
+import Spotlight, {
+  SpotlightCard,
+} from "../../../components/ui/spotlight-card";
 import { ImRocket } from "react-icons/im";
 import { MdError, MdCheckCircle } from "react-icons/md";
 import ParticlesAnimation from "./ui/particles-animation";
-import { validateEmail } from "../api/emailValidatorWithZeroBounceApi";
-import { sendEmailWithEmailjs } from "../api/autoReplyWithEmailJsApi";
+import { validateEmail } from "../../../api/emailValidatorWithZeroBounceApi";
+import { sendEmailWithEmailjs } from "../../../api/autoReplyWithEmailJsApi";
 
 const ReactHookForm = () => {
   // State for email validation status

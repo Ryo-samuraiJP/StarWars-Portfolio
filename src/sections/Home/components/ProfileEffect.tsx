@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
-import profile from "./../assets/images/profile.jpeg";
 import { motion } from "framer-motion";
-import Saturn from "./../assets/images/Saturn.png";
+import Saturn from "./../../../assets/images/Saturn.png";
+import profile from "./../../../assets/images/profile.jpeg";
 
 const ProfileEffect = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
