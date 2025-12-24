@@ -4,6 +4,36 @@ import outlier from "../assets/images/outlier.jpeg";
 import linkedin from "../assets/images/linkedin.png";
 import mozilla from "../assets/images/mozilla.jpg";
 import tru from "../assets/images/tru.png";
+import hennge from "../assets/images/hennge.png";
+import {
+  SiAxios,
+  SiC,
+  SiCss3,
+  SiExpress,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiMongodb,
+  SiNodedotjs,
+  SiNpm,
+  SiPostman,
+  SiPython,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiTerraform,
+  SiGithubactions,
+  SiZod,
+  SiDotenv,
+  SiPnpm,
+  SiVite,
+} from "react-icons/si";
+import { TbBrandCSharp, TbSql } from "react-icons/tb";
+import { IconType } from "react-icons/lib";
+import { VscIssues } from "react-icons/vsc";
+import { FaAws, FaGithub, FaJava } from "react-icons/fa";
+import { BiGitPullRequest } from "react-icons/bi";
 
 interface ICredentialsData {
   id: number;
@@ -16,6 +46,39 @@ interface ICredentialsData {
   link?: string;
   skills?: string[];
 }
+
+// Mapping of skill names to their corresponding icons
+export const iconMap: { [key: string]: IconType } = {
+  AWS: FaAws,
+  Axios: SiAxios,
+  C: SiC,
+  CSharp: TbBrandCSharp,
+  CSS: SiCss3,
+  dotenv: SiDotenv,
+  Express: SiExpress,
+  Git: SiGit,
+  GitHub: FaGithub,
+  GitHubActions: SiGithubactions,
+  HTML: SiHtml5,
+  Issues: VscIssues,
+  Java: FaJava,
+  JavaScript: SiJavascript,
+  MongoDB: SiMongodb,
+  Nextjs: SiNextdotjs,
+  Nodejs: SiNodedotjs,
+  Npm: SiNpm,
+  Pnpm: SiPnpm,
+  Postman: SiPostman,
+  PR: BiGitPullRequest,
+  Python: SiPython,
+  React: SiReact,
+  SQL: TbSql,
+  TailwindCSS: SiTailwindcss,
+  Terraform: SiTerraform,
+  TypeScript: SiTypescript,
+  Vite: SiVite,
+  Zod: SiZod,
+};
 
 export const credentialsData: ICredentialsData[] = [
   {
@@ -53,7 +116,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/22a39b3119134b734ac3abc509699e61b32d2bb54666fad1836db3a56df0b262?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgjjkZba3QcKTtpW5I9uEpg%3D%3D",
-    skills: ["Tailwindcss"],
+    skills: ["TailwindCSS"],
   },
   {
     id: 4,
@@ -62,7 +125,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "Mozilla",
     icon: mozilla,
     link: "https://www.linkedin.com/learning/certificates/28cfba9d5c3d70debf8f2c7c46efb3fa102de5adc2b55bd9b5b44d459f757fba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgjjkZba3QcKTtpW5I9uEpg%3D%3D",
-    skills: ["Javascript"],
+    skills: ["JavaScript"],
   },
   {
     id: 5,
@@ -98,7 +161,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/857030b833069af903e03aac239b9479c0405f4081479ae4da690a98a7b1c0a3?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgjjkZba3QcKTtpW5I9uEpg%3D%3D",
-    skills: ["Nodedotjs"],
+    skills: ["Nodejs"],
   },
   {
     id: 9,
@@ -116,7 +179,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/bbf1d64296c83139045d071400b7c091d733ee8967ed45344c96e0a1ff9ad254?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgjjkZba3QcKTtpW5I9uEpg%3D%3D",
-    skills: ["Express", "Nodedotjs"],
+    skills: ["Nodejs", "Express"],
   },
   {
     id: 11,
@@ -125,7 +188,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/f6c2202dd61892832930034ca659d0e96e251fbe40f042528f2f6190c02ef136?trk=share_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgjjkZba3QcKTtpW5I9uEpg%3D%3D",
-    skills: ["Mongodb"],
+    skills: ["MongoDB"],
   },
   {
     id: 12,
@@ -143,7 +206,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/61818883ca12e44eb248889d20fee5eceece0dec40d3b44b44aa6cf20d0a9d9e?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgjjkZba3QcKTtpW5I9uEpg%3D%3D",
-    skills: ["React", "Mongodb", "Nodedotjs", "Express", "Axios"],
+    skills: ["React", "MongoDB", "Nodejs", "Express", "Axios"],
   },
   {
     id: 14,
@@ -152,7 +215,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/c1461cfbbf01c1e176a37c563e533bc1c5a79246275708c601dfbbd7e32b1bad",
-    skills: ["Nodedotjs", "Express", "Postman"],
+    skills: ["Nodejs", "Express", "Postman"],
   },
   {
     id: 15,
@@ -161,7 +224,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/cec30228eda55c8557ba32c6d10c3756af77ac25042db3e0633b2ace79458d70",
-    skills: ["Nodedotjs", "Express", "Postman"],
+    skills: ["Nodejs", "Express", "Postman"],
   },
   {
     id: 16,
@@ -170,7 +233,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "LinkedIn",
     icon: linkedin,
     link: "https://www.linkedin.com/learning/certificates/2fdb268d068088d639d54ee83a9bfc0d497cb9ee072a1ddee261cf29d8f6ef3f",
-    skills: ["Typescript"],
+    skills: ["TypeScript"],
   },
   {
     id: 17,
@@ -179,17 +242,7 @@ export const credentialsData: ICredentialsData[] = [
     organization: "Outlier",
     icon: outlier,
     location: "San Francisco, CA (Remote)",
-    desc: "Worked on prompt engineering, factual verification, evaluation, and localization to ensure the quality of large language models (LLMs) prior to customer release.\n・Designed and refined about 450 prompts in English and Japanese across diverse categories and constraints, deepening understanding of LLM behavior and mastering prompt engineering techniques using Markdown to optimize AI model performance and user intent alignment.\n・Researched and analyzed the factual accuracy of roughly 900 AI-generated texts without relying on AI tools, applying expertise in mathematics and programming (HTML, CSS, JavaScript, Python) while also developing strong cross-domain research and source reliability assessment skills.\n・Evaluated approximately 900 AI-generated responses against predefined constraints and hierarchical quality dimensions, selecting the most appropriate output, correcting grammatical/typographical errors, and enhancing localization for improved clarity and cultural alignment.\n・Conducted final reviews of more than 60 tasks completed by team members, providing corrections and feedback that contributed to high customer satisfaction, while strengthening skills in critical thinking, quality assurance, and quality auditing.",
-    skills: [
-      "Generative AI Tools",
-      "Prompt Engineering",
-      "AI Prompting",
-      "Critical Thinking",
-      "Problem-Solving",
-      "Analytical Skills",
-      "Quality Assurance",
-      "Quality Auditing",
-    ],
+    desc: "Worked on prompt engineering, analytical researching, fact-checking/verification, LLM evaluation, and Japanese localization to ensure the quality of large language models (LLMs) prior to customer release.\n・Designed and refined about 450 prompts in English and Japanese across diverse categories and constraints, deepening understanding of LLM behavior and mastering prompt engineering techniques using Markdown to optimize AI model performance and user intent alignment.\n・Researched and analyzed the factual accuracy of roughly 900 AI-generated texts without relying on AI tools, applying expertise in mathematics and programming (HTML, CSS, JavaScript, Python) while also developing strong cross-domain research and source reliability assessment skills.\n・Evaluated approximately 900 AI-generated responses against predefined constraints and hierarchical quality dimensions, selecting the most appropriate output, correcting grammatical/typographical errors, and enhancing localization for improved clarity and cultural alignment.\n・Conducted final reviews of more than 60 tasks completed by team members, providing corrections and feedback that contributed to high customer satisfaction, while strengthening skills in critical thinking, quality assurance, and quality auditing.",
   },
   {
     id: 18,
@@ -209,6 +262,31 @@ export const credentialsData: ICredentialsData[] = [
     icon: comsquare,
     location: "Tokyo, Japan (Remote)",
     desc: "Worked on AI feasibility validation, quality assurance, and UI/UX improvements for telephony SaaS products such as CallTracker and VoiceX.\n・Advised on the feasibility of integrating an AI module into VoiceX to detect customer harassment, leveraging prior experience as an AI Trainer and in building the RAG chatbot using AWS, which enabled rapid prototyping and secured executive approval for implementation.\n・Tested CallTracker more than 50 times to ensure proper functionality and UI accuracy by entering predefined inputs into user fields, verifying expected outcomes, and confirming data reflection in browser storage using Developer Tools.\n・Expected to start enhancing UI/UX for SaaS products using Next.js, TypeScript, and CSS, focusing on improving usability and user engagement.",
-    skills: ["Nextjs", "Typescript", "CSS"],
+    skills: ["Nextjs", "TypeScript", "CSS"],
+  },
+  {
+    id: 20,
+    title: "Frontend Engineer GIP Intern",
+    date: "Nov 2025 - Dec 2025",
+    organization: "HENNGE K.K.",
+    icon: hennge,
+    location: "Tokyo, Japan",
+    desc: "Participated as a Frontend Engineer in a Global Internship Program (GIP) at a Japanese startup company operating HENNGE ONE, a SaaS product with the No.1 domestic market share in cloud security.\n・Collaborated in English with a globally diverse environment, working closely with 10 mentors and 2 fellow international interns to gain hands-on experience in a multinational setting.\n・Built a frontend application using TypeScript and React, as well as DevOps tasks utilizing Terraform, GitHub Actions, and AWS to deploy the application to the cloud.\n・Communicated with employees from other divisions throughout outside activities (bukatsu), gaining a deep understanding of organizational culture, history, vision, products, and people with diverse backgrounds.",
+    skills: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Pnpm",
+      "Zod",
+      "dotenv",
+      "TailwindCSS",
+      "Git",
+      "GitHub",
+      "Issues",
+      "PR",
+      "GitHubActions",
+      "Terraform",
+      "AWS",
+    ],
   },
 ];

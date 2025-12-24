@@ -60,11 +60,7 @@ const Home = () => {
             >
               <Typewriter
                 options={{
-                  strings: [
-                    "web developer",
-                    "software engineer",
-                    "ai llm trainer",
-                  ],
+                  strings: ["web developer", "software engineer", "ai trainer"],
                   delay: 50,
                   deleteSpeed: 30,
                   loop: true,
@@ -88,15 +84,16 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 1 }}
               viewport={{ once: true }}
             >
-              Software engineer/developer proficient in React, TypeScript,
-              JavaScript, Tailwind CSS, and Framer Motion, with 1+ year of
-              experience in AI training (LLM evaluation). Continuously enhancing
-              the MERN stack and exploring AWS. As a recent CS graduate in
-              Canada, I seek opportunities to work with talented teams in
-              building secure and efficient software solutions. I am passionate
-              about learning new technologies and contributing to innovative
-              projects by leveraging my extensive knowledge and expertise in web
-              development, LLM evaluation, and effective AI prompting.
+              Software Engineer, specializing in frontend web development using
+              React, TypeScript, Tailwind CSS, and Framer Motion, with 1 year of
+              experience in AI Trainer where I gained hands-on skills in prompt
+              engineering, analytical researching, fact-checking/verification,
+              LLM evaluation, and Japanese localization. Currently exploring the
+              MERN stack, Terraform, and AWS. I seek opportunities to work with
+              talented teams in building secure and efficient software
+              solutions. I am passionate about learning new technologies and
+              contributing to innovative projects by leveraging my extensive
+              expertise in web development and effective AI prompting.
               Additionally, I am a huge MLB fan interested in sports science and
               baseball data analytics!
             </motion.p>
