@@ -1,68 +1,17 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { credentialsData } from "../../../data/credentialsData";
-import {
-  SiAxios,
-  SiC,
-  SiCss3,
-  SiExpress,
-  SiGit,
-  SiHtml5,
-  SiJavascript,
-  SiMongodb,
-  SiNodedotjs,
-  SiNpm,
-  SiPostman,
-  SiPython,
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { credentialsData, iconMap } from "../../../data/credentialsData";
 import { FaPlus } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import ShiningButton from "../../TechBlog/components/ShiningButton";
-import { TbBrandCSharp, TbSql } from "react-icons/tb";
-import { AiOutlineJava } from "react-icons/ai";
-
-// Map of icons for skill icons and skill text strings
-const iconMap: { [key: string]: JSX.Element | string } = {
-  Axios: <SiAxios />,
-  C: <SiC />,
-  CSharp: <TbBrandCSharp />,
-  CSS: <SiCss3 />,
-  Express: <SiExpress />,
-  Git: <SiGit />,
-  HTML: <SiHtml5 />,
-  Java: <AiOutlineJava />,
-  Javascript: <SiJavascript />,
-  Mongodb: <SiMongodb />,
-  Nodedotjs: <SiNodedotjs />,
-  Postman: <SiPostman />,
-  Python: <SiPython />,
-  React: <SiReact />,
-  Nextjs: <SiNextdotjs />,
-  SQL: <TbSql />,
-  Tailwindcss: <SiTailwindcss />,
-  Typescript: <SiTypescript />,
-  Npm: <SiNpm />,
-  "Generative AI Tools": "generative AI tools,",
-  "Prompt Engineering": "prompt engineering,",
-  "AI Prompting": "AI prompting,",
-  "Critical Thinking": "critical thinking,",
-  "Problem-Solving": "problem-solving,",
-  "Analytical Skills": "analytical skills,",
-  "Quality Assurance": "quality assurance,",
-  "Quality Auditing": "quality auditing, etc.",
-};
 
 const CredentialTimeline = () => {
-  const [credential, setCredential] = useState(credentialsData.slice(-3)); // the last three of credentials that are loaded initially
+  const [credential, setCredential] = useState(credentialsData.slice(-4)); // the last four of credentials that are loaded initially
   const [, setHasMore] = useState(true); // to check if there are more credentials to load
   const [isExpanded, setIsExpanded] = useState(false); // to check if the credentials are expanded
   const loadMoreRef = useRef<HTMLButtonElement>(null); // to reference for the Plus icon ("Load more" button)
@@ -70,7 +19,7 @@ const CredentialTimeline = () => {
 
   const toggleCredential = () => {
     if (isExpanded) {
-      setCredential(credentialsData.slice(-3)); // Reset to the last three credentials
+      setCredential(credentialsData.slice(-4)); // Reset to the last four credentials
       setHasMore(true);
       if (loadMorePosition !== null) {
         window.scrollTo({ top: loadMorePosition, behavior: "auto" }); // Set the scroll position to the stored position without scrolling
@@ -137,44 +86,27 @@ const CredentialTimeline = () => {
             </div>
             <div className="vertical-timeline-element-title text-sm py-3">
               {credential.desc &&
-                credential.desc.split("\n").map((line, idx) => (
-                  <span key={idx}>
-                    {line}
-                    <br />
-                  </span>
+                credential.desc.split("\n").map((bulletPnt, i) => (
+                  // Display each bullet point in a separate div for proper line breaks
+                  <div key={i} className="mb-2">
+                    {bulletPnt}
+                  </div>
                 ))}
             </div>
             <div className="grid md:grid-cols-2">
               {credential.skills && credential.skills.length > 0 && (
                 <div className="flex items-center">
                   <span className="text-sm md:font-medium">Skills:</span>
-                  {/* For icon skills: */}
-                  <div className="flex flex-row gap-x-1 sm:gap-x-2 ml-2">
-                    {credential.skills
-                      .filter((skill) => typeof iconMap[skill] !== "string")
-                      .map((skill, i) => (
-                        <span key={i} className="text-xl">
-                          {iconMap[skill]}
-                        </span>
-                      ))}
-                  </div>
-                  {/* For text skills: */}
-                  <div className="overflow-auto md:overflow-visible">
-                    <div
-                      className="flex flex-row whitespace-nowrap gap-x-1 sm:gap-x-1.5 overflow-hidden
-                        overflow-x-scroll scrollbarX w-[20%] sm:w-[43%] md:w-[55%] lg:w-[80%] xl:w-[41%]"
-                    >
-                      {credential.skills
-                        .filter((skill) => typeof iconMap[skill] === "string")
-                        .map((skill, i) => (
-                          <span
-                            key={i}
-                            className="text-sm sm:text-base mb-1 sm:mb-0.5 font-light"
-                          >
-                            {iconMap[skill]}
-                          </span>
-                        ))}
-                    </div>
+                  {/* Display skill icons with horizontal scrolling on small screens */}
+                  <div
+                    className="flex flex-row gap-x-1.5 ml-2 scrollbarX
+                      overflow-x-auto sm:overflow-visible w-[45%] sm:w-full"
+                  >
+                    {credential.skills.map((skill, i) => (
+                      <span key={i} className="text-xl">
+                        {iconMap[skill] && React.createElement(iconMap[skill])}
+                      </span>
+                    ))}
                   </div>
                 </div>
               )}
