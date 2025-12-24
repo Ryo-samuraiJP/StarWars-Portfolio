@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import CredentialTimeline from "../components/CredentialTimeline";
+import CredentialTimeline from "./components/CredentialTimeline";
 import { motion } from "framer-motion";
 
 const CredentialSection = () => {

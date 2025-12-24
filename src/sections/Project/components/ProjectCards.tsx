@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { filterProjects } from "../data/projectsData";
+import { filterProjects } from "../../../data/projectsData";
 import { motion } from "framer-motion";
 
 interface ProjectCardsProps {

@@ -1,5 +1,5 @@
-import SkillsProgress from "../components/SkillProgressBar";
-import IconSphere from "../components/IconSphere";
+import SkillsProgress from "./components/SkillProgressBar";
+import IconSphere from "./components/IconSphere";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 

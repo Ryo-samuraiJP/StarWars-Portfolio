@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import ServiceCards from "../components/ServiceCards";
+import ServiceCards from "./components/ServiceCards";
 import { motion } from "framer-motion";
 
 const ServiceSection = () => {

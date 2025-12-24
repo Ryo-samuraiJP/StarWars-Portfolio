@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import useMousePosition from "../../lib/mouse-position";
+import useMousePosition from "../../../../lib/mouse-position";
 
 interface ParticlesProps {
   quantity?: number; // Number of particles

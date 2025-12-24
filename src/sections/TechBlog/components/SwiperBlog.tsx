@@ -14,7 +14,7 @@ import {
 import ShiningButton from "./ShiningButton";
 import { IoMdOpen, IoMdTime } from "react-icons/io";
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
-import { fetchDevPosts } from "../api/fetchPostsWithDevApi";
+import { fetchDevPosts } from "../../../api/fetchPostsWithDevApi";
 
 // DEV.to API response type definition
 interface Post {
