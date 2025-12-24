@@ -14,6 +14,7 @@ import {
   SiReact,
   SiOracle,
   SiAmazonwebservices,
+  SiTerraform,
 } from "react-icons/si";
 
 export interface Skill {
@@ -32,31 +33,31 @@ export const skillsData = [
         name: "React",
         icon: SiReact,
         color: "#61DAFB",
-        progress: 70,
+        progress: 80,
       },
       {
         name: "TypeScript",
         icon: SiTypescript,
         color: "#3178C6",
-        progress: 60,
+        progress: 80,
       },
       {
         name: "JavaScript",
         icon: SiJavascript,
         color: "#F7DF1E",
-        progress: 70,
+        progress: 90,
       },
       {
         name: "Tailwind",
         icon: SiTailwindcss,
         color: "#06B6D4",
-        progress: 80,
+        progress: 90,
       },
       {
         name: "CSS3",
         icon: SiCss3,
         color: "#1572B6",
-        progress: 80,
+        progress: 90,
       },
       {
         name: "HTML5",
@@ -116,19 +117,25 @@ export const skillsData = [
         name: "Git",
         icon: SiGit,
         color: "#F05032",
-        progress: 80,
+        progress: 70,
       },
       {
         name: "GitHub",
         icon: SiGithub,
         color: "#8730A5",
-        progress: 70,
+        progress: 80,
       },
       {
         name: "GitHub Actions",
         icon: SiGithubactions,
         color: "#2088FF",
         progress: 50,
+      },
+      {
+        name: "Terraform",
+        icon: SiTerraform,
+        color: "#844FBA",
+        progress: 40,
       },
     ],
   },

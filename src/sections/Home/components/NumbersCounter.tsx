@@ -48,7 +48,7 @@ const NumbersCounter = () => {
           viewport={{ once: true }}
         >
           <div className="font-bold tracking-tighter md:w-[3.5rem] text-left text-5xl sm:text-[3.2rem]">
-            <NumbersCounterAnimation value={4} />+
+            <NumbersCounterAnimation value={5} />+
           </div>
           <p className="w-20 sm:w-36 md:w-40 lg:w-44 font-light text-sm md:text-base text-right sm:text-center">
             YEARS OF BUILDING SOFTWARE
@@ -116,7 +116,7 @@ const NumbersCounter = () => {
           viewport={{ once: true }}
         >
           <div className="font-bold tracking-tighter text-left text-5xl sm:text-[3.2rem]">
-            <NumbersCounterAnimation value={9000} />+
+            <NumbersCounterAnimation value={10000} />+
           </div>
           <p className="w-28 font-light text-sm md:text-base text-right sm:text-center">
             TOTAL POST VIEWS ON DEV
